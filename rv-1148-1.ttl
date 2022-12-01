@@ -1,0 +1,130 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://hdl.handle.net/20.500.11840/686332/purchase/1> a crm:E7_Activity ;
+    rdfs:label "Aankoop in 1897 van Â Wolff, M.Â ",
+        "Verwerving" ;
+    crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi59610> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+    crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
+    crm:P9_consists_of <https://hdl.handle.net/20.500.11840/686332/acquisition/1> .
+
+<http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1.jpg&cache=yes> a crm:E36_Visual_Item ;
+    dc:format "image/jpeg" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300215302> .
+
+<http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1_a.jpg&cache=yes> a crm:E36_Visual_Item ;
+    dc:format "image/jpeg" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300215302> .
+
+<http://vocab.getty.edu/aat/300055863> a crm:E55_Type ;
+    rdfs:label "Provenance Entry" .
+
+<http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
+    rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/686332> a crm:E22_Human-Made_Object ;
+    crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/686332#production1> ;
+    crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1.jpg&cache=yes>,
+        <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1_a.jpg&cache=yes> ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Versierde olifantstand" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Presentatietitel"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "Nederlands"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Decorated elephant tusk" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Display title"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "RV-1148-1" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ivory" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Materiaal Anderstalig"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "1760-1886" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Datum Anderstalig"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ede" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Lokale naam"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "(not assigned)"@nl ] ] ;
+    crm:P2_has_type [ a crm:E55_Type ;
+            rdfs:label "Voorwerpen" ],
+        [ a crm:E55_Type ;
+            rdfs:label "MateriÃ«le cultuurcollectie" ],
+        [ a crm:E55_Type ;
+            rdfs:label "Olifantstand / reliÃ«f" ],
+        <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
+    crm:P43_has_dimension [ a crm:E54_Dimension ;
+            crm:P190_has_symbolic_content "220 x 12 cm ; gewicht 25,5 kg" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "afmetingenlabel" ] ] ;
+    crm:P45_consists_of <https://hdl.handle.net/20.500.11840/termmaster10065792> ;
+    crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
+    crm:P65_shows_visual_item [ a crm:E36_Visual_Item ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster1829> ] ;
+    crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Bini" ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078292> ],
+        [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Benin City" ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> ] ;
+    la:has_phase [ a la:Phase ;
+            crm:P9_consists_of [ a crm:E8_Acquisition ;
+                    crm:P2_has_type [ a crm:E55_Type ;
+                            rdfs:label "Eigendom" ],
+                        [ a crm:E55_Type ;
+                            rdfs:label "Aankoop" ] ] ] .
+
+<https://hdl.handle.net/20.500.11840/686332#production1> a crm:E12_Production ;
+    crm:P32_used_general_technique <https://hdl.handle.net/20.500.11840/termmaster10064925> ;
+    crm:P4_has_time-span [ a crm:E52_Time-Span ;
+            crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                    crm:P190_has_symbolic_content "1760-1786" ] ;
+            crm:P82a_begin_of_the_begin "1760-01-01"^^xsd:date ;
+            crm:P82b_end_of_the_end "1786-01-01"^^xsd:date ] ;
+    crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055011> .
+
+<https://hdl.handle.net/20.500.11840/686332/acquisition/1> a crm:E8_Acquisition ;
+    crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+    crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi59610> ;
+    crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/686332> .
+
+<https://hdl.handle.net/20.500.11840/termmaster10064925> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10065792> a crm:E57_Material .
+
+<https://hdl.handle.net/20.500.11840/termmaster10067487> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10078292> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster1829> a crm:E55_Type .
+
+<http://vocab.getty.edu/aat/300215302> a crm:E55_Type ;
+    rdfs:label "digital images" .
+
+<https://hdl.handle.net/20.500.11840/pi59610> a crm:E39_Actor ;
+    rdfs:label "Wolff, M." .
+
+<https://hdl.handle.net/20.500.11840/termmaster10055011> a crm:E53_Place,
+        crm:E55_Type .
+
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
