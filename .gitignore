@@ -1,5 +1,5 @@
 archive/
 .DS_store
-*.gitignore
-.ipynb_checkpoints
+.gitignore
+.ipynb_checkpoints/
 
