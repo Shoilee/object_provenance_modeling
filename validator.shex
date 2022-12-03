@@ -68,7 +68,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
 }
 
 <actor> {
-  a [ crm:E39_Actor ];
+  a [ prov:Agent ] OR [ crm:E39_Actor ] +;
 }
 
 <place>{
@@ -77,8 +77,9 @@ prefix prov: <http://www.w3.org/ns/prov#>
 
 <prov_entity>{
   a [ prov:Entity ];
-    prov:wasAttributedTo  BNode OR @<prov_agent> *; 
+    prov:wasAttributedTo @<prov_agent> *; 
   	prov:wasDerivedFrom @<prov_entity> *;
+    prov:wasGeneratedBy @<prov_activity> *;
 }
 
 <prov_agent>{
