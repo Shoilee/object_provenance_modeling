@@ -5,6 +5,38 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
+<https://example.com/686332/provenance_information_object> a prov:Entity;
+    prov:wasDerivedFrom <https://example.com/Provenance_series_2> ;
+    prov:wasAttributedTo <https://example.com/Provenance_series_2/Agent1>.
+
+<https://example.com/Provenance_series_2> a prov:Entity;
+    prov:wasGeneratedBy <http://example.com/provenance_research#1> .
+
+<http://example.com/provenance_research#1> a prov:Activity ;
+    prov:wasAssociatedWith <https://example.com/Provenance_series_2/Agent1> ;
+    prov:used <https://example.com/achieval_material_1> ;
+    prov:wasStartedAtTime "2022-01-01"^^xsd:date ;
+    prov:endedAtTime "2022-04-15"^^xsd:date .
+
+<https://example.com/Provenance_series_2/Agent1> a prov:Agent ;
+    rdfs:label "Rosalie" ;
+    prov:actedOnBehalhOf <https://www.wikidata.org/entity/Q17153751> .
+
+<https://example.com/686332/purchase_information/1> a prov:Entity ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_1> .
+
+<https://example.com/achieval_material_1> a prov:Entity;
+    prov:wasDerivedFrom <https://example.com/Provenance_series_2> ;
+    prov:wasAttributedTo <https://hdl.handle.net/20.500.11840/pi59610> .
+
+<https://example.com/686332/production_information/1> a prov:Entity ;
+    prov:wasDerivedFrom <http://example.com/Book#1> .
+
+<http://example.com/Book#1> a prov:Entity ;
+    prov:wasAttributedTo [a prov:Agent;
+        rdfs:label "Barbara Blackmun"] .
+
+
 ### object 
   <https://hdl.handle.net/20.500.11840/686332> a crm:E22_Human-Made_Object ;
       crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/686332#production1> ;
@@ -116,13 +148,13 @@
 <http://vocab.getty.edu/aat/300215302> a crm:E55_Type ;
         rdfs:label "digital images" .
 
-<https://hdl.handle.net/20.500.11840/pi59610> a crm:E39_Actor ;
+<https://hdl.handle.net/20.500.11840/pi59610> a crm:E39_Actor, prov:Agent ;
         rdfs:label "Wolff, M." .
 
 <https://hdl.handle.net/20.500.11840/termmaster10055011> a crm:E53_Place,
         crm:E55_Type .
 
-<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor ;
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
         crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
 
 <http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
