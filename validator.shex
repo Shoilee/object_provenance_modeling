@@ -1,0 +1,96 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix la: <https://linked.art/ns/terms/>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix sx: <http://weso.es/ns/shex/>
+prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix aat: <http://vocab.getty.edu/aat/>
+prefix prov: <http://www.w3.org/ns/prov#> 
+
+<object> {
+  	a [ crm:E22_Human-Made_Object ];
+    crm:P108i_was_produced_by  @<production> *; 
+    crm:P138i_has_representation  IRI * ; 
+    crm:P1_is_identified_by  BNode +; 
+    crm:P2_has_type  . *; 
+    crm:P43_has_dimension  . *; 
+    crm:P45_consists_of  IRI OR xsd:string *; 
+    crm:P49_has_former_or_current_owner  .* ; 
+    crm:P52_has_current_owner  @<actor> OR xsd:string *; 
+    crm:P65_shows_visual_item  . * ; 
+    crm:P67i_is_referred_to_by  .* ; 
+}
+
+<production>  {
+    a [ crm:E12_Production ];
+    crm:P4_has_time-span  BNode *; 
+    crm:P7_took_place_at  IRI OR xsd:string *; 
+}
+
+<acquisition> {
+    rdf:type [ crm:E8_Acquisition ];
+    crm:P22_transferred_title_to  @<actor> ; 
+    crm:P23_transferred_title_from  @<actor> ; 
+    crm:P24_transferred_title_of  @<object> ; 
+    crm:P4_has_time  BNode *; 
+}
+
+<purchase>  {
+    a [ crm:E7_Activity ];
+    crm:P14_carried_out_by  @<actor> *; 
+    crm:P9_consists_of  IRI *; 
+  	rdfs:label xsd:string +;
+}
+
+<transfer_of_custody> {
+  a [ crm:E10_Transfer_of_Custody ];
+  crm:P28_custody_surrendered_by  @<actor> ; 
+  crm:P29_custody_recieved_by  @<actor>; 
+  crm:P2_has_type  . * ; 
+  crm:P30_transferred_custody_of  @<object> +; 
+  crm:P9_consist_of . *; 
+}
+
+<histevent> {
+    a  [ crm:E7_Activity ];
+    crm:P1_is_identified_by  @<event_title> ; 
+    crm:P4_has_time-span  BNode *; 
+    crm:P67i_is_referred_to_by  BNode *;
+}
+
+<event_title> {
+    a [ crm:E41_Linguistic_Appellation ];
+    crm:P190_has_symbolic_content  xsd:string; 
+  crm:P2_has_type [ aat:300404670 ] ; 
+    crm:P72_has_language  IRI OR xsd:string *; 
+}
+
+<actor> {
+  a [ crm:E39_Actor ];
+}
+
+<place>{
+  a [ crm:E53_Place ];
+}
+
+<prov_entity>{
+  a [ prov:Entity ];
+    prov:wasAttributedTo  BNode OR @<prov_agent> *; 
+  	prov:wasDerivedFrom @<prov_entity> *;
+}
+
+<prov_agent>{
+  a [ prov:Agent ] OR [ crm:E39_Actor ] +;
+  rdfs:label xsd:string *;
+  prov:actedOnBehalhOf @<prov_agent> * ;
+}
+
+<prov_activity>{
+  a [ prov:Activity ] ;
+  prov:used  @<prov_entity> *; 
+  prov:wasAssociatedWith  @<prov_agent> *; 
+  prov:endedAtTime  xsd:date *; 
+  prov:wasStartedAtTime  xsd:date *; 
+}
