@@ -10,5 +10,9 @@
 
 Validation tool: <a href="https://rdfshape.weso.es/shexValidate ">RDFshape<a>
 
+## The Data Model
+
+![Data Model Diagram](resource/visualization.svg)
+
 
 
