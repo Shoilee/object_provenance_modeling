@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "D:\NMvW\WEB\LODccrdfAfgeschermd\ccrdfobjacquisition.py", line 63, in <module>
-    print(g.serialize(format=f, context=c, indent=4))
-  File "C:\Python39\lib\site-packages\rdflib\graph.py", line 1113, in serialize
-    return stream.getvalue().decode("windows-1252")
-  File "C:\Python39\lib\encodings\cp1252.py", line 15, in decode
-    return codecs.charmap_decode(input,errors,decoding_table)
-UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 384: character maps to <undefined>
