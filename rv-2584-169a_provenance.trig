@@ -24,6 +24,8 @@
 
 <http://example.com/provenance_research#2> a prov:Activity ;
     prov:type "Provenance Research" ;
+    prov:wasStartedAtTime "2019-03-01"^^xsd:date ;
+    prov:endedAtTime "2020-12-31"^^xsd:date ;
     prov:wasAssociatedWith <https://example.com/Provenance_series_1/Agent#2> ;
     prov:used <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244>;
     prov:used <https://resolver.kb.nl/resolve?urn=MMKB06:000008354:00009> ;
