@@ -7,27 +7,26 @@
 
 <https://example.com/686332/provenance_information_object> a prov:Entity;
     prov:wasDerivedFrom <https://example.com/Provenance_series_2> ;
-    prov:wasAttributedTo <https://example.com/Provenance_series_2/Agent1>.
+    prov:wasAttributedTo <https://example.com/Provenance_series_2/Agent#1>.
 
 <https://example.com/Provenance_series_2> a prov:Entity;
     prov:wasGeneratedBy <http://example.com/provenance_research#1> .
 
 <http://example.com/provenance_research#1> a prov:Activity ;
-    prov:wasAssociatedWith <https://example.com/Provenance_series_2/Agent1> ;
+    prov:wasAssociatedWith <https://example.com/Provenance_series_2/Agent#1> ;
     prov:used <https://example.com/achieval_material_1> ;
     prov:wasStartedAtTime "2022-01-01"^^xsd:date ;
     prov:endedAtTime "2022-04-15"^^xsd:date .
 
-<https://example.com/Provenance_series_2/Agent1> a prov:Agent ;
+<https://example.com/Provenance_series_2/Agent#1> a prov:Agent ;
     rdfs:label "Rosalie" ;
     prov:actedOnBehalhOf <https://www.wikidata.org/entity/Q17153751> .
 
 <https://example.com/686332/purchase_information/1> a prov:Entity ;
     prov:wasDerivedFrom <https://example.com/achieval_material_1> .
-
-<https://example.com/achieval_material_1> a prov:Entity;
-    prov:wasDerivedFrom <https://example.com/Provenance_series_2> ;
     prov:wasAttributedTo <https://hdl.handle.net/20.500.11840/pi59610> .
+
+<https://example.com/achieval_material_1> a prov:Entity .
 
 <https://example.com/686332/production_information/1> a prov:Entity ;
     prov:wasDerivedFrom <http://example.com/Book#1> .

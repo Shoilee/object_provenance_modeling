@@ -1,0 +1,496 @@
+# The diagram for this object can be found here: https://drive.google.com/file/d/1sh45JBPKenyeoI8aFN6REwL0TCvYt8lw/view?usp=sharing 
+
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Data Provenance
+<https://example.com/provenance_information_object_829286/story#1> a prov:Entity;
+    prov:type "RDF-Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/Provenance_series_1> ;
+    prov:wasAttributedTo <https://example.com/Provenance_series_1/Agent#2>.
+
+<https://example.com/provenance_information_object_829286/story#2> a prov:Entity;
+    prov:type "RDF-Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/Provenance_series_1> ;
+    prov:wasAttributedTo <https://example.com/Provenance_series_1/Agent#2>.
+
+<https://example.com/Provenance_series_1> a prov:Entity;
+    prov:type "Report" ;
+    prov:wasGeneratedBy <http://example.com/provenance_research#2> .
+
+<http://example.com/provenance_research#2> a prov:Activity ;
+    prov:type "Provenance Research" ;
+    prov:wasAssociatedWith <https://example.com/Provenance_series_1/Agent#2> ;
+    prov:used <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244>;
+    prov:used <https://resolver.kb.nl/resolve?urn=MMKB06:000008354:00009> ;
+    prov:used <http://example.com/article#1>;
+    prov:used <http://collecties.zuidafrikahuis.nl/detail.php?nav_id=17-1&index=19&imgid=410228&id=345535> ;
+    # prov:wasStartedAtTime ""^^xsd:date ;
+    # prov:endedAtTime ""^^xsd:date .
+
+<https://example.com/Provenance_series_1/Agent#2> a prov:Agent ;
+    prov:type "Person" ;
+    prov:role "Researcher" ;
+    rdfs:label "Francois Janse van Rensburg" ;
+    prov:actedOnBehalhOf <https://www.wikidata.org/entity/Q17153751> .
+
+## Acquision theory
+<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/1> a prov:Entity ;
+    prov:wasDerivedFrom <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244> ;
+    prov:wasAttributedTo <https://example.com/Provenance_series_1/Agent#2> .
+
+<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/2> a prov:Entity ;
+    prov:wasDerivedFrom <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244> ;
+    prov:wasAttributedTo <https://example.com/Provenance_series_1/Agent#2> .
+
+<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/3> a prov:Entity ;
+    prov:wasDerivedFrom <http://example.com/Kuitenbrouwer-2012#275-279> ;
+    prov:wasAttributedTo <https://example.com/Provenance_series_1/Agent#2> .
+
+# TODO I do not know how to represent information from inscription
+# sources 
+    # 1. Inscription from object
+    # 2. Exhibitions 
+    # 3. Book references
+<https://example.com/686332/purchase_information/1> a prov:Entity ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_1> ;
+    prov:wasAttributedTo <https://hdl.handle.net/20.500.11840/pi59610> .
+
+<https://example.com/achieval_material_1> a prov:Entity .
+
+<https://example.com/686332/production_information/1> a prov:Entity ;
+    prov:wasDerivedFrom <http://example.com/Book#1> .
+
+# TODO I do not know how to place retrive date for entity
+# Book references:
+<https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244> a prov:Entity ;
+    rdfs:label "Algemeen Handelsblad".
+
+<https://resolver.kb.nl/resolve?urn=MMKB06:000008354:00009> a prov:Entity ;
+    rdfs:label "Catalogus-gedenkschrift van de tentoonstelling "De groote trek" by Fred. Oudschans Dentz".
+
+<http://collecties.zuidafrikahuis.nl/detail.php?nav_id=17-1&index=19&imgid=410228&id=345535> a a prov:Entity ;
+    rdfs:label "Zuid-Afrikahuis photo collection 'Modelwaentjie Groot Trek Eeufeesviering 1938".
+
+<http://angloboerwar.com> a prov:Entity ;
+    prov:type "Website" .
+
+<http://example.com/Kuitenbrouwer-2012#275-279> a prov:Entity ;
+    prov:type "Book" .
+
+<http://example.com/article#1> a prov:Entity;
+    prov:type "Article";
+    prov:wasAttributedTo [a prov:Agent ; 
+        rdfs:label "Johann Tempelhoff"] .
+
+# TODO check whether Exhibition 1 and 2 is identical
+# Exhibitions
+<https://example.com/exhibition#1> a crm:E7_Activity ;
+    crm:P1_is_identified_by <https://example.com/exhibition#1#title> ;
+    crm:P4_has_time-span <https://example.com/exhibition#1#timespan> ;
+    crm:P14_carried_out_by [ a crm:E39_Actor;
+        rdfs:label "A.M.V.J." ];
+    crm:P7_took_place_at <https://example.com/place#1> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .
+
+<https://example.com/exhibition#1#title> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P190_has_symbolic_content "Groote Trek" .
+
+<https://example.com/exhibition#1#timespan> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1938-12-16"^^xsd:date ;
+    crm:P82b_end_of_the_end "1938-12-22"^^xsd:date .
+
+<http://vocab.getty.edu/aat/300054766> a crm:E55_Type .
+
+<https://example.com/place#1> a crm:E53_Place ;
+    rdfs:label "Amsterdam" ;
+
+<https://example.com/exhibition#2> a crm:E7_Activity ;
+    crm:P1_is_identified_by <https://example.com/exhibition#2#title> ;
+    crm:P4_has_time-span <https://example.com/exhibition#2#timespan> ;
+    crm:P14_carried_out_by [ a crm:E39_Actor;
+        rdfs:label "Algemeen Nederlandsch Verbond" ];
+    crm:P7_took_place_at <https://example.com/place#2> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .
+
+<https://example.com/exhibition#1#title> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P190_has_symbolic_content "Groote Trek" .
+
+<https://example.com/exhibition#1#timespan> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1939-01-16"^^xsd:date ;
+    crm:P82b_end_of_the_end "1939-01-22"^^xsd:date .
+
+<https://example.com/place#2> a crm:E53_Place ;
+    rdfs:label "Laan 34, Den Haag" ;
+
+# Object Information
+<http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes> a crm:E36_Visual_Item ;
+    dc:format "image/jpeg" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300215302> .
+
+<http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> a crm:E36_Visual_Item ;
+    dc:format "image/jpeg" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300215302> .
+
+<http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
+    rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/pi81704> a crm:E39_Actor .
+
+<https://example.com/maker_2> a crm:E39_Actor .
+
+<https://hdl.handle.net/20.500.11840/termmaster10064925> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10065303> a crm:E57_Material .
+
+<https://hdl.handle.net/20.500.11840/termmaster10065614> a crm:E57_Material .
+
+<https://hdl.handle.net/20.500.11840/termmaster10065895> a crm:E57_Material .
+
+<https://hdl.handle.net/20.500.11840/termmaster10068399> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10068918> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10078201> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster15550> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster20788> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster2625> a crm:E55_Type .
+
+<http://vocab.getty.edu/aat/300215302> a crm:E55_Type ;
+    rdfs:label "digital images" .
+
+<https://hdl.handle.net/20.500.11840/pi58241> a crm:E39_Actor ;
+    rdfs:label "Hendrik Muller Fonds" .
+
+<https://hdl.handle.net/20.500.11840/termmaster10055289> a crm:E53_Place,
+        crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10063974> a crm:E53_Place,
+        crm:E55_Type .
+
+<http://vocab.getty.edu/aat/300055863> a crm:E55_Type ;
+    rdfs:label "Provenance Entry" .
+
+<https://example.com/provenance_information_object_829286/story#1>{
+    <https://hdl.handle.net/20.500.11840/829286> a crm:E22_Human-Made_Object ;
+    crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/829286#production1> ;
+    crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
+        <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> ;
+    crm:P12i_was_present_at <https://example.com/exhibition#1> ;
+    crm:P12i_was_present_at <https://example.com/exhibition#2> ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ossewa" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Presentatietitel"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "Afrikaans"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ossenwagen (model)" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Presentatietitel"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "Nederlands"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ox-wagon" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Presentatietitel"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (UK)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "1900" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Datum Anderstalig"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Bullock wagon (model)" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Display title"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Wood ; textile ; metal" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Materiaal Anderstalig"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "RV-2584-169a" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ] ;
+    crm:P2_has_type [ a crm:E55_Type ;
+            rdfs:label "Materiële cultuurcollectie" ],
+        [ a crm:E55_Type ;
+            rdfs:label "ossenkar (model)" ],
+        [ a crm:E55_Type ;
+            rdfs:label "Voorwerpen" ],
+        <https://hdl.handle.net/20.500.11840/termmaster10068399>,
+        <https://hdl.handle.net/20.500.11840/termmaster10068918> ;
+    crm:P43_has_dimension [ a crm:E54_Dimension ;
+            crm:P190_has_symbolic_content """17 x 49,5 x 20 cm (chassis)
+                27 x 53 x 23,5 cm (opbouw met huif)""" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "afmetingenlabel" ] ] ;
+    crm:P49_has_former_or_current_owner <https://hdl.handle.net/20.500.11840/pi2603> ;
+    crm:P45_consists_of <https://hdl.handle.net/20.500.11840/termmaster10065303>,
+        <https://hdl.handle.net/20.500.11840/termmaster10065614>,
+        <https://hdl.handle.net/20.500.11840/termmaster10065895> ;
+    crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ; # are they?
+    crm:P65_shows_visual_item [ a crm:E36_Visual_Item ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster20788> ],
+        [ a crm:E36_Visual_Item ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster2625> ],
+        [ a crm:E36_Visual_Item ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster15550> ] ;
+    crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Zuidelijk Afrikaans" ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ],
+        [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Cape Town" ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055289> ] .
+
+    <https://hdl.handle.net/20.500.11840/829286#production1> a crm:E12_Production ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi81704> ;
+        # crm:P14_carried_out_by <https://example.com/maker_2> ; # indicated by inscription
+        crm:P32_used_general_technique <https://hdl.handle.net/20.500.11840/termmaster10064925> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                        crm:P190_has_symbolic_content "1901" ] ;
+                crm:P82a_begin_of_the_begin "1901-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1901-01-01"^^xsd:date ] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055289>,
+
+    <https://hdl.handle.net/20.500.11840/686332/transfer_of_custody/1> a crm:E10_Transfer_of_Custody; # why E_10_tranfer_of_custody, why not an E7_activity
+            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/829286>;
+            crm:P29_custody_recieved_by <https://hdl.handle.net/20.500.11840/pi2603>;
+
+    <https://hdl.handle.net/20.500.11840/829286/purchase/1> a crm:E7_Activity ; # this one also can be transfer_of_custody
+        rdfs:label "Pedigree: vroegere eigenaar",
+            " Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller voor 1938" ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P82a_begin_of_the_begin "10000001938"^^xsd:dateTime ;
+                crm:P82b_end_of_the_end "10000001938"^^xsd:dateTime ] ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/1> .
+
+    <https://hdl.handle.net/20.500.11840/829286/purchase/2> a crm:E7_Activity ;
+        rdfs:label "Legaat in 1946 van Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller (hoogstwaarschijnlijk)",
+            "Verwerving" ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/2> .
+
+    <https://hdl.handle.net/20.500.11840/829286/purchase/3> a crm:E7_Activity ;
+        rdfs:label "Tussenkomst",
+            " Hendrik Muller Fonds " ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi58241> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/3> .
+
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/1> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/2> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/3> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page; maybe Zuid-Afrikaansche Museum
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+}
+
+<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/1>{# does this also mean that the acquisition also happen in 1938, the most objective/known trruth of acquisition, but incomplete
+    <https://hdl.handle.net/20.500.11840/829286/purchase/1> a crm:E7_Activity ; # this one also can be transfer_of_custody
+        rdfs:label "Pedigree: vroegere eigenaar",
+            " Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller voor 1938" ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P82a_begin_of_the_begin "10000001938"^^xsd:dateTime ;
+                crm:P82b_end_of_the_end "10000001938"^^xsd:dateTime ] ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/1> .
+    
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/1> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+}
+
+<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/2>{
+    <https://hdl.handle.net/20.500.11840/829286/purchase/2> a crm:E7_Activity ;
+        rdfs:label "Legaat in 1946 van Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller (hoogstwaarschijnlijk)",
+            "Verwerving" ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/2> .
+
+    # 1946 acquisition is important here
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/2> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+                 crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P82a_begin_of_the_begin "10000001946"^^xsd:dateTime ;
+                crm:P82b_end_of_the_end "10000001946"^^xsd:dateTime ] ;
+}
+
+<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/3>{
+    <https://hdl.handle.net/20.500.11840/829286/purchase/3> a crm:E7_Activity ;
+        rdfs:label "Tussenkomst",
+            " Hendrik Muller Fonds " ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi58241> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/3> .
+
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/3> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+}
+
+<https://example.com/provenance_information_object_829286/story#2>{
+    <https://hdl.handle.net/20.500.11840/829286> a crm:E22_Human-Made_Object ;
+    crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/829286#production1> ;
+    crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
+        <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> ;
+    crm:P12i_was_present_at <https://example.com/exhibition#1> ;
+    crm:P12i_was_present_at <https://example.com/exhibition#2> ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ossewa" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Presentatietitel"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "Afrikaans"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ossenwagen (model)" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Presentatietitel"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "Nederlands"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Ox-wagon" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Presentatietitel"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (UK)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "1900" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Datum Anderstalig"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Bullock wagon (model)" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Display title"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Wood ; textile ; metal" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "Materiaal Anderstalig"@nl ] ;
+            crm:P72_has_language [ a crm:E56_Language ;
+                    rdfs:label "English (US)"@nl ] ],
+        [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "RV-2584-169a" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ] ;
+    crm:P2_has_type [ a crm:E55_Type ;
+            rdfs:label "Materiële cultuurcollectie" ],
+        [ a crm:E55_Type ;
+            rdfs:label "ossenkar (model)" ],
+        [ a crm:E55_Type ;
+            rdfs:label "Voorwerpen" ],
+        <https://hdl.handle.net/20.500.11840/termmaster10068399>,
+        <https://hdl.handle.net/20.500.11840/termmaster10068918> ;
+    crm:P43_has_dimension [ a crm:E54_Dimension ;
+            crm:P190_has_symbolic_content """17 x 49,5 x 20 cm (chassis)
+                27 x 53 x 23,5 cm (opbouw met huif)""" ;
+            crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "afmetingenlabel" ] ] ;
+    crm:P45_consists_of <https://hdl.handle.net/20.500.11840/termmaster10065303>,
+        <https://hdl.handle.net/20.500.11840/termmaster10065614>,
+        <https://hdl.handle.net/20.500.11840/termmaster10065895> ;
+    crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ; 
+    crm:P49_has_former_or_current_owner <https://hdl.handle.net/20.500.11840/pi2603> ;
+    crm:P65_shows_visual_item [ a crm:E36_Visual_Item ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster20788> ],
+        [ a crm:E36_Visual_Item ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster2625> ],
+        [ a crm:E36_Visual_Item ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster15550> ] ;
+    crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Zuidelijk Afrikaans" ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ],
+        [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Mumbai" ;
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10063974> ] .
+
+    <https://hdl.handle.net/20.500.11840/829286#production1> a crm:E12_Production ;
+        crm:P14_carried_out_by [a crm:E39_Actor;
+            rdfs:label "Boer Prisoners of war "];
+        crm:P32_used_general_technique <https://hdl.handle.net/20.500.11840/termmaster10064925> ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10063974>,
+
+    <https://hdl.handle.net/20.500.11840/686332/transfer_of_custody/1> a crm:E10_Transfer_of_Custody; # why E_10_tranfer_of_custody, why not an E7_activity
+            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/829286>;
+            crm:P29_custody_recieved_by <https://hdl.handle.net/20.500.11840/pi2603>;
+            crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                        rdfs:label "Boer Prisoners of war"];
+            crm:P9_consist_of <https://hdl.handle.net/20.500.11840/event436> ;
+            crm:P2_has_type [ a crm:E55_Type;
+                    rdfs:label "Gift"].
+            crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10063974>;
+
+    <https://hdl.handle.net/20.500.11840/829286/purchase/2> a crm:E7_Activity ;
+        rdfs:label "Legaat in 1946 van Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller (hoogstwaarschijnlijk)",
+            "Verwerving" ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/2> .
+
+    <https://hdl.handle.net/20.500.11840/829286/purchase/3> a crm:E7_Activity ;
+        rdfs:label "Tussenkomst",
+            " Hendrik Muller Fonds " ;
+        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi58241> ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
+        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/3> .
+
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/1> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/2> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+
+    <https://hdl.handle.net/20.500.11840/829286/acquisition/3> a crm:E8_Acquisition ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
+}
+
+<https://hdl.handle.net/20.500.11840/pi2603> a crm:E39_Actor ;
+    rdfs:label "Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller" .
+
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+
+# I can create two event event-1: "Battle of Paardeberg(18-27 February 1900)" and Event-2: "The second South African War(1899 - 1902)"; not sure how it should relate to object
+# also another event: Pre-Boer Propaganda and dutch nationalism; event or a concept? 
