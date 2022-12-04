@@ -1,0 +1,5 @@
+1. Read the provenance report
+2. Find object in Website and get hdl id
+3. Find objects linkedart rdf
+
+    'curl -H "Accept:text/turtle" "https://linkedart.wereldculturen.nl/ccrdf/ccrdfobjacquisition.py?command=search&query=*=https://hdl.handle.net/20.500.11840/829286" > obj_2.ttl'

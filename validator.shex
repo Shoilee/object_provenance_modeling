@@ -40,6 +40,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
 <purchase>  {
     a [ crm:E7_Activity ];
     crm:P14_carried_out_by  @<actor> *; 
+  	# crm:P2_has_type [ aat:300055863 ] ;
     crm:P9_consists_of  IRI *; 
   	rdfs:label xsd:string +;
 }
@@ -63,7 +64,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
 <event_title> {
     a [ crm:E41_Linguistic_Appellation ];
     crm:P190_has_symbolic_content  xsd:string; 
-  crm:P2_has_type [ aat:300404670 ] ; 
+  	crm:P2_has_type [ aat:300404670 ] ; 
     crm:P72_has_language  IRI OR xsd:string *; 
 }
 

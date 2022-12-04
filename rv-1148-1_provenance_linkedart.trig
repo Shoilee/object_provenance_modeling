@@ -23,7 +23,7 @@
     prov:actedOnBehalhOf <https://www.wikidata.org/entity/Q17153751> .
 
 <https://example.com/686332/purchase_information/1> a prov:Entity ;
-    prov:wasDerivedFrom <https://example.com/achieval_material_1> .
+    prov:wasDerivedFrom <https://example.com/achieval_material_1> ;
     prov:wasAttributedTo <https://hdl.handle.net/20.500.11840/pi59610> .
 
 <https://example.com/achieval_material_1> a prov:Entity .

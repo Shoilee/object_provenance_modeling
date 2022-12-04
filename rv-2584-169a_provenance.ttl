@@ -180,7 +180,7 @@
 <http://vocab.getty.edu/aat/300055863> a crm:E55_Type ;
     rdfs:label "Provenance Entry" .
 
-<https://example.com/provenance_information_object_829286/story#1>{
+
     <https://hdl.handle.net/20.500.11840/829286> a crm:E22_Human-Made_Object ;
     crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/829286#production1> ;
     crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
@@ -311,59 +311,9 @@
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page; maybe Zuid-Afrikaansche Museum
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
-}
 
-<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/1>{# does this also mean that the acquisition also happen in 1938, the most objective/known trruth of acquisition, but incomplete
-    <https://hdl.handle.net/20.500.11840/829286/purchase/1> a crm:E7_Activity ; # this one also can be transfer_of_custody
-        rdfs:label "Pedigree: vroegere eigenaar",
-            " Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller voor 1938" ;
-        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
-        crm:P4_has_time-span [ a crm:E52_Time-Span ;
-                crm:P82a_begin_of_the_begin "10000001938"^^xsd:dateTime ;
-                crm:P82b_end_of_the_end "10000001938"^^xsd:dateTime ] ;
-        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/1> .
-    
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/1> a crm:E8_Acquisition ;
-        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
-}
 
-<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/2>{
-    <https://hdl.handle.net/20.500.11840/829286/purchase/2> a crm:E7_Activity ;
-        rdfs:label "Legaat in 1946 van Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller (hoogstwaarschijnlijk)",
-            "Verwerving" ;
-        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
-        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/2> .
 
-    # 1946 acquisition is important here
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/2> a crm:E8_Acquisition ;
-        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P4_has_time-span [ a crm:E52_Time-Span ;
-            crm:P82a_begin_of_the_begin "10000001946"^^xsd:dateTime ;
-            crm:P82b_end_of_the_end "10000001946"^^xsd:dateTime ] ;
-}
-
-<https://hdl.handle.net/20.500.11840/829286/acqusition_theory/3>{
-    <https://hdl.handle.net/20.500.11840/829286/purchase/3> a crm:E7_Activity ;
-        rdfs:label "Tussenkomst",
-            " Hendrik Muller Fonds " ;
-        crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi58241> ;
-        crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
-        crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
-        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/3> .
-
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/3> a crm:E8_Acquisition ;
-        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page
-        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
-}
-
-<https://example.com/provenance_information_object_829286/story#2>{
     <https://hdl.handle.net/20.500.11840/829286> a crm:E22_Human-Made_Object ;
     crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/829286#production1> ;
     crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
@@ -485,7 +435,6 @@
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> .
-}
 
 <https://hdl.handle.net/20.500.11840/pi2603> a crm:E39_Actor ;
     rdfs:label "Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller" .
