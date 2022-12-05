@@ -15,8 +15,8 @@
 <http://example.com/provenance_research#1> a prov:Activity ;
     prov:wasAssociatedWith <https://example.com/Provenance_series_2/Agent#1> ;
     prov:used <https://example.com/achieval_material_1> ;
-    prov:wasStartedAtTime "2022-01-01"^^xsd:date ;
-    prov:endedAtTime "2022-04-15"^^xsd:date .
+    prov:wasStartedAtTime "2019-03-01"^^xsd:date ;
+    prov:endedAtTime "2021-01-29"^^xsd:date .
 
 <https://example.com/Provenance_series_2/Agent#1> a prov:Agent ;
     rdfs:label "Rosalie" ;

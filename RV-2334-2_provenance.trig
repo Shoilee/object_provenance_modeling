@@ -8,7 +8,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
 ### Data Provenance
-<https://example.com/provenance_information_object_737521> a prov:Entity;
+<https://example.com/provenance_information_object_737522> a prov:Entity;
     prov:type "RDF-Named Graph" ;
     prov:wasDerivedFrom <https://example.com/Provenance_series_1> ;
     prov:wasAttributedTo <https://example.com/Provenance_series_1/Agent#3>.
@@ -32,7 +32,7 @@
     prov:used <https://example.com/preface#1> .
 
 ## Acquision theory
-<https://example.com/provenance_information_object_737521/transfer_of_custody/> a prov:Entity ;
+<https://example.com/provenance_information_object_737522/transfer_of_custody/> a prov:Entity ;
     prov:wasDerivedFrom <https://example.com/catalog#1> ;
     prov:wasDerivedFrom <https://example.com/preface#1> .
 
@@ -45,7 +45,7 @@
     prov:wasAttributedTo <https://hdl.handle.net/20.500.11840/pi59624> ;
     rdfs:label "Tenryusan sekibutsushu, catalouge, Collection of stone Buddhas from Tainlongshan." .
 
-<https://example.com/provenance_information_object_737521/purchase/> a prov:Entity ;
+<https://example.com/provenance_information_object_737522/purchase/> a prov:Entity ;
     prov:wasDerivedFrom <https://example.com/catalog#1> .
 
 <https://example.com/Rasser-1937> a prov:Entity;
@@ -58,7 +58,7 @@
     prov:wasAttributedTo [a prov:Agent;
         rdfs:label "Herman van Roijen (1905-1901)"].
 
-<https://example.com/provenance_information_object_737521/gift/> a prov:Entity ;
+<https://example.com/provenance_information_object_737522/gift/> a prov:Entity ;
     prov:wasDerivedFrom <https://example.com/Rasser-1937>;
     prov:wasDerivedFrom <https://example.com/foreign-affairs-1937> .
 
@@ -68,10 +68,10 @@
 # Object Information
 
 ### OBJECT
-<https://example.com/provenance_information_object_737521>{
-    <https://hdl.handle.net/20.500.11840/737521> a crm:E22_Human-Made_Object ;
-    crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/737521#production1>;
-    crm:P138i_has_representation <https://collectie.wereldculturen.nl/cc/imageproxy.ashx?server=localhost&port=17581&filename=images//Images/RV//rv-2334-1.jpg&width=240&height=200&borderwidth=1&borderheight=1&bordercolor=e8e8e8&bg=f8f8f8&passepartoutwidth=16&passepartoutheight=16&passepartoutcolor=f8f8f8&cache=yes> ;
+<https://example.com/provenance_information_object_737522>{
+    <https://hdl.handle.net/20.500.11840/737522> a crm:E22_Human-Made_Object ;
+    crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/737522#production1>;
+    crm:P13steen8i_has_representation <https://collectie.wereldculturen.nl/cc/imageproxy.ashx?server=localhost&port=17581&filename=images//Images/RV//rv-2334-1.jpg&width=240&height=200&borderwidth=1&borderheight=1&bordercolor=e8e8e8&bg=f8f8f8&passepartoutwidth=16&passepartoutheight=16&passepartoutcolor=f8f8f8&cache=yes> ;
     # crm:P12i_was_present_at <https://example.com/exhibition1> ; # Yamanak's exhibition
     crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
             crm:P190_has_symbolic_content "Boddhisatvahoofd" ;
@@ -80,19 +80,19 @@
             crm:P72_has_language [ a crm:E56_Language ;
                     rdfs:label "Nederlands"@nl ] ],
         [ a crm:E33_E41_Linguistic_Appellation ;
-            crm:P190_has_symbolic_content "Godenkop" ;
+            crm:P190_has_symbolic_content "Kop" ;
             crm:P2_has_type [ a crm:E55_Type ;
                     rdfs:label "Presentatietitel"@nl ] ;
             crm:P72_has_language [ a crm:E56_Language ;
                     rdfs:label "Nederlands"@nl ] ],
         [ a crm:E33_E41_Linguistic_Appellation ;
-            crm:P190_has_symbolic_content "godenbeeld (onderdeel)" ;
+            crm:P190_has_symbolic_content "Boeddhabeeld (onderdeel)" ;
             crm:P2_has_type [ a crm:E55_Type ;
                     rdfs:label "Presentatietitel"@nl ] ;
             crm:P72_has_language [ a crm:E56_Language ;
                     rdfs:label "Nederlands"@nl ] ],
         [ a crm:E42_Identifier ;
-            crm:P190_has_symbolic_content "RV-2334-1" ;
+            crm:P190_has_symbolic_content "RV-2334-2" ;
             crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ] ;
     crm:P2_has_type [ a crm:E55_Type ;
             rdfs:label "Materiële cultuurcollectie" ],
@@ -103,10 +103,10 @@
         <https://hdl.handle.net/20.500.11840/termmaster1829> ,
         <https://hdl.handle.net/20.500.11840/termmaster2652> ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            crm:P190_has_symbolic_content """28 cm""" ;
+            crm:P190_has_symbolic_content """23,5 x 15,5 cm""" ;
             crm:P2_has_type [ a crm:E55_Type ;
                     rdfs:label "afmetingenlabel" ] ] ;
-    crm:P3_has_note "Hoofd van een bodhisattva, een toekomstige Boeddha. Dit hoofd is afkomstig uit de tempelgrotten van Tianlongshan." ;
+    crm:P3_has_note "Hoofd van een Boeddha. Dit hoofd is toegeschreven aan de tempelgrotten van Tianlongshan." ;
     crm:P49_has_former_or_current_owner  <https://hdl.handle.net/20.500.11840/pi58328>;
     crm:P49_has_former_or_current_owner  <https://hdl.handle.net/20.500.11840/pi59624>;
     crm:P45_consists_of <https://hdl.handle.net/20.500.11840/termmaster26299> ;
@@ -119,20 +119,20 @@
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster5303> ] .
 
 #### PRODUCTION
-    <https://hdl.handle.net/20.500.11840/737521#production1> a crm:E12_Production ;
+    <https://hdl.handle.net/20.500.11840/737522#production1> a crm:E12_Production ;
         crm:P32_used_general_technique <https://hdl.handle.net/20.500.11840/termmaster26002> ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
-                        crm:P190_has_symbolic_content "vroeg 7de-vroeg 10de eeuw";
-                        crm:P190_has_symbolic_content "Tang"  ] ] ;
+                        crm:P190_has_symbolic_content "vroeg 7de-vroeg 10de eeuw"; 
+                        crm:P190_has_symbolic_content "Tang" ] ] ;
         crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster25064> .
 
 
 ### TRANSFER OF CUSTODY
     # native --> Yamanaka
-    <https://hdl.handle.net/20.500.11840/737521#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+    <https://hdl.handle.net/20.500.11840/737522#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
             crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
-            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737521>;
+            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737522>;
             crm:P29_custody_recieved_by <https://hdl.handle.net/20.500.11840/pi59624>;
             crm:P2_has_type [ a <http://vocab.getty.edu/aat/300055863>;
                     rdfs:label "Illegal purchase from natives"] ;
@@ -140,7 +140,7 @@
 
 ### PURCHASE
     # Yamanaka --> Nezu 
-    <https://hdl.handle.net/20.500.11840/737521#purchase/1> a crm:E96_Purchase ; 
+    <https://hdl.handle.net/20.500.11840/737522#purchase/1> a crm:E96_Purchase ; 
         crm:P22_transferred_title_to <https://hdl.handle.net/20.500.11840/pi58328> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi59624> ;
         crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
@@ -148,19 +148,19 @@
 
 ### GIFT
     # Nezu --> Diplomat (Gift)
-    <https://hdl.handle.net/20.500.11840/737521#purchase/2> a crm:E7_Activity ;
+    <https://hdl.handle.net/20.500.11840/737522#purchase/2> a crm:E7_Activity ;
             rdfs:label "Schenking in 1937 van Nezu Kaichirō, (1860 - 1940)" ;
-            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737521>;
+            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737522>;
             crm:P29_custody_recieved_by <https://example.com/actor1>;
             crm:P28_custody_surrendered_by <https://hdl.handle.net/20.500.11840/pi58328> ;
-            crm:P9_consist_of <https://hdl.handle.net/20.500.11840/737521#acquisition/1> ;
+            crm:P9_consist_of <https://hdl.handle.net/20.500.11840/737522#acquisition/1> ;
             crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster18233> ;
             crm:P2_has_type [ a crm:E55_Type;
                     rdfs:label "Gift"].
 
 ### ACQUISITION
    # Diplomat --> Volkenkunde (Acquisition) 
-    <https://hdl.handle.net/20.500.11840/737521#acquisition/1> a crm:E8_Acquisition ;
+    <https://hdl.handle.net/20.500.11840/737522#acquisition/1> a crm:E8_Acquisition ;
         crm:P4_has_time [a crm:E52_Time;
                 crm:P1_is_identified_by [ a crm:E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1937-10-01"];
@@ -168,48 +168,48 @@
                 crm:P82b_end_of_the_end "1937-10-01"^^xsd:date ];
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58328> ;
-        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/737521> .
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/737522> .
 }
 
 ### NAMED GRAPH FOR ACQUSITION HISTORY
 
 ### TRANSFER OF CUSTODY
-<https://example.com/provenance_information_object_737521/transfer_of_custody/>{
+<https://example.com/provenance_information_object_737522/transfer_of_custody/>{
     # native --> Yamanaka
-    <https://hdl.handle.net/20.500.11840/737521#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+    <https://hdl.handle.net/20.500.11840/737522#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
             crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
-            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737521>;
+            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737522>;
             crm:P29_custody_recieved_by <https://hdl.handle.net/20.500.11840/pi59624>;
             crm:P2_has_type [ a <http://vocab.getty.edu/aat/300055863>;
                     rdfs:label "Illegal purchase from natives"] ;
             crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster25064> .
 }
 ### PURCHASE
-<https://example.com/provenance_information_object_737521/purchase/>{
+<https://example.com/provenance_information_object_737522/purchase/>{
     # Yamanaka --> Nezu 
-    <https://hdl.handle.net/20.500.11840/737521#purchase/1> a crm:E96_Purchase ; 
+    <https://hdl.handle.net/20.500.11840/737522#purchase/1> a crm:E96_Purchase ; 
         crm:P22_transferred_title_to <https://hdl.handle.net/20.500.11840/pi58328> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi59624> ;
         crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
         crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster18236> .
 }
-<https://example.com/provenance_information_object_737521/gift/>{
+<https://example.com/provenance_information_object_737522/gift/>{
 ### GIFT
     # Nezu --> Diplomat (Gift)
-    <https://hdl.handle.net/20.500.11840/737521#purchase/2> a crm:E7_Activity ;
+    <https://hdl.handle.net/20.500.11840/737522#purchase/2> a crm:E7_Activity ;
             rdfs:label "Schenking in 1937 van Nezu Kaichirō, (1860 - 1940)" ;
-            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737521>;
+            crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/737522>;
             crm:P29_custody_recieved_by <https://example.com/actor1>;
             crm:P28_custody_surrendered_by <https://hdl.handle.net/20.500.11840/pi58328> ;
-            crm:P9_consist_of <https://hdl.handle.net/20.500.11840/737521#acquisition/1> ;
+            crm:P9_consist_of <https://hdl.handle.net/20.500.11840/737522#acquisition/1> ;
             crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster18233> ;
             crm:P2_has_type [ a crm:E55_Type;
                     rdfs:label "Gift"].
 }
 ### ACQUISITION
-<https://example.com/provenance_information_object_737521/purchase/acquisition/>{
+<https://example.com/provenance_information_object_737522/purchase/acquisition/>{
    # Diplomat --> Volkenkunde (Acquisition) 
-    <https://hdl.handle.net/20.500.11840/737521#acquisition/1> a crm:E8_Acquisition ;
+    <https://hdl.handle.net/20.500.11840/737522#acquisition/1> a crm:E8_Acquisition ;
         crm:P4_has_time [a crm:E52_Time;
                 crm:P1_is_identified_by [ a crm:E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1937-10-01"];
@@ -217,7 +217,7 @@
                 crm:P82b_end_of_the_end "1937-10-01"^^xsd:date ];
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58328> ;
-        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/737521> .
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/737522> .
 
 }
 
