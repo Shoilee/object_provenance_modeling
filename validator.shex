@@ -9,75 +9,133 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix aat: <http://vocab.getty.edu/aat/>
 prefix prov: <http://www.w3.org/ns/prov#> 
 
-<object> {
-  	a [ crm:E22_Human-Made_Object ];
-    crm:P108i_was_produced_by  @<production> *; 
-    crm:P138i_has_representation  IRI * ; 
-    crm:P1_is_identified_by  BNode +; 
-    crm:P2_has_type  . *; 
-    crm:P43_has_dimension  . *; 
-    crm:P45_consists_of  IRI OR xsd:string *; 
-    crm:P49_has_former_or_current_owner  .* ; 
-    crm:P52_has_current_owner  @<actor> OR xsd:string *; 
-    crm:P65_shows_visual_item  . * ; 
-    crm:P67i_is_referred_to_by  .* ; 
+<type>{
+  a [ crm:E55_Type ] ;
 }
 
-<production>  {
-    a [ crm:E12_Production ];
-    crm:P4_has_time-span  BNode *; 
-    crm:P7_took_place_at  IRI OR xsd:string *; 
+<language>{
+  a [crm:E56_Language] ;
+  rdfs:label . ;
 }
 
-<acquisition> {
-    rdf:type [ crm:E8_Acquisition ];
-    crm:P22_transferred_title_to  @<actor> ; 
-    crm:P23_transferred_title_from  @<actor> ; 
-    crm:P24_transferred_title_of  @<object> ; 
-    crm:P4_has_time  BNode *; 
+<identifier> {
+  a [ crm:E42_Identifier ] ;
+  crm:P190_has_symbolic_content xsd:string +;
+  crm:P2_has_type @<type> *;
 }
 
-<purchase>  {
-    a [ crm:E7_Activity ];
-    crm:P14_carried_out_by  @<actor> *; 
-  	# crm:P2_has_type [ aat:300055863 ] ;
-    crm:P9_consists_of  IRI *; 
-  	rdfs:label xsd:string +;
+<linguistic_Appellation> {
+  a [crm:E41_Linguistic_Appellation];
+  crm:P190_has_symbolic_content xsd:string *;
+  crm:P2_has_type @<type> *;
+  crm:P72_has_language @<language> *;
 }
 
-<transfer_of_custody> {
-  a [ crm:E10_Transfer_of_Custody ];
-  crm:P28_custody_surrendered_by  @<actor> ; 
-  crm:P29_custody_recieved_by  @<actor>; 
-  crm:P2_has_type  . * ; 
-  crm:P30_transferred_custody_of  @<object> +; 
-  crm:P9_consist_of . *; 
+<time-span>{
+  a [ crm:E52_Time-Span ] ;
+  crm:P1_is_identified_by @<linguistic_Appellation> *;
+  crm:P190_has_symbolic_content xsd:string *  ;
+  crm:P82a_begin_of_the_begin xsd:date or xsd:dateTime *;
+  crm:P82b_end_of_the_end xsd:date or xsd:dateTime * ;
 }
 
-<histevent> {
-    a  [ crm:E7_Activity ];
-    crm:P1_is_identified_by  @<event_title> ; 
-    crm:P4_has_time-span  BNode *; 
-    crm:P67i_is_referred_to_by  BNode *;
-}
-
-<event_title> {
-    a [ crm:E41_Linguistic_Appellation ];
-    crm:P190_has_symbolic_content  xsd:string; 
-  	crm:P2_has_type [ aat:300404670 ] ; 
-    crm:P72_has_language  IRI OR xsd:string *; 
+<dimension> {
+  a [ crm:E54_Dimension ] ;
+  crm:P190_has_symbolic_content xsd:string ;
+  crm:P2_has_type @<type> ;
 }
 
 <actor> {
-  a [ prov:Agent ] OR [ crm:E39_Actor ] +;
+  a [ crm:E39_Actor ] or [prov:Agent] +;
 }
 
 <place>{
-  a [ crm:E53_Place ];
+  a [ crm:E53_Place ] ;
+}
+
+<visual_item>{
+  a [ crm:E36_Visual_Item ] ;
+  crm:P2_has_type @<type> ;  
+}
+
+<linguistic-object>{
+  a [ crm:E33_Linguistic_Object ] ;
+  crm:P190_has_symbolic_content xsd:string ;
+  crm:P2_has_type @<type> *;
+  crm:P72_has_language @<language> *;
+}
+
+<material>{
+  a [ crm:E57_Material ];
+}
+
+<object> {
+  	a [ crm:E24_Physical_Human-made_Thing ];
+    crm:P1_is_identified_by @<linguistic_Appellation> OR @<identifier> +; 
+    crm:P2_has_type <type> OR IRI OR BNode * ; 
+    crm:P3_has_note xsd:string + ;
+    crm:P49_has_former_or_current_owner @<actor> * ; 
+    crm:P52_has_current_owner  @<actor> * ; 
+    crm:P108i_was_produced_by  @<production> * ; 
+    crm:P43_has_dimension  @<dimension> +; 
+    crm:P45_consists_of  @<material> OR xsd:string * ; 
+    crm:P65_shows_visual_item  @<visual_item> *; 
+    crm:P138i_has_representation  IRI * ; 
+    crm:P67i_is_referred_to_by  @<linguistic-object> * ; 
+}
+
+<production>  {
+    a [ crm:E12_Production ] ;
+    crm:P14_carried_out_by @<actor> *;
+    crm:P7_took_place_at @<place> * ;
+    crm:P4_has_time-span  @<time-span> * ; 
+  	crm:P32_used_general_technique @<type> * ;
+}
+
+<transfer_of_custody>{
+  a [ crm:E10_Transfer_of_Custody ];
+  crm:P7_took_place_at @<place> * ;
+  crm:P4_has_time-span  @<time-span> * ; 
+  crm:P9_consists_of @<sub-activity> * ;
+  crm:P28_custody_surrendered_by @<actor> * ;
+  crm:P29_custody_recieved_by @<actor>  ;
+  crm:P30_transferred_custody_of @<object> ;# MUST HAVE
+}
+
+<acquisition>{
+  a [ crm:E8_Acquisition ] ;
+  crm:P7_took_place_at @<place> * ;
+  crm:P4_has_time-span  @<time-span> * ; 
+  crm:P9_consists_of @<sub-activity> *;
+  crm:P23_transferred_title_from @<actor> ;
+  crm:P22_transferred_title_to @<actor> ;
+  crm:P24_transferred_title_of @<object> ; # MUST HAVE
+}
+
+<sub-activity>{
+  a [ crm:E7_Activity ] ;
+  rdfs:label xsd:string * ;
+  crm:P2_has_type @<type> ;# MUST HAVE
+  crm:P4_has_time @<time-span> *;
+  crm:P7_took_place_at @<place> *;
+  crm:P14_carried_out_by @<actor> *;
+}
+
+<histevent>{
+  a [ crm:E5_Event ];
+  crm:P1_is_identified_by @<linguistic_Appellation> ;
+  crm:P4_has_time-span @<time-span> ;
+  crm:P67i_is_referred_to_by @<linguistic-object> *;
+  # crm:P9_consist_of @<activity> * ; #TODO: I am not sure about this
+}
+
+<exhibition>{
+  a [ crm:E5_Event ];
 }
 
 <prov_entity>{
   a [ prov:Entity ];
+    prov:type xsd:string ;
     prov:wasAttributedTo @<prov_agent> *; 
   	prov:wasDerivedFrom @<prov_entity> *;
     prov:wasGeneratedBy @<prov_activity> *;
@@ -85,12 +143,14 @@ prefix prov: <http://www.w3.org/ns/prov#>
 
 <prov_agent>{
   a [ prov:Agent ] OR [ crm:E39_Actor ] +;
-  rdfs:label xsd:string *;
+  prov:type xsd:string OR [ prov:Person ] OR [prov:Organization]; 
+  rdfs:label xsd:string * ;
   prov:actedOnBehalhOf @<prov_agent> * ;
 }
 
 <prov_activity>{
   a [ prov:Activity ] ;
+  prov:type xsd:string ;
   prov:used  @<prov_entity> *; 
   prov:wasAssociatedWith  @<prov_agent> *; 
   prov:endedAtTime  xsd:date *; 
