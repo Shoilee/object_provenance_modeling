@@ -1,4 +1,7 @@
 # The diagram for this object can be found here: https://drive.google.com/file/d/1sh45JBPKenyeoI8aFN6REwL0TCvYt8lw/view?usp=sharing 
+# TODO: FIX IT!!!!!!!
+# TODO: I updated the first named_graph, fix the remaning;
+# <https://hdl.handle.net/20.500.11840/pi58241> is "Hendrik Muller Fonds" ; I considered it as "Zuid-Afrikaansche Museum"
 
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -53,7 +56,7 @@
     prov:wasDerivedFrom <http://example.com/Kuitenbrouwer-2012#275-279> ;
     prov:wasAttributedTo <https://example.com/Provenance_series_1/Agent#2> .
 
-# TODO I do not know how to represent information from inscription
+# TODO: I do not know how to represent information from inscription
 # sources 
     # 1. Inscription from object
     # 2. Exhibitions 
@@ -67,7 +70,7 @@
 <https://example.com/686332/production_information/1> a prov:Entity ;
     prov:wasDerivedFrom <http://example.com/Book#1> .
 
-# TODO I do not know how to place retrive date for entity
+# TODO: I do not know how to place retrive date for entity
 # Book references:
 <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244> a prov:Entity ;
     rdfs:label "Algemeen Handelsblad".
@@ -89,7 +92,7 @@
     prov:wasAttributedTo [a prov:Agent ; 
         rdfs:label "Johann Tempelhoff"] .
 
-# TODO check whether Exhibition 1 and 2 is identical
+# TODO: check whether Exhibition 1 and 2 is identical
 # Exhibitions
 <https://example.com/exhibition1> a crm:E7_Activity ;
     crm:P1_is_identified_by <https://example.com/exhibition1#title> ;
@@ -184,11 +187,6 @@
 
 <https://example.com/provenance_information_object_829286/story#1>{
     <https://hdl.handle.net/20.500.11840/829286> a crm:E22_Human-Made_Object ;
-    crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/829286#production1> ;
-    crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
-        <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> ;
-    crm:P12i_was_present_at <https://example.com/exhibition1> ;
-    crm:P12i_was_present_at <https://example.com/exhibition2> ;
     crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
             crm:P190_has_symbolic_content "Ossewa" ;
             crm:P2_has_type [ a crm:E55_Type ;
@@ -236,22 +234,29 @@
             rdfs:label "Voorwerpen" ],
         <https://hdl.handle.net/20.500.11840/termmaster10068399>,
         <https://hdl.handle.net/20.500.11840/termmaster10068918> ;
+    # TODO: crm:P3_has_note "".
+    # TODO: crm:P21_had_general_purpose 
+    crm:P49_has_former_or_current_owner <https://hdl.handle.net/20.500.11840/pi2603> ;
+    crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ; # are they?
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             crm:P190_has_symbolic_content """17 x 49,5 x 20 cm (chassis)
                 27 x 53 x 23,5 cm (opbouw met huif)""" ;
             crm:P2_has_type [ a crm:E55_Type ;
                     rdfs:label "afmetingenlabel" ] ] ;
-    crm:P49_has_former_or_current_owner <https://hdl.handle.net/20.500.11840/pi2603> ;
     crm:P45_consists_of <https://hdl.handle.net/20.500.11840/termmaster10065303>,
         <https://hdl.handle.net/20.500.11840/termmaster10065614>,
         <https://hdl.handle.net/20.500.11840/termmaster10065895> ;
-    crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ; # are they?
     crm:P65_shows_visual_item [ a crm:E36_Visual_Item ;
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster20788> ],
         [ a crm:E36_Visual_Item ;
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster2625> ],
         [ a crm:E36_Visual_Item ;
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster15550> ] ;
+        crm:P108i_was_produced_by <https://hdl.handle.net/20.500.11840/829286#production1> ;
+    crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
+        <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> ;
+    crm:P12i_was_present_at <https://example.com/exhibition1> ; # TODO: verify, whether it should be here?
+    crm:P12i_was_present_at <https://example.com/exhibition2> ; # TODO: verify, whether it should be here?
     crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
             crm:P190_has_symbolic_content "Zuidelijk Afrikaans" ;
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ],
