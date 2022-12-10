@@ -169,11 +169,9 @@
 <https://hdl.handle.net/20.500.11840/pi58241> a crm:E39_Actor ;
     rdfs:label "Hendrik Muller Fonds" .
 
-<https://hdl.handle.net/20.500.11840/termmaster10055289> a crm:E53_Place,
-        crm:E55_Type .
+<https://hdl.handle.net/20.500.11840/termmaster10055289> a crm:E53_Place .
 
-<https://hdl.handle.net/20.500.11840/termmaster10063974> a crm:E53_Place,
-        crm:E55_Type .
+<https://hdl.handle.net/20.500.11840/termmaster10063974> a crm:E53_Place .
 
 <https://example.com/provenance_information_object_829286/story#1>{
     <https://hdl.handle.net/20.500.11840/829286> a crm:E24_Physical_Human-made_Thing ;
@@ -248,10 +246,7 @@
     crm:P12i_was_present_at <https://example.com/exhibition2> ; # TODO: verify, whether it should be here?
     crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
             crm:P190_has_symbolic_content "Zuidelijk Afrikaans" ;
-            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ],
-        [ a crm:E33_Linguistic_Object ;
-            crm:P190_has_symbolic_content "Cape Town" ;
-            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055289> ] .
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ].
 
 # PRODUCTION
     <https://example.com/829286#production/1> a crm:E12_Production ;
@@ -469,10 +464,7 @@
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster15550> ] ;
     crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
             crm:P190_has_symbolic_content "Zuidelijk Afrikaans" ;
-            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ],
-        [ a crm:E33_Linguistic_Object ;
-            crm:P190_has_symbolic_content "Mumbai" ;
-            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10063974> ] .
+            crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ] .
 # PRODUCTION
     <https://example.com/829286#production/2> a crm:E12_Production ;
         crm:P14_carried_out_by [a crm:E39_Actor;
@@ -553,8 +545,7 @@
                 rdfs:label "Tussenkomst"] ;
         crm:P7_took_place_at [ a crm:E53_Place ;
                 rdfs:label "The Netherlands"] ;
-        crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
-        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/3> .
+        crm:P4_has_time-span [ a crm:E52_Time-Span ] .
 }
 
 <https://hdl.handle.net/20.500.11840/pi2603> a crm:E39_Actor ;
