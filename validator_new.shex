@@ -1,0 +1,125 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix la: <https://linked.art/ns/terms/>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix sx: <http://weso.es/ns/shex/>
+prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix aat: <http://vocab.getty.edu/aat/>
+prefix prov: <http://www.w3.org/ns/prov#> 
+
+<type>{
+  a [ crm:E55_Type ] ;
+}
+
+<language>{
+  a [crm:E56_Language] ;
+  rdfs:label . ;
+}
+
+<identifier> {
+  a [ crm:E42_Identifier ] ;
+  crm:P190_has_symbolic_content xsd:string +;
+  crm:P2_has_type @<type> *;
+}
+
+<linguistic_Appellation> {
+  a [crm:E41_Linguistic_Appellation];
+  crm:P190_has_symbolic_content xsd:string +;
+  crm:P2_has_type @<type> *;
+  crm:P72_has_language @<language> *;
+}
+
+<time-span>{
+  a [ crm:E52_Time-Span ] ;
+  crm:P1_is_identified_by @<linguistic_Appellation> *;
+  crm:P190_has_symbolic_content xsd:string *  ;
+  crm:P82a_begin_of_the_begin xsd:date or xsd:dateTime*;
+  crm:P82b_end_of_the_end xsd:date or xsd:dateTime * ;
+}
+
+<dimension> {
+  a [ crm:E54_Dimension ] ;
+  crm:P190_has_symbolic_content xsd:string ;
+  crm:P2_has_type @<type> ;
+}
+
+<actor> {
+	a [ crm:E39_Actor ] +;
+}
+
+<place>{
+  a [ crm:E53_Place ] ;
+}
+
+<visual_item>{
+  a [ crm:E36_Visual_Item ] ;
+  crm:P2_has_type @<type> ;  
+}
+
+<linguistic-object>{
+  a [ crm:E33_Linguistic_Object ] ;
+  crm:P190_has_symbolic_content xsd:string ;
+  crm:P2_has_type @<type> ;
+  crm:P72_has_language @<language>;
+}
+
+<object> {
+  	a [ crm:E24_Physical_Human-made_Thing ];
+    crm:P1_is_identified_by @<linguistic_Appellation> OR @<identifier> +; 
+    crm:P2_has_type <type> OR IRI OR BNode * ; 
+    crm:P3_has_note xsd:string + ;
+    crm:P49_has_former_or_current_owner @<actor> * ; 
+    crm:P52_has_current_owner  @<actor> * ; 
+    crm:P108i_was_produced_by  @<production> * ; 
+    crm:P43_has_dimension  @<dimension> +; 
+    crm:P45_consists_of  IRI OR xsd:string * ; 
+    crm:P65_shows_visual_item  @<visual_item> *; 
+    crm:P138i_has_representation  IRI * ; 
+    crm:P67i_is_referred_to_by  . * ; 
+}
+
+<production>  {
+    a [ crm:E12_Production ] ;
+    crm:P14_carried_out_by @<actor> *;
+    crm:P7_took_place_at @<place> * ;
+    crm:P4_has_time-span  @<time-span> * ; 
+  	crm:P32_used_general_technique @<type> * ;
+}
+
+<transfer_of_custody>{
+  a [ crm:E10_Transfer_of_Custody ];
+  crm:P7_took_place_at @<place> * ;
+  crm:P4_has_time-span  @<time-span> * ; 
+  crm:P9_consists_of @<sub-activity> * ;
+  crm:P28_custody_surrendered_by @<actor> ;
+  crm:P29_custody_recieved_by @<actor>  ;
+  crm:P30_transferred_custody_of @<object> ;
+}
+
+<acquisition>{
+  a [ crm:E8_Acquisition ] ;
+  crm:P7_took_place_at @<place> * ;
+  crm:P4_has_time-span  @<time-span> * ; 
+  crm:P9_consists_of @<sub-activity> *;
+  crm:P23_transferred_title_from @<actor> ;
+  crm:P22_transferred_title_to @<actor> ;
+  crm:P24_transferred_title_of @<object> ;
+}
+
+<sub-activity>{
+  a [ crm:E7_Activity ] ;
+  crm:P2_has_type @<type> ;#just one and must have
+  rdfs:label xsd:string *;
+  crm:P4_has_time @<time-span> ;
+  crm:P7_took_place_at @<place> ;
+  crm:P14_carried_out_by @<actor> ;
+}
+
+<histevent>{
+  a [ crm:E5_Event ];
+  crm:P1_is_identified_by @<linguistic_Appellation> ;
+  crm:P4_has_time-span @<time-span> ;
+  crm:P67i_is_referred_to_by @<linguistic-object> ;
+}
