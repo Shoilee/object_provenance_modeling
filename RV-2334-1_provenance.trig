@@ -105,7 +105,6 @@
             rdfs:label "ruimtes en objecten voor ceremonies" ],
         [ a crm:E55_Type ;
             rdfs:label "cultus en ritueel" ],
-        <https://hdl.handle.net/20.500.11840/termmaster1829> ,
         <https://hdl.handle.net/20.500.11840/termmaster2652> ;
     crm:P3_has_note "Hoofd van een bodhisattva, een toekomstige Boeddha. Dit hoofd is afkomstig uit de tempelgrotten van Tianlongshan." ;
     crm:P49_has_former_or_current_owner  <https://hdl.handle.net/20.500.11840/pi58328>;
@@ -117,6 +116,8 @@
             crm:P2_has_type [ a crm:E55_Type ;
                     rdfs:label "afmetingenlabel" ] ] ;
     crm:P45_consists_of <https://hdl.handle.net/20.500.11840/termmaster26299> ;
+    crm:P65_shows_visual_item [ a crm:E36_Visual_Item ;
+                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster1829> ] ;  
     crm:P138i_has_representation <https://collectie.wereldculturen.nl/cc/imageproxy.ashx?server=localhost&port=17581&filename=images//Images/RV//rv-2334-1.jpg&width=240&height=200&borderwidth=1&borderheight=1&bordercolor=e8e8e8&bg=f8f8f8&passepartoutwidth=16&passepartoutheight=16&passepartoutcolor=f8f8f8&cache=yes> ;
     crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
             crm:P190_has_symbolic_content "Oost-Aziatisch" ;
