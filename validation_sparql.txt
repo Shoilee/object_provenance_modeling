@@ -1,0 +1,25 @@
+# CQ1
+
+SELECT * 
+WHERE 
+{
+  ?o a crm:E24_Physical_Human-made_Thing .
+  ?o crm:P49_has_former_or_current_owner ?p.
+  ?p rdfs:label ?lab
+} 
+
+
+# CQ2 (fix typo in prop)
+
+SELECT * 
+WHERE 
+{
+  ?person a crm:E39_Actor .
+  {?activity crm:P29_custody_recieved_by ?person. 
+   ?activity crm:P30_transferred_custody_of ?obj} 
+  UNION
+  {?activity crm:P23_transferred_title_from ?person. 
+   ?activity crm:P24_transferred_title_of ?obj}
+} 
+
+# CQ3
