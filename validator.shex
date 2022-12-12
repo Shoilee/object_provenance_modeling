@@ -72,7 +72,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
 <object> {
   	a [ crm:E24_Physical_Human-made_Thing ];
     crm:P1_is_identified_by @<linguistic_Appellation> OR @<identifier> +; 
-    crm:P2_has_type <type> OR IRI OR BNode * ; 
+    crm:P2_has_type @<type> OR IRI OR BNode * ; 
     crm:P3_has_note xsd:string + ;
     crm:P49_has_former_or_current_owner @<actor> * ; 
     crm:P52_has_current_owner  @<actor> * ; 

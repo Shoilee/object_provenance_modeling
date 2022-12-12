@@ -31,7 +31,10 @@
     prov:used <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244> ;
     prov:used <https://resolver.kb.nl/resolve?urn=MMKB06:000008354:00009> ;
     prov:used <http://example.com/article#1>;
-    prov:used <http://collecties.zuidafrikahuis.nl/detail.php?nav_id=17-1&index=19&imgid=410228&id=345535> .# This link is causing problem when we are trying to generate image
+    prov:used <http://collecties.zuidafrikahuis.nl/detail.php?nav_id=17-1&index=19&imgid=410228&id=345535> ;
+    prov:used <http://angloboerwar.com> ;
+    prov:used <http://example.com/Kuitenbrouwer-2012#275-279> ;
+    prov:used <http://example.com/article#1> .# This link is causing problem when we are trying to generate image
 
 <https://example.com/Provenance_series_1/Agent#2> a prov:Agent ;
     prov:type prov:Person ;

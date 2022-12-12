@@ -31,7 +31,6 @@ select ?node where{
 {FOCUS a crm:E7_Activity}@<sub-activity>,
 {FOCUS a crm:E8_Acquisition}@<acquisition>,
 {FOCUS a crm:E10_Transfer_of_Custody}@<transfer_of_custody>,
-{FOCUS a crm:E52_Time-Span}@<time-span>,
 {FOCUS a crm:E24_Physical_Human-made_Thing}@<object>,
 {FOCUS a crm:E12_Production}@<production>
 
@@ -50,4 +49,5 @@ select ?node where{
 {FOCUS a crm:E39_Actor}@<actor>,
 {FOCUS a crm:E57_Material}@<material>,
 {FOCUS a crm:E53_Place}@<place>,
-{FOCUS a crm:E56_Language}@<language>
+{FOCUS a crm:E56_Language}@<language>,
+{FOCUS a crm:E52_Time-Span}@<time-span>
