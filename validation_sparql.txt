@@ -22,4 +22,14 @@ WHERE
    ?activity crm:P24_transferred_title_of ?obj}
 } 
 
-# CQ3
+# CQ3A partial match, requires specific queries for specific versions
+SELECT * 
+WHERE 
+{
+  ?p1 a crm:E39_Actor .
+  ?p2 a crm:E39_Actor .
+  ?act1 a crm:E7_Activity.
+    ?act1 ?prop1 ?p1. 
+    ?act1 ?prop2 ?p2. 
+  FILTER (?p1 != ?p2)
+} 
