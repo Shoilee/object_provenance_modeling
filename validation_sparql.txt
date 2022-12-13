@@ -35,27 +35,31 @@ WHERE
 } 
 
 # CQ4, matches object location
+SELECT ?obj ?place WHERE
 {
   ?obj a crm:E24_Physical_Human-Made_Thing .
-  {?activity crm:P9_consists_of ?sub .
-    ?sub crm:P7_took_place_at ?place. 
+  ?activity crm:P9_consists_of ?sub .
+  ?sub crm:P7_took_place_at ?place. 
+  {
    ?activity crm:P30_transferred_custody_of ?obj} 
   UNION
-  {?activity crm:P9_consists_of ?sub .
-    ?sub crm:P7_took_place_at ?place. 
+  {
    ?activity crm:P24_transferred_title_of ?obj}
 } 
 
 # CQ5, correct query if the relation is updated, DOESN"T WORK
+SELECT * WHERE
 {
   ?event a crm:E5_Event .
   ?event crm:P9_consists_of ?activity .
-  ?activity a crm:E7_Activity .# should als consider E8 and E10, sub-class of E7
-  ?activity ?prop ?obj .
+  ?activity a crm:E7_Activity .
+  ?superActivity crm:P9_consists_of ?activity  .
+  ?superActivity ?prop ?obj .
   ?obj a crm:E24_Physical_Human-Made_Thing .
 } 
 
 # CQ6, matches object location with time
+SELECT ?obj ?place ?b_time ?e_time
 {
   ?obj a crm:E24_Physical_Human-Made_Thing .
   {?activity crm:P9_consists_of ?sub .
