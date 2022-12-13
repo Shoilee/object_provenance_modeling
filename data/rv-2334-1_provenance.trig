@@ -23,7 +23,7 @@
 
 <http://example.com/provenance_research#2> a prov:Activity ;
     prov:type "Research" ;
-    prov:startedAtTime  "2019-03-01"^^xsd:date ;
+    prov:startedAtTime "2019-03-01"^^xsd:date ;
     prov:endedAtTime "2020-12-31"^^xsd:date ;
     prov:wasAssociatedWith <https://example.com/Provenance_series_1/Agent#3> ;
     prov:used <https://example.com/catalog#1> ;

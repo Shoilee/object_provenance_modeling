@@ -47,7 +47,7 @@ SELECT ?obj ?place WHERE
    ?activity crm:P24_transferred_title_of ?obj}
 } 
 
-# CQ5, correct query if the relation is updated, DOESN"T WORK
+# CQ5
 SELECT * WHERE
 {
   ?event a crm:E5_Event .
