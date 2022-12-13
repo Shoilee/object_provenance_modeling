@@ -1,5 +1,4 @@
 # The diagram for this object can be found here: https://drive.google.com/file/d/1sh45JBPKenyeoI8aFN6REwL0TCvYt8lw/view?usp=sharing 
-# TODO: try to fix place or types from Thesuari
 
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -25,7 +24,7 @@
 
 <http://example.com/provenance_research#2> a prov:Activity ;
     prov:type "Research" ;
-    prov:wasStartedAtTime "2019-03-01"^^xsd:date ;
+    prov:startedAtTime  "2019-03-01"^^xsd:date ;
     prov:endedAtTime "2020-12-31"^^xsd:date ;
     prov:wasAssociatedWith <https://example.com/Provenance_series_1/Agent#2> ;
     prov:used <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244> ;
@@ -34,13 +33,13 @@
     prov:used <http://collecties.zuidafrikahuis.nl/detail.php?nav_id=17-1&index=19&imgid=410228&id=345535> ;
     prov:used <http://angloboerwar.com> ;
     prov:used <http://example.com/Kuitenbrouwer-2012#275-279> ;
-    prov:used <http://example.com/article#1> .# This link is causing problem when we are trying to generate image
+    prov:used <http://example.com/article#1> . # This link is causing problem when we are trying to generate image
 
 <https://example.com/Provenance_series_1/Agent#2> a prov:Agent ;
     prov:type prov:Person ;
     prov:role "Researcher" ;
     rdfs:label "Francois Janse van Rensburg" ;
-    prov:actedOnBehalhOf <https://www.wikidata.org/entity/Q17153751> .
+    prov:actedOnBehalfOf <https://www.wikidata.org/entity/Q17153751> .
 
 ## Acquision theory
 <https://example.com/829286/acqusition_theory/1> a prov:Entity ;
@@ -63,7 +62,6 @@
     # 2. Exhibitions 
     # 3. Book references
 
-# TODO: I do not know how to place retrive date for entity
 # Book references:
 <https://resolver.kb.nl/resolve?urn=ddd:010664462:mpeg21:a0244> a prov:Entity ;
     prov:type "News Article" ;
@@ -88,14 +86,13 @@
     prov:wasAttributedTo [a prov:Agent ; 
         rdfs:label "Johann Tempelhoff"] .
 
-# TODO: check whether Exhibition 1 and 2 is identical
 # Exhibitions
 <https://example.com/exhibition1> a crm:E7_Activity ;
     crm:P1_is_identified_by <https://example.com/exhibition1#title> ;
     crm:P4_has_time-span <https://example.com/exhibition1#timespan> ;
     crm:P14_carried_out_by [ a crm:E39_Actor;
         rdfs:label "A.M.V.J." ];
-    crm:P7_took_place_at <https://example.com/place#1> ;
+    crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16296> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .
 
 <https://example.com/exhibition1#title> a crm:E33_E41_Linguistic_Appellation ;
@@ -105,9 +102,10 @@
     crm:P82a_begin_of_the_begin "1938-12-16"^^xsd:date ;
     crm:P82b_end_of_the_end "1938-12-22"^^xsd:date .
 
-<http://vocab.getty.edu/aat/300054766> a crm:E55_Type .
+<http://vocab.getty.edu/aat/300054766> a crm:E55_Type ;
+    rdfs:label "exhibitions".
 
-<https://example.com/place#1> a crm:E53_Place ;
+<https://hdl.handle.net/20.500.11840/termmaster16296> a crm:E53_Place ;
     rdfs:label "Amsterdam" .
 
 <https://example.com/exhibition2> a crm:E7_Activity ;
@@ -154,6 +152,8 @@
 
 <https://hdl.handle.net/20.500.11840/termmaster10065895> a crm:E57_Material .
 
+<https://hdl.handle.net/20.500.11840/termmaster16292> a crm:E53_Place .
+
 <https://hdl.handle.net/20.500.11840/termmaster10068399> a crm:E55_Type .
 
 <https://hdl.handle.net/20.500.11840/termmaster10068918> a crm:E55_Type .
@@ -177,8 +177,8 @@
 <https://hdl.handle.net/20.500.11840/termmaster10063974> a crm:E53_Place .
 
 <https://example.com/provenance_information_object_829286/story#1>{
-    <https://hdl.handle.net/20.500.11840/829286> a crm:E24_Physical_Human-made_Thing ;
-    crm:P1_is_identified_by [ a crm:E41_Linguistic_Appellation ;
+    <https://hdl.handle.net/20.500.11840/829286> a crm:E24_Physical_Human-Made_Thing ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
             crm:P190_has_symbolic_content "Ossewa" ;
             crm:P2_has_type [ a crm:E55_Type ;
                     rdfs:label "Presentatietitel"@nl ] ;
@@ -226,7 +226,7 @@
         <https://hdl.handle.net/20.500.11840/termmaster10068399> ,
         <https://hdl.handle.net/20.500.11840/termmaster10068918> ;
     crm:P3_has_note "Voordat Engeland in 1806 de macht in de Kaap Kolonie, het huidige Zuid-Afrika, overnam lag deze in handen van Nederland. De Kaap werd bewoond door Nederlandse kolonisten die Boeren werden genoemd en zich in de loop der tijd vermengd hadden met Duitsers en Franse Hugenoten. Zij spraken een eigen taal, het Afrikaans. De ossenkar is een krachtig symbool voor Afrikaanse Boeren. De kar was hun voornaamste vervoersmiddel gedurende de Grote Trek van 1830-1835. Om aan de Engelse overheersing te ontkomen trokken de Boeren oost- en noordoost waards om uiteindelijk Oranje Vrijstaat te stichten. De Boeren ossenkar leek op de huifkaar die door kolonisten in Amerika werd gebruikt. Het was een grote, stevige kar met huif, getrokken door vier tot acht paar ossen die door twee mannen tegelijkertijd werden gemend. Elk dier werd bij zijn naam genoemd en aangespoord met een grote zweep. Tijdens gevaarlijke overtochten door bijvoorbeeld rivieren stapten de vrouwen en kinderen af terwijl de mannen de karren duwden of juist afremden. Wanneer de Boeren een kamp oprichtten namen ze plaats op een verhoging in het landschap en stelden de wagens in een cirkel of vierkant op. Dit werd een “laager” genoemd. Nadat de Engelsen probeerden om ook de onafhankelijke Boeren republieken zoals Transvaal en Oranje Vrijstaat in te lijven braken er aan het einde van de negentiende eeuw onder leiding van de Boer Paul Kruger twee grote oorlogen uit: de Eerste Boerenoorlog (1880-1881) die door de Boeren werd gewonnen en de Tweede Boerenoorlog (1900-1902) die zij verloren. De Slag bij Paardeberg (1900) was één van de belangrijkste veldslagen uit de Tweede Boerenoorlog en werd gevochten op de oevers van de Modder Rivier in Oranje Vrijstaat in de nabijheid van de plaats Kimberley. De troepen van generaal Piet Cronjé hadden zich ingegraven in een “laager”, een kamp, en lagen onder zeer zwaar Engels en Canadees vuur. Uiteindelijk gaven ze zich aan generaal Kitchener over. Op 27 februari 1900 werden 4.019 mannen en 50 vrouwen krijgsgevangen genomen. In voorgaande veldslagen zoals in de Slag bij Elandslaagte (1899) hadden de Engelsen al grote aantallen krijgsgevangenen genomen en na de Slag bij Paardeberg realiseerden zij zich dat ze hen niet allemaal in de directe omgeving konden onderbrengen. Uit angst dat de gevangenen uit sympathie door de lokale bevolking bevrijd zouden worden en met het praktisch oogpunt dat zij al met moeite hun eigen troepen konden voeden en huisvesten werd besloten de krijgsgevangenen naar andere gebieden te zenden. De eerste overzeese krijgsgevangenkampen werden op St. Helena gesticht waar uiteindelijk ongeveer 5.000 gevangen naartoe werden vervoerd. Daarnaast werd hetzelfde aantal naar Ceylon (Sri Lanka) gestuurd. De in 1895 gebouwde SS Armenian was in eerste instantie een vrachtschip dat tussen Liverpool en New York voer maar werd verbouwd gedurende de Tweede Boerenoorlog zodat het paarden kon vervoeren. In 1901 werd het schip ingezet voor het transport van 963 Boeren krijgsgevangenen met eindbestemming Bermuda waar inmiddels andere krijgsgevangenkampen waren geopend. De gevangenen op Bermuda werden over het algemeen vrij goed behandeld en elk kamp had zijn eigen school, kerk en bibliotheek. De grootste uitdaging was echter het bestrijden van de verveling en hiertoe werden verschillende activiteiten georganiseerd. Eén van die activiteiten was huisnijverheid. Het maken van speelgoed en allerlei andere kleinigheden groeide uit tot een complete industrie en veel krijgsgevangen verdienden zelfs geld door de verkoop van hun handgemaakte producten. Het basisgereedschap van elke gevangene was het zakmes maar door hun verdiensten door de verkoop waren velen in staat om meer en beter gereedschap te kopen. Sommige zaken zoals wandelstokken, pennen, dozen, knijpers, servetringen en briefopeners werden ‘en masse’ door de krijgsgevangen geleverd. Daarnaast werden ook gedetailleerde (schaal)modellen gemaakt. Het was gebruikelijk dat op de voorwerpen gedetailleerde gegevens zoals de datum, naam van het kamp, land waar het kamp stond en in veel gevallen de naam van de maker werd geschreven. Veel kampen organiseerden tentoonstellingen waar de krijgsgevangen hun handgemaakte producten en hun gereedschappen tentoon konden stellen. De gevangen op Burt’s Island, Bermuda, richtten zelfs de “Industrial Association for Carvings and Curios” op. Via deze organisatie werd het de gevangen mogelijk gemaakt hun waren in veel verschillende winkels te verkopen. Een gedeelte van de opbrengst werd onder de gevangen zelf verdeeld. Boeren kunstnijverheid uit Bermuda is tegenwoordig een zeldzaamheid. De meeste krijgsgevangen werden na afloop van de Tweede Boerenoorlog weer terug naar Zuid-Afrika gebracht of trokken verder naar Noord-Amerika. Enkelen bleven achter in Bermuda waar zij werk vonden op boerderijen of werkten als timmerlui. Hoe het museum in het bezit is gekomen van deze ossenkar is onbekend. Het lijkt onwaarschijnlijk dat hij in Bermuda is aangeschaft. Waarschijnlijk heeft J. Smith, een Engelsman die waarschijnlijk aan de kant van de Boeren had meegevochten, voordat hij werd ingescheept op de S.S. Armenian dit schaalmodel in Simonsbaij verkocht." ;
-    crm:P49_has_former_or_current_owner <https://hdl.handle.net/20.500.11840/pi2603> ;
+    crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi2603> ;
     crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
     crm:P108i_was_produced_by <https://example.com/829286#production/1> ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
@@ -265,10 +265,10 @@
 
 #PROVENANCE
     # TRANSFER OF CUSTODY: theory#1
-    <https://example.com/829286#transfer_of_custody/1> a crm:E10_Transfer_of_Custody; # why E_10_tranfer_of_custody, why not an E7_activity
+    <https://example.com/829286#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/829286>;
-        crm:P29_custody_recieved_by <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:crm:P29_custody_recieved_by [a crm:E39_Actor; 
+        crm:P29_custody_received_by <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P28_custody_surrendered_by [a crm:E39_Actor; 
                 rdfs:label "Boer Prisoners from Cape Town"] ;
         crm:P9_consists_of <https://example.com/829286#transfer_of_custody/1/sub-activity/1> .
 
@@ -285,32 +285,30 @@
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/1/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/1/sub-activity/1> .
 
     <https://example.com/829286#acquisition/1/sub-activity/1> a crm:E7_Activity ; 
         rdfs:label "Pedigree: vroegere eigenaar",
             " Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller voor 1938" ;
         crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P2_has_type [a crm:E55_Type;
                 rdfs:label "Unknown"] ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P82b_end_of_the_end "1938-12-01"^^xsd:date ] .
 
     # ACQUISITION: theory#2
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/2> a crm:E8_Acquisition ;
+    <https://example.com/829286#acquisition/2> a crm:E8_Acquisition ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/2/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/2/sub-activity/1> .
     
     <https://example.com/829286#acquisition/2/sub-activity/1> a crm:E7_Activity ;
         rdfs:label "Legaat in 1946 van Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller (hoogstwaarschijnlijk)",
             "Verwerving" ;
         crm:P14_carried_out_by <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P7_took_place_at [ a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P82a_begin_of_the_begin "1946-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1946-12-01"^^xsd:date ] ;
@@ -318,11 +316,11 @@
                 rdfs:label "Legaat"] .
 
     # ACQUISITION: theory#3  
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/3> a crm:E8_Acquisition ;
+    <https://example.com/829286#acquisition/3> a crm:E8_Acquisition ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page; maybe Zuid-Afrikaansche Museum
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/3/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/3/sub-activity/1> .
 
     <https://example.com/829286#acquisition/3/sub-activity/1> a crm:E7_Activity ;
         rdfs:label "Tussenkomst",
@@ -330,10 +328,38 @@
         crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi58241> ;
         crm:P2_has_type [a crm:E55_Type;
                 rdfs:label "Tussenkomst"] ;
-        crm:P7_took_place_at [ a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
-        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/3> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/3> .
+
+
+     # HISTOROCAL EVENT
+    <https://example.com/histevent2> a crm:E5_Event ;
+        crm:P1_is_identified_by <https://example.com/histevent2/title/1> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P190_has_symbolic_content "(1899 - 1902)" ;
+                crm:P82a_begin_of_the_begin "1899-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1902-12-31"^^xsd:date] ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300185689>. 
+
+    <https://example.com/histevent2/title/1> a crm:E33_E41_Linguistic_Appellation ;
+        crm:P190_has_symbolic_content "The second South African War(1899 - 1902)" ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
+        crm:P72_has_language <http://vocab.getty.edu/aat/300387822> .
+
+    <https://example.com/histevent3> a crm:E5_Event ;
+        crm:P1_is_identified_by <https://example.com/histevent3/title/1> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P190_has_symbolic_content "(18-27 February 1900)" ;
+                crm:P82a_begin_of_the_begin "1900-02-18"^^xsd:date ;
+                crm:P82b_end_of_the_end "1900-02-27"^^xsd:date] ;
+        crm:P9_consists_of <https://example.com/829286#production/1>; # TODO: check with Victor or should be other way arround
+        crm:P2_has_type <http://vocab.getty.edu/aat/300185689> . 
+
+    <https://example.com/histevent3/title/1> a crm:E33_E41_Linguistic_Appellation ;
+        crm:P190_has_symbolic_content "Battle of Paardeberg(18-27 February 1900)" ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
+        crm:P72_has_language <http://vocab.getty.edu/aat/300387822> .
 }
 
 <https://example.com/829286/acqusition_theory/1>{
@@ -341,14 +367,13 @@
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/1/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/1/sub-activity/1> .
 
     <https://example.com/829286#acquisition/1/sub-activity/1> a crm:E7_Activity ; 
         rdfs:label "Pedigree: vroegere eigenaar",
             " Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller voor 1938" ;
         crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P2_has_type [a crm:E55_Type;
                 rdfs:label "Unknown"] ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
@@ -356,18 +381,17 @@
 }
 
 <https://example.com/829286/acqusition_theory/2>{
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/2> a crm:E8_Acquisition ;
+    <https://example.com/829286#acquisition/2> a crm:E8_Acquisition ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/2/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/2/sub-activity/1> .
     
     <https://example.com/829286#acquisition/2/sub-activity/1> a crm:E7_Activity ;
         rdfs:label "Legaat in 1946 van Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller (hoogstwaarschijnlijk)",
             "Verwerving" ;
         crm:P14_carried_out_by <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P7_took_place_at [ a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P82a_begin_of_the_begin "1946-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1946-12-01"^^xsd:date ] ;
@@ -376,11 +400,11 @@
 }
 
 <https://example.com/829286/acqusition_theory/3>{
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/3> a crm:E8_Acquisition ;
+    <https://example.com/829286#acquisition/3> a crm:E8_Acquisition ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/3/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/3/sub-activity/1> .
 
     <https://example.com/829286#acquisition/3/sub-activity/1> a crm:E7_Activity ;
         rdfs:label "Tussenkomst",
@@ -388,14 +412,13 @@
         crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi58241> ;
         crm:P2_has_type [a crm:E55_Type;
                 rdfs:label "Tussenkomst"] ;
-        crm:P7_took_place_at [ a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ] ;
-        crm:P9_consists_of <https://hdl.handle.net/20.500.11840/829286/acquisition/3> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/3> .
 }
 
 <https://example.com/provenance_information_object_829286/story#2>{
-    <https://hdl.handle.net/20.500.11840/829286> a crm:E22_Human-Made_Object ;
+    <https://hdl.handle.net/20.500.11840/829286> a crm:E24_Physical_Human-Made_Thing ;
     crm:P108i_was_produced_by <https://example.com/829286#production/1> ;
     crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
         <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> ;
@@ -450,7 +473,7 @@
         <https://hdl.handle.net/20.500.11840/termmaster10068918> ;
     crm:P3_has_note "Voordat Engeland in 1806 de macht in de Kaap Kolonie, het huidige Zuid-Afrika, overnam lag deze in handen van Nederland. De Kaap werd bewoond door Nederlandse kolonisten die Boeren werden genoemd en zich in de loop der tijd vermengd hadden met Duitsers en Franse Hugenoten. Zij spraken een eigen taal, het Afrikaans. De ossenkar is een krachtig symbool voor Afrikaanse Boeren. De kar was hun voornaamste vervoersmiddel gedurende de Grote Trek van 1830-1835. Om aan de Engelse overheersing te ontkomen trokken de Boeren oost- en noordoost waards om uiteindelijk Oranje Vrijstaat te stichten. De Boeren ossenkar leek op de huifkaar die door kolonisten in Amerika werd gebruikt. Het was een grote, stevige kar met huif, getrokken door vier tot acht paar ossen die door twee mannen tegelijkertijd werden gemend. Elk dier werd bij zijn naam genoemd en aangespoord met een grote zweep. Tijdens gevaarlijke overtochten door bijvoorbeeld rivieren stapten de vrouwen en kinderen af terwijl de mannen de karren duwden of juist afremden. Wanneer de Boeren een kamp oprichtten namen ze plaats op een verhoging in het landschap en stelden de wagens in een cirkel of vierkant op. Dit werd een “laager” genoemd. Nadat de Engelsen probeerden om ook de onafhankelijke Boeren republieken zoals Transvaal en Oranje Vrijstaat in te lijven braken er aan het einde van de negentiende eeuw onder leiding van de Boer Paul Kruger twee grote oorlogen uit: de Eerste Boerenoorlog (1880-1881) die door de Boeren werd gewonnen en de Tweede Boerenoorlog (1900-1902) die zij verloren. De Slag bij Paardeberg (1900) was één van de belangrijkste veldslagen uit de Tweede Boerenoorlog en werd gevochten op de oevers van de Modder Rivier in Oranje Vrijstaat in de nabijheid van de plaats Kimberley. De troepen van generaal Piet Cronjé hadden zich ingegraven in een “laager”, een kamp, en lagen onder zeer zwaar Engels en Canadees vuur. Uiteindelijk gaven ze zich aan generaal Kitchener over. Op 27 februari 1900 werden 4.019 mannen en 50 vrouwen krijgsgevangen genomen. In voorgaande veldslagen zoals in de Slag bij Elandslaagte (1899) hadden de Engelsen al grote aantallen krijgsgevangenen genomen en na de Slag bij Paardeberg realiseerden zij zich dat ze hen niet allemaal in de directe omgeving konden onderbrengen. Uit angst dat de gevangenen uit sympathie door de lokale bevolking bevrijd zouden worden en met het praktisch oogpunt dat zij al met moeite hun eigen troepen konden voeden en huisvesten werd besloten de krijgsgevangenen naar andere gebieden te zenden. De eerste overzeese krijgsgevangenkampen werden op St. Helena gesticht waar uiteindelijk ongeveer 5.000 gevangen naartoe werden vervoerd. Daarnaast werd hetzelfde aantal naar Ceylon (Sri Lanka) gestuurd. De in 1895 gebouwde SS Armenian was in eerste instantie een vrachtschip dat tussen Liverpool en New York voer maar werd verbouwd gedurende de Tweede Boerenoorlog zodat het paarden kon vervoeren. In 1901 werd het schip ingezet voor het transport van 963 Boeren krijgsgevangenen met eindbestemming Bermuda waar inmiddels andere krijgsgevangenkampen waren geopend. De gevangenen op Bermuda werden over het algemeen vrij goed behandeld en elk kamp had zijn eigen school, kerk en bibliotheek. De grootste uitdaging was echter het bestrijden van de verveling en hiertoe werden verschillende activiteiten georganiseerd. Eén van die activiteiten was huisnijverheid. Het maken van speelgoed en allerlei andere kleinigheden groeide uit tot een complete industrie en veel krijgsgevangen verdienden zelfs geld door de verkoop van hun handgemaakte producten. Het basisgereedschap van elke gevangene was het zakmes maar door hun verdiensten door de verkoop waren velen in staat om meer en beter gereedschap te kopen. Sommige zaken zoals wandelstokken, pennen, dozen, knijpers, servetringen en briefopeners werden ‘en masse’ door de krijgsgevangen geleverd. Daarnaast werden ook gedetailleerde (schaal)modellen gemaakt. Het was gebruikelijk dat op de voorwerpen gedetailleerde gegevens zoals de datum, naam van het kamp, land waar het kamp stond en in veel gevallen de naam van de maker werd geschreven. Veel kampen organiseerden tentoonstellingen waar de krijgsgevangen hun handgemaakte producten en hun gereedschappen tentoon konden stellen. De gevangen op Burt’s Island, Bermuda, richtten zelfs de “Industrial Association for Carvings and Curios” op. Via deze organisatie werd het de gevangen mogelijk gemaakt hun waren in veel verschillende winkels te verkopen. Een gedeelte van de opbrengst werd onder de gevangen zelf verdeeld. Boeren kunstnijverheid uit Bermuda is tegenwoordig een zeldzaamheid. De meeste krijgsgevangen werden na afloop van de Tweede Boerenoorlog weer terug naar Zuid-Afrika gebracht of trokken verder naar Noord-Amerika. Enkelen bleven achter in Bermuda waar zij werk vonden op boerderijen of werkten als timmerlui. Hoe het museum in het bezit is gekomen van deze ossenkar is onbekend. Het lijkt onwaarschijnlijk dat hij in Bermuda is aangeschaft. Waarschijnlijk heeft J. Smith, een Engelsman die waarschijnlijk aan de kant van de Boeren had meegevochten, voordat hij werd ingescheept op de S.S. Armenian dit schaalmodel in Simonsbaij verkocht." ;
     crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ; 
-    crm:P49_has_former_or_current_owner <https://hdl.handle.net/20.500.11840/pi2603> ;
+    crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi2603> ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             crm:P190_has_symbolic_content """17 x 49,5 x 20 cm (chassis)
                 27 x 53 x 23,5 cm (opbouw met huif)""" ;
@@ -483,8 +506,8 @@
     # TRANSFER OF CUSTODY: theory#2
     <https://example.com/829286#transfer_of_custody/2> a crm:E10_Transfer_of_Custody; # why E_10_tranfer_of_custody, why not an E7_activity
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/829286>;
-        crm:P29_custody_recieved_by <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:crm:P29_custody_recieved_by [a crm:E39_Actor; 
+        crm:P29_custody_received_by <https://hdl.handle.net/20.500.11840/pi2603> ;
+        crm:P28_custody_surrendered_by [a crm:E39_Actor; 
                 rdfs:label "Boer Prisoners from Mumbai"] ;
         crm:P9_consists_of <https://example.com/829286#transfer_of_custody/1/sub-activity/1> .
 
@@ -501,32 +524,30 @@
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/1/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/1/sub-activity/1> .
 
     <https://example.com/829286#acquisition/1/sub-activity/1> a crm:E7_Activity ; 
         rdfs:label "Pedigree: vroegere eigenaar",
             " Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller voor 1938" ;
         crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi2603> ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292>;
         crm:P2_has_type [a crm:E55_Type;
                 rdfs:label "Unknown"] ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P82b_end_of_the_end "1938-12-01"^^xsd:date ] .
 
     # ACQUISITION: theory#2
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/2> a crm:E8_Acquisition ;
+    <https://example.com/829286#acquisition/2> a crm:E8_Acquisition ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi2603> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/2/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/2/sub-activity/1> .
     
     <https://example.com/829286#acquisition/2/sub-activity/1> a crm:E7_Activity ;
         rdfs:label "Legaat in 1946 van Dr. H.P.N. (Hendrik Pieter Nicolaas) Muller (hoogstwaarschijnlijk)",
             "Verwerving" ;
         crm:P14_carried_out_by <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P7_took_place_at [ a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P82a_begin_of_the_begin "1946-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1946-12-01"^^xsd:date ] ;
@@ -534,11 +555,11 @@
                 rdfs:label "Legaat"] .
 
     # ACQUISITION: theory#3  
-    <https://hdl.handle.net/20.500.11840/829286/acquisition/3> a crm:E8_Acquisition ;
+    <https://example.com/829286#acquisition/3> a crm:E8_Acquisition ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;# Do not lead to any particular page; maybe Zuid-Afrikaansche Museum
+        crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi58241> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/829286> ;
-        crm:P9_consist_of <https://example.com/829286#acquisition/3/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/829286#acquisition/3/sub-activity/1> .
 
     <https://example.com/829286#acquisition/3/sub-activity/1> a crm:E7_Activity ;
         rdfs:label "Tussenkomst",
@@ -546,9 +567,36 @@
         crm:P14_carried_out_by <https://hdl.handle.net/20.500.11840/pi58241> ;
         crm:P2_has_type [a crm:E55_Type;
                 rdfs:label "Tussenkomst"] ;
-        crm:P7_took_place_at [ a crm:E53_Place ;
-                rdfs:label "The Netherlands"] ;
+        crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster16292> ;
         crm:P4_has_time-span [ a crm:E52_Time-Span ] .
+
+    # HISTOROCAL EVENT
+    <https://example.com/histevent2> a crm:E5_Event ;
+        crm:P1_is_identified_by <https://example.com/histevent2/title/1> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P190_has_symbolic_content "(1899 - 1902)" ;
+                crm:P82a_begin_of_the_begin "1899-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1902-12-31"^^xsd:date] ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300185689>. 
+
+    <https://example.com/histevent2/title/1> a crm:E33_E41_Linguistic_Appellation ;
+        crm:P190_has_symbolic_content "The second South African War(1899 - 1902)" ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
+        crm:P72_has_language <http://vocab.getty.edu/aat/300387822> .
+
+    <https://example.com/histevent3> a crm:E5_Event ;
+        crm:P1_is_identified_by <https://example.com/histevent3/title/1> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P190_has_symbolic_content "(18-27 February 1900)" ;
+                crm:P82a_begin_of_the_begin "1900-02-18"^^xsd:date ;
+                crm:P82b_end_of_the_end "1900-02-27"^^xsd:date] ;
+        crm:P9_consists_of <https://example.com/829286#production/2>; # TODO: check with Victor or should be other way arround
+        crm:P2_has_type <http://vocab.getty.edu/aat/300185689>. 
+
+    <https://example.com/histevent3/title/1> a crm:E33_E41_Linguistic_Appellation ;
+        crm:P190_has_symbolic_content "Battle of Paardeberg(18-27 February 1900)" ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
+        crm:P72_has_language <http://vocab.getty.edu/aat/300387822> .
 }
 
 <https://hdl.handle.net/20.500.11840/pi2603> a crm:E39_Actor ;
@@ -557,5 +605,7 @@
 <https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
 
-# I can create two event event-1: "Battle of Paardeberg(18-27 February 1900)" and Event-2: "The second South African War(1899 - 1902)"; not sure how it should relate to object
-# also another event: Pre-Boer Propaganda and dutch nationalism; event or a concept?
+<http://vocab.getty.edu/aat/300185689> a crm:E55_Type;
+    rdfs:label "armed conflicts" .
+
+<http://vocab.getty.edu/aat/300387822> a crm:E56_Language .

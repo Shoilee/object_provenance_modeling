@@ -1,0 +1,21 @@
+ class & count \\ \hline
+ crm:E10 Transfer of Custody & 7 \\ \hline
+ crm:E12 Production & 7 \\ \hline
+ crm:E24 Physical Human-Made Thing & 6 \\ \hline
+ crm:E33 E41 Linguistic Appellation & 40 \\ \hline
+ crm:E33 Linguistic Object & 13 \\ \hline
+ crm:E36 Visual Item & 13 \\ \hline
+ crm:E39 Actor & 27 \\ \hline
+ crm:E42 Identifier & 7 \\ \hline
+ crm:E52 Time-Span & 57 \\ \hline
+ crm:E53 Place & 11 \\ \hline
+ crm:E54 Dimension & 7 \\ \hline
+ crm:E55 Type & 109 \\ \hline
+ crm:E56 Language & 26 \\ \hline
+ crm:E57 Material & 6 \\ \hline
+ crm:E5 Event & 3 \\ \hline
+ crm:E7 Activity & 21 \\ \hline
+ crm:E8 Acquisition & 12 \\ \hline
+ prov:Activity & 2 \\ \hline
+ prov:Agent & 20 \\ \hline
+ prov:Entity & 38 \\ \hline

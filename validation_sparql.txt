@@ -3,19 +3,19 @@
 SELECT * 
 WHERE 
 {
-  ?o a crm:E24_Physical_Human-made_Thing .
-  ?o crm:P49_has_former_or_current_owner ?p.
+  ?o a crm:E24_Physical_Human-Made_Thing .
+  ?o crm:P49_has_former_or_current_keeper ?p.
   ?p rdfs:label ?lab
 } 
 
 
-# CQ2 (fix typo in prop)
+# CQ2
 
 SELECT * 
 WHERE 
 {
   ?person a crm:E39_Actor .
-  {?activity crm:P29_custody_recieved_by ?person. 
+  {?activity crm:P29_custody_received_by ?person. 
    ?activity crm:P30_transferred_custody_of ?obj} 
   UNION
   {?activity crm:P23_transferred_title_from ?person. 
@@ -33,3 +33,77 @@ WHERE
     ?act1 ?prop2 ?p2. 
   FILTER (?p1 != ?p2)
 } 
+
+# CQ4, matches object location
+{
+  ?obj a crm:E24_Physical_Human-Made_Thing .
+  {?activity crm:P9_consists_of ?sub .
+    ?sub crm:P7_took_place_at ?place. 
+   ?activity crm:P30_transferred_custody_of ?obj} 
+  UNION
+  {?activity crm:P9_consists_of ?sub .
+    ?sub crm:P7_took_place_at ?place. 
+   ?activity crm:P24_transferred_title_of ?obj}
+} 
+
+# CQ5, correct query if the relation is updated, DOESN"T WORK
+{
+  ?event a crm:E5_Event .
+  ?event crm:P9_consists_of ?activity .
+  ?activity a crm:E7_Activity .# should als consider E8 and E10, sub-class of E7
+  ?activity ?prop ?obj .
+  ?obj a crm:E24_Physical_Human-Made_Thing .
+} 
+
+# CQ6, matches object location with time
+{
+  ?obj a crm:E24_Physical_Human-Made_Thing .
+  {?activity crm:P9_consists_of ?sub .
+    ?sub crm:P7_took_place_at ?place. 
+    ?sub crm:P4_has_time-span ?time .
+    ?time crm:P82a_begin_of_the_begin ?b_time .
+    ?time crm:P82b_end_of_the_end ?e_time.
+   ?activity crm:P30_transferred_custody_of ?obj} 
+UNION
+  {?activity crm:P9_consists_of ?sub .
+    ?sub crm:P7_took_place_at ?place. 
+    ?sub crm:P4_has_time-span ?time .
+    ?time crm:P82a_begin_of_the_begin ?b_time .
+    ?time crm:P82b_end_of_the_end ?e_time.
+   ?activity crm:P24_transferred_title_of ?obj}
+} 
+
+# CQ7
+SELECT ?s ?p ?o ?agentName
+WHERE
+{
+  Graph ?g {?s ?p ?o .}
+  {?g prov:wasDerivedFrom ?entity .
+  ?entity prov:wasGeneratedBy ?activity .
+  ?activity prov:wasAssociatedWith ?agent} UNION
+  {?g prov:wasAttibutedTo ?agent . }
+  ?agent rdfs:label ?agentName .
+}LIMIT 100
+
+# CQ8
+SELECT ?research ?institute
+WHERE
+{
+  ?research a prov:Activity .
+  ?research prov:wasAssociatedWith ?agent . 
+	?agent prov:actedOnBehalfOf ?institute .
+}
+
+# CQ1
+SELECT ?activity ?date
+WHERE
+{
+  Graph ?g {?s ?p ?o .}
+  ?g prov:wasDerivedFrom ?entity .
+  ?entity prov:wasGeneratedBy ?activity .
+  ?activity prov:endedAtTime ?date .
+	filter not exists {
+      ?activity prov:endedAtTime ?date1 
+      filter (?date > ?date1)
+   }
+ } ORDER BY DESC(?date)
