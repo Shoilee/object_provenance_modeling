@@ -3,4 +3,4 @@ archive/
 .gitignore
 .ipynb_checkpoints
 
-temp.ttl
+shape_diagram.shex
