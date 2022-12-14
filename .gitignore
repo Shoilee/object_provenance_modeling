@@ -1,6 +1,6 @@
 archive/
 .DS_store
 .gitignore
-.ipynb_checkpoints/
+.ipynb_checkpoints
 
 temp.ttl
