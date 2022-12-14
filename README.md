@@ -14,4 +14,14 @@ Validation tool: <a href="https://rdfshape.weso.es/shexValidate">RDFshape<a>
 
 ## The Data Model
 
-![Data Model Diagram](resource/visualization.svg)
+### Object Description Ontology
+![Object Description Ontology Diagram](resource/object_description_ontology.png)
+
+### Object Provenace Ontoloy
+![Object Provenace Ontoloy Diagram](resource/object_provenance_ontology.png)
+
+### Data Provenace Ontoloy
+![Data Provenace Ontoloy Diagram](resource/data_provenance_ontology.png)
+
+### Multi-perspective Ontoloy
+![Multi-perspective Ontoloy Diagram](resource/multyperspective_diagram.png)
