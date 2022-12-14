@@ -155,7 +155,7 @@
         crm:P22_transferred_title_to <https://hdl.handle.net/20.500.11840/pi58328> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi59624> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/737521> ;
-        crm:P9_consists_of <https://example.com/737521#transfer_of_custody/2/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/737521#acquisition/1/sub-activity/1> .
 
     <https://example.com/737521#acquisition/1/sub-activity/1> a crm:E7_Activity ;
         crm:P2_has_type [ a crm:E55_Type ;
@@ -215,7 +215,7 @@
         crm:P22_transferred_title_to <https://hdl.handle.net/20.500.11840/pi58328> ;
         crm:P23_transferred_title_from <https://hdl.handle.net/20.500.11840/pi59624> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/737521> ;
-        crm:P9_consists_of <https://example.com/737521#transfer_of_custody/2/sub-activity/1> .
+        crm:P9_consists_of <https://example.com/737521#acquisition/1/sub-activity/1> .
 
     <https://example.com/737521#acquisition/1/sub-activity/1> a crm:E7_Activity ;
         crm:P2_has_type [ a crm:E55_Type ;

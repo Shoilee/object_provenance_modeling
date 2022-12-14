@@ -610,4 +610,8 @@
 <http://vocab.getty.edu/aat/300185689> a crm:E55_Type;
     rdfs:label "armed conflicts" .
 
-<http://vocab.getty.edu/aat/300387822> a crm:E56_Language .
+<http://vocab.getty.edu/aat/300387822> a crm:E56_Language;
+    rdfs:label "English" .
+
+<http://vocab.getty.edu/aat/300404670> a crm:E55_Type .
+

@@ -126,8 +126,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
   crm:P1_is_identified_by @<linguistic_Appellation> ;
   crm:P4_has_time-span @<time-span> ;
   crm:P67i_is_referred_to_by @<linguistic-object> *;
-  crm:P2_has_type [ aat:300054766 ] ; 
-  crm:P9_consists_of @<sub-activity> * ; 
+  crm:P9_consists_of @<sub-activity> or @<production> or @<histevent> * ; 
 }
 
 <exhibition>{
