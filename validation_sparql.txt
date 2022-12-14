@@ -93,7 +93,7 @@ WHERE
 	OPTIONAL (?agent prov:actedOnBehalfOf ?agent2 .)
 }
 
-# CQ1
+# CQ9
 SELECT ?activity ?date
 WHERE
 {
