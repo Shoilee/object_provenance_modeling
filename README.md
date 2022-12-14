@@ -1,14 +1,16 @@
-# Provenance Data Modelling 
+# Ethnographic Object Provenance Data Modelling 
 
-**This folder contains the following:**
+**This REPO contains the following:**
 <ol>
-    <li> TriG for objects <a href="https://hdl.handle.net/20.500.11840/686332">rv-1148-1<a> and <a href="https://hdl.handle.net/20.500.11840/829286">rv-2584-169a<a> 
-    <li> Also Turtle file for the object objects (Removed the named graph from the TriG file; My ShEX validator do not support RDF-Named Graph at this moment)
-    <li> ShEX shape for provenance data model(<a href="validator.shex">validator<a>)
-    <li> Shapemap query can be found in <a href="shapemap_query.txt">shapemap file<a>
+    <li> <a href="/data">Data TriG files<a>
+    <li> <a href="/ontologies">Existing ontologies:<a> CIDOC & PROV
+    <li> <a href="/resource">Resources:<a> Interview questions, Model diagrams, Data Diagrams 
+    <li> <a href="validator.shex">ShEX shape<a> for data model
+    <li> <a href="shapemap_query.txt">Shapemap query<a> can be found in a text file
+    <li> <a href="validation_sparql.txt">SPARQL Queries<a> against CQs
 </ol>
 
-Validation tool: <a href="https://rdfshape.weso.es/shexValidate ">RDFshape<a>
+Validation tool: <a href="https://rdfshape.weso.es/shexValidate">RDFshape<a>
 
 ## The Data Model
 
