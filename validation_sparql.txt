@@ -1,30 +1,28 @@
 # CQ1
 
-SELECT * 
-WHERE 
+SELECT ?object ?person WHERE 
 {
-  ?o a crm:E24_Physical_Human-Made_Thing .
-  ?o crm:P49_has_former_or_current_keeper ?p.
-  ?p rdfs:label ?lab
-} 
+  ?object a crm:E24_Physical_Human-Made_Thing .
+  ?object crm:P49_has_former_or_current_keeper ?person.
+  ?person rdfs:label ?lab
+}
 
 
 # CQ2
 
-SELECT * 
+SELECT ?object ?person 
 WHERE 
 {
   ?person a crm:E39_Actor .
   {?activity crm:P29_custody_received_by ?person. 
-   ?activity crm:P30_transferred_custody_of ?obj} 
+   ?activity crm:P30_transferred_custody_of ?object} 
   UNION
   {?activity crm:P23_transferred_title_from ?person. 
-   ?activity crm:P24_transferred_title_of ?obj}
+   ?activity crm:P24_transferred_title_of ?object}
 } 
 
 # CQ3A partial match, requires specific queries for specific versions
-SELECT * 
-WHERE 
+SELECT * WHERE 
 {
   ?p1 a crm:E39_Actor .
   ?p2 a crm:E39_Actor .
@@ -38,13 +36,13 @@ WHERE
 SELECT ?obj ?place WHERE
 {
   ?obj a crm:E24_Physical_Human-Made_Thing .
-  ?activity crm:P9_consists_of ?sub .
-  ?sub crm:P7_took_place_at ?place. 
   {
    ?activity crm:P30_transferred_custody_of ?obj} 
   UNION
   {
    ?activity crm:P24_transferred_title_of ?obj}
+   ?activity crm:P9_consists_of ?sub .
+  ?sub crm:P7_took_place_at ?place. 
 } 
 
 # CQ5
@@ -59,21 +57,18 @@ SELECT * WHERE
 } 
 
 # CQ6, matches object location with time
-SELECT ?obj ?place ?b_time ?e_time
+SELECT ?obj ?place ?b_time ?e_time WHERE
 {
   ?obj a crm:E24_Physical_Human-Made_Thing .
-  {?activity crm:P9_consists_of ?sub .
-    ?sub crm:P7_took_place_at ?place. 
-    ?sub crm:P4_has_time-span ?time .
-    ?time crm:P82a_begin_of_the_begin ?b_time .
-    ?time crm:P82b_end_of_the_end ?e_time.
+  ?activity crm:P9_consists_of ?sub .
+  ?sub crm:P7_took_place_at ?place. 
+  ?sub crm:P4_has_time-span ?time .
+  ?time crm:P82a_begin_of_the_begin ?b_time .
+  ?time crm:P82b_end_of_the_end ?e_time.
+  {
    ?activity crm:P30_transferred_custody_of ?obj} 
 UNION
-  {?activity crm:P9_consists_of ?sub .
-    ?sub crm:P7_took_place_at ?place. 
-    ?sub crm:P4_has_time-span ?time .
-    ?time crm:P82a_begin_of_the_begin ?b_time .
-    ?time crm:P82b_end_of_the_end ?e_time.
+  {
    ?activity crm:P24_transferred_title_of ?obj}
 } 
 
@@ -90,12 +85,12 @@ WHERE
 }LIMIT 100
 
 # CQ8
-SELECT ?research ?institute
+SELECT ?research ?agent1 ?agent2
 WHERE
 {
   ?research a prov:Activity .
-  ?research prov:wasAssociatedWith ?agent . 
-	?agent prov:actedOnBehalfOf ?institute .
+  ?research prov:wasAssociatedWith ?agent1 . 
+	OPTIONAL (?agent prov:actedOnBehalfOf ?agent2 .)
 }
 
 # CQ1
