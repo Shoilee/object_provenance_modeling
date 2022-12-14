@@ -70,9 +70,6 @@
     prov:wasDerivedFrom <https://example.com/Rasser-1937>;
     prov:wasDerivedFrom <https://example.com/foreign-affairs-1937> .
 
-#TODO: I can add date to these document; in that case, every document with have a prov:wasGeneratedBy Activity with the date of activity 
-#TODO: I can also add Yamanaka's exhibition
-
 # Object Information
 
 ### OBJECT

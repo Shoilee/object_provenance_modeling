@@ -245,8 +245,8 @@
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster15550> ] ;
     crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
         <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> ;
-    crm:P12i_was_present_at <https://example.com/exhibition1> ; # TODO: verify, whether it should be here?
-    crm:P12i_was_present_at <https://example.com/exhibition2> ; # TODO: verify, whether it should be here?
+    crm:P12i_was_present_at <https://example.com/exhibition1> ;
+    crm:P12i_was_present_at <https://example.com/exhibition2> ; 
     crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
             crm:P190_has_symbolic_content "Zuidelijk Afrikaans" ;
             crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078201> ].
@@ -340,7 +340,8 @@
                 crm:P190_has_symbolic_content "(1899 - 1902)" ;
                 crm:P82a_begin_of_the_begin "1899-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1902-12-31"^^xsd:date] ;
-        crm:P2_has_type <http://vocab.getty.edu/aat/300185689>. 
+        crm:P2_has_type <http://vocab.getty.edu/aat/300185689> ;
+        crm:P9_consists_of <https://example.com/histevent3> . 
 
     <https://example.com/histevent2/title/1> a crm:E33_E41_Linguistic_Appellation ;
         crm:P190_has_symbolic_content "The second South African War(1899 - 1902)" ;
@@ -353,7 +354,7 @@
                 crm:P190_has_symbolic_content "(18-27 February 1900)" ;
                 crm:P82a_begin_of_the_begin "1900-02-18"^^xsd:date ;
                 crm:P82b_end_of_the_end "1900-02-27"^^xsd:date] ;
-        crm:P9_consists_of <https://example.com/829286#production/1>; # TODO: check with Victor or should be other way arround
+        crm:P9_consists_of <https://example.com/829286#production/1>; 
         crm:P2_has_type <http://vocab.getty.edu/aat/300185689> . 
 
     <https://example.com/histevent3/title/1> a crm:E33_E41_Linguistic_Appellation ;
@@ -422,8 +423,8 @@
     crm:P108i_was_produced_by <https://example.com/829286#production/1> ;
     crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169.jpg&cache=yes>,
         <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//rv-2584-169a.jpg&cache=yes> ;
-    crm:P12i_was_present_at <https://example.com/exhibition1> ; # TODO: VERIFY
-    crm:P12i_was_present_at <https://example.com/exhibition2> ; # TODO: VERIFY
+    crm:P12i_was_present_at <https://example.com/exhibition1> ; 
+    crm:P12i_was_present_at <https://example.com/exhibition2> ; 
     crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
             crm:P190_has_symbolic_content "Ossewa" ;
             crm:P2_has_type [ a crm:E55_Type ;
@@ -577,7 +578,8 @@
                 crm:P190_has_symbolic_content "(1899 - 1902)" ;
                 crm:P82a_begin_of_the_begin "1899-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1902-12-31"^^xsd:date] ;
-        crm:P2_has_type <http://vocab.getty.edu/aat/300185689>. 
+        crm:P2_has_type <http://vocab.getty.edu/aat/300185689> ;
+        crm:P9_consists_of <https://example.com/histevent3> .
 
     <https://example.com/histevent2/title/1> a crm:E33_E41_Linguistic_Appellation ;
         crm:P190_has_symbolic_content "The second South African War(1899 - 1902)" ;
@@ -590,7 +592,7 @@
                 crm:P190_has_symbolic_content "(18-27 February 1900)" ;
                 crm:P82a_begin_of_the_begin "1900-02-18"^^xsd:date ;
                 crm:P82b_end_of_the_end "1900-02-27"^^xsd:date] ;
-        crm:P9_consists_of <https://example.com/829286#production/2>; # TODO: check with Victor or should be other way arround
+        crm:P9_consists_of <https://example.com/829286#production/2>; 
         crm:P2_has_type <http://vocab.getty.edu/aat/300185689>. 
 
     <https://example.com/histevent3/title/1> a crm:E33_E41_Linguistic_Appellation ;

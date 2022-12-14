@@ -21,8 +21,6 @@ select ?node where{
 {FOCUS a prov:Agent}@<prov_agent>,
 {FOCUS a prov:Activity}@<prov_activity>
 
-# TODO: I cannot differentiate activities like: purchase, histevent, exhibition
-
 # object infomation model shapemap
 {FOCUS a crm:E24_Physical_Human-Made_Thing}@<object>,
 {FOCUS a crm:E12_Production}@<production>
