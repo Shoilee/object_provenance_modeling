@@ -18,10 +18,10 @@ Validation tool: <a href="https://rdfshape.weso.es/shexValidate">RDFshape<a>
 ![Object Description Ontology Diagram](resource/object_description_ontology.png)
 
 ### Object Provenace Ontology
-![Object Provenace Ontology Diagram](resource/object_provenance_ontology.png)
+![Object Provenace Ontology Diagram](resource/Figure-1.png)
 
 ### Data Provenace Ontology
 ![Data Provenace Ontology Diagram](resource/data_provenance_ontology.png)
 
 ### Multi-perspective Ontoloy
-![Multi-perspective Ontoloy Diagram](resource/multyperspective_diagram.png)
+![Multi-perspective Ontoloy Diagram](resource/Figure-2.png)
