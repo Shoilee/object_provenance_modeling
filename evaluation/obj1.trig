@@ -7,8 +7,8 @@
 
 <https://example.com/605043/provenance_information_object> a prov:Entity;
         prov:type "Named Graph";
-    prov:wasDerivedFrom <https://example.com/Provenance_series_2> ;
-    prov:wasAttributedTo <https://example.com/Provenance_series_2/Agent#1>.
+    prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#2> ;
+    prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
 
 <https://example.com/PPROCE/Provenance_Report#2> a prov:Entity;
         prov:type "Report";

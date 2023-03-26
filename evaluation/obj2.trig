@@ -1,0 +1,351 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<https://example.com/609141/provenance_information_object> a prov:Entity;
+        prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#2> ;
+    prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
+
+<https://example.com/PPROCE/Provenance_Report#3> a prov:Entity;
+        prov:type "Report";
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE> .
+
+<http://example.com/Project_PPROCE> a prov:Activity ;
+        prov:type "Research" ;
+    prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1> ;
+    prov:used <<https://example.com/achieval_material_e4>,
+        <https://example.com/achieval_material_e5>,
+        <https://example.com/achieval_material_e6>,
+        <https://example.com/achieval_material_e7>,
+        <http://example.com/Book#1> ;
+#TODO: WE CAN MENTION THE FOLLOWING:
+#    prov:startedAtTime  "2019-03-01"^^xsd:date ;
+#    prov:endedAtTime ""^^xsd:date .
+
+<https://example.com/PPROCE/Agent#1> a prov:Agent ;
+    prov:type prov:Person ;
+    rdfs:label "Klaas Stutje" ;
+    prov:actedOnBehalfOf [ a prov:Agent; 
+        rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
+
+<https://example.com/609141/acquisition_information/3> a prov:Entity ;
+    prov:type "Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_e7> .
+
+<https://example.com/609141/acquisition_information/2> a prov:Entity ;
+    prov:type "Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_e4> ,
+         <https://example.com/achieval_material_e6> .
+
+<https://example.com/609141/acquisition_information/1> a prov:Entity ;
+    prov:type "Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_e4> ,
+         <https://example.com/achieval_material_e5> .
+
+<https://example.com/609141/transfer_of_custody_information/1> a prov:Entity ;
+    prov:type "Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_e4> ,
+         <https://example.com/achieval_material_e5> .
+
+<https://example.com/609141/production_information/1> a prov:Entity ;
+        prov:type "Named Graph" ;
+    prov:wasDerivedFrom <http://example.com/Book#1> .
+
+<https://example.com/achieval_material_e4> a prov:Entity ;
+        prov:type "Document" ;
+        rdfs:label "NL-HlmNHA, 476 Rijksmuseum en rechtsvoorgangers te Amsterdam, inv. no. 845".
+
+<https://example.com/achieval_material_e5> a prov:Entity ;
+        prov:type "Letter" ;
+        rdfs:label "letter from the director of the Archeologisch Cabinet to the Minister of Interior Affairs, dated 10 January 1852".
+
+<https://example.com/achieval_material_e6> a prov:Entity ;
+        prov:type "Letter" ;
+        rdfs:label "letter from the director of the Museum voor Oudheden to the director of the KKZ, dated 2 March 1852".
+
+<https://example.com/achieval_material_e7> a prov:Entity ;
+        prov:type "Inventory Card";
+        rdfs:label "Rijksmuseum Volkenkunde, inventory card series 360, no. 5254-5257".
+
+<http://example.com/Book#1> a prov:Entity ;
+        prov:type "Book" ;
+        rdfs:label "Collaborative Efforts to Preserve Wayang Beber in Indonesia" ;
+    prov:wasAttributedTo [a prov:Agent;
+        prov:type prov:Person;
+        rdfs:label "Saiful Bakhri"] ;
+    prov:wasAttributedTo [a prov:Agent;
+        prov:type prov:Person;
+        rdfs:label "Isamu Sakamoto"] ;
+    prov:wasAttributedTo [a prov:Agent;
+        prov:type prov:Person;
+        rdfs:label "Muhammad Nurul Fajri"] ;    .
+
+<https://example.com/provenance_information_object_609141>{
+# OBJECT
+     <https://hdl.handle.net/20.500.11840/609141> a crm:E24_Physical_Human-Made_Thing;
+        crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                crm:P190_has_symbolic_content "Wayang bèbèr plaat" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Presentatietitel"@nl ] ;
+                crm:P72_has_language [ a crm:E56_Language ;
+                        rdfs:label "Nederlands"@nl ]],
+            [ a crm:E33_E41_Linguistic_Appellation ;
+                crm:P190_has_symbolic_content "Wayan beber scrolls" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Presentatietitel"@nl ] ;
+                crm:P72_has_language [ a crm:E56_Language ;
+                        rdfs:label "English"@en ]],
+            [ a crm:E42_Identifier ;
+                crm:P190_has_symbolic_content "RV-360-5255" ;
+                crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ];
+        crm:P2_has_type [ a crm:E55_Type ;
+                rdfs:label "Voorwerpen" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Materiële cultuurcollectie" ],
+            [ a crm:E55_Type ;
+                rdfs:label "plaat / scrolls" ] ;
+        crm:P3_has_note "" ;
+        # TODO: Correct this information
+        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
+                rdfs:label "the court of Ekeneza"];
+        crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi59610>;
+        crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P43_has_dimension [ a crm:E54_Dimension ;
+                crm:P190_has_symbolic_content "70 x 283 cm" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "afmetingenlabel" ] ] ;
+        crm:P108i_was_produced_by <https://example.com/609141#production/1> ;
+        crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1.jpg&cache=yes>,
+            <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1_a.jpg&cache=yes> ;  
+        # TODO: correct it
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Bini" ;
+                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078292> ],
+            [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Benin City" ;
+                # crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> 
+                ] .
+
+# PRODUCTION
+    <https://example.com/609141#production/1> a crm:E12_Production ;
+        crm:P32_used_general_technique <http://vocab.getty.edu/aat/300011914> ;
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Paper"] ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                        crm:P190_has_symbolic_content "Seventh century" ] ;
+                crm:P82a_begin_of_the_begin "1700-01-01"^^xsd:date ] .
+        # crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055011> .
+
+
+ # PROVENANCE
+    # transfer of custody
+    <https://example.com/609141#transfer_of_custody/1> a crm:E10_Transfer_of_Custody ;
+        crm:P9_consists_of <https://example.com/609141#transfer_of_custody/1/sub-activity/1> ;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/609141>;
+        crm:P29_custody_received_by [ a crm:E39_Actor ;
+                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] .
+        
+
+    <https://example.com/609141#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ; 
+        rdfs:label "found in the village Sampang in the house of the guardian of the Pamambahans Sampang." ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P82b_end_of_the_end "1851-11-30"^^xsd:date ];
+        crm:P14_carried_out_by [ a crm:E39_Actor ;
+                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] ;
+        crm:P7_took_place_at [a crm:E53_Place;
+            rdfs:label "in the village Sampang in the house of the guardian of the Pamambahans Sampang."];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Found"].
+
+    # acqusition 1
+    <https://example.com/609141#acquisition/1> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1851"];
+                crm:P82a_begin_of_the_begin "1851-11-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1852-03-01"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/609141#acquisition/1/sub-activity/1> ;
+        crm:P22_transferred_title_to [a crm:E39_Actor;
+                rdfs:label "Archaeologisch Cabinet der Hoogeschool"] ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label "Adolph François Henry van de Poel (1816-1875)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
+
+    <https://example.com/609141#acquisition/1/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "donated the scrolls in 1851 to the Archaeologisch Cabinet der Hoogeschool" ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1851"];
+                crm:P82a_begin_of_the_begin "1851-11-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1851-11-01"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Donation"].
+
+
+    # acqusition 2
+    <https://example.com/609141#acquisition/2> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1852"];
+                crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
+                crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/609141#acquisition/2/sub-activity/1> ;
+        crm:P22_transferred_title_to [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label  "Archaeologisch Cabinet der Hoogeschool"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
+
+    <https://example.com/609141#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "Archaeologisch Cabinet der Hoogeschool's director decided that the scrolls were better placed in the collection of KKZ." ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                        crm:P190_has_symbolic_content "1852"];
+                crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
+                crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].
+
+    # acqusition 3
+    <https://example.com/609141#acquisition/3> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-31"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/609141#acquisition/3/sub-activity/1> ;
+        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
+
+    <https://example.com/609141#acquisition/3/sub-activity/1> a crm:E7_Activity  ;
+         rdfs:label "Arrived in the museum in 1883 as part of the collection of the Koninklijk Kabinet van Zeldzaamheden (KKZ). ";
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].
+}
+
+<https://example.com/609141/production_information/1>{
+    <https://example.com/609141#production/1> a crm:E12_Production ;
+        crm:P32_used_general_technique <http://vocab.getty.edu/aat/300011914> ;
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Paper"] ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                        crm:P190_has_symbolic_content "Seventh century" ] ;
+                crm:P82a_begin_of_the_begin "1700-01-01"^^xsd:date ] .
+        # crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055011> .
+}     
+
+<https://example.com/609141/transfer_of_custody_information/1>{
+     <https://example.com/609141#transfer_of_custody/1> a crm:E10_Transfer_of_Custody ;
+        crm:P9_consists_of <https://example.com/609141#transfer_of_custody/1/sub-activity/1> ;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/609141>;
+        crm:P29_custody_received_by [ a crm:E39_Actor ;
+                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] .
+
+    <https://example.com/609141#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ; 
+        rdfs:label "found in the village Sampang in the house of the guardian of the Pamambahans Sampang." ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P82b_end_of_the_end "1851-11-30"^^xsd:date ];
+        crm:P14_carried_out_by [ a crm:E39_Actor ;
+                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] ;
+        crm:P7_took_place_at [a crm:E53_Place;
+            rdfs:label "in the village Sampang in the house of the guardian of the Pamambahans Sampang."];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Found"].
+}
+
+<https://example.com/609141/acquisition_information/1>{
+    <https://example.com/609141#acquisition/2> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1852"];
+                crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
+                crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/609141#acquisition/2/sub-activity/1> ;
+        crm:P22_transferred_title_to [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label  "Archaeologisch Cabinet der Hoogeschool"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
+
+    <https://example.com/609141#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "Archaeologisch Cabinet der Hoogeschool's director decided that the scrolls were better placed in the collection of KKZ." ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                        crm:P190_has_symbolic_content "1852"];
+                crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
+                crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].
+}
+
+<https://example.com/609141/acquisition_information/2>{
+    <https://example.com/609141#acquisition/2> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1852"];
+                crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
+                crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/609141#acquisition/2/sub-activity/1> ;
+        crm:P22_transferred_title_to [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label  "Archaeologisch Cabinet der Hoogeschool"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
+
+    <https://example.com/609141#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "Archaeologisch Cabinet der Hoogeschool's director decided that the scrolls were better placed in the collection of KKZ." ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                        crm:P190_has_symbolic_content "1852"];
+                crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
+                crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].
+}
+
+<https://example.com/609141/acquisition_information/3>{
+    <https://example.com/609141#acquisition/3> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-31"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/609141#acquisition/3/sub-activity/1> ;
+        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
+
+    <https://example.com/609141#acquisition/3/sub-activity/1> a crm:E7_Activity  ;
+         rdfs:label "Arrived in the museum in 1883 as part of the collection of the Koninklijk Kabinet van Zeldzaamheden (KKZ). ";
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].
+}
+
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
+        prov:type prov:Organization ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+
+<http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
+        rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300388256> a crm:E56_Language ;
+        rdfs:label "Dutch".
