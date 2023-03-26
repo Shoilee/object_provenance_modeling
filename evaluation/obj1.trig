@@ -1,0 +1,258 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<https://example.com/605043/provenance_information_object> a prov:Entity;
+        prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/Provenance_series_2> ;
+    prov:wasAttributedTo <https://example.com/Provenance_series_2/Agent#1>.
+
+<https://example.com/PPROCE/Provenance_Report#2> a prov:Entity;
+        prov:type "Report";
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE> .
+
+<http://example.com/Project_PPROCE> a prov:Activity ;
+        prov:type "Research" ;
+    prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
+    prov:used <<https://example.com/achieval_material_e1>,
+        <https://example.com/achieval_material_e2>,
+        <https://example.com/achieval_material_e3> ;
+#TODO: WE CAN MENTION THE FOLLOWING:
+#    prov:startedAtTime  "2019-03-01"^^xsd:date ;
+#    prov:endedAtTime ""^^xsd:date .
+
+<https://example.com/PPROCE/Agent#1> a prov:Agent ;
+    prov:type prov:Person ;
+    rdfs:label "Klaas Stutje" ;
+    prov:actedOnBehalfOf [ a prov:Agent; 
+        rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
+
+<https://example.com/605043/purchase_information/1> a prov:Entity ;
+    prov:type "Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_e1>,
+        <https://example.com/achieval_material_e2>,
+        <https://example.com/achieval_material_e3> ;
+    prov:wasAttributedTo  <https://example.com/PPROCE/Agent#1>.
+
+
+<https://example.com/605043/tranfer_of_custody/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e1> .
+
+<https://example.com/605043/acquisition_information/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e2> .
+
+<https://example.com/605043/acquisition_information/2> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e3> .
+
+<https://example.com/achieval_material_e1> a prov:Entity ;
+        prov:type "Document";
+        rdfs:label "NL-LdnRMV, Archief serie 360".
+
+<https://example.com/achieval_material_e2> a prov:Entity ;
+        prov:type "Letter";
+        rdfs:label "NL-HlmNHA, 476 Rijksmuseum en rechtsvoorgangers te Amsterdam, inv.no. 854, letter 21 December 1824".
+
+<https://example.com/achieval_material_e3> a prov:Entity ;
+        prov:type "Inventory Card";
+        rdfs:label "Museum Volkenkunde, inventory card RV-360-1623".
+
+<https://example.com/provenance_information_object_605043>a prov:Entity ;
+        prov:type "Named Graph" ;
+    prov:wasDerivedFrom <http://example.com/Report#2> .
+
+<http://example.com/Report#2> a prov:Entity ;
+        prov:type "Provenance Report" ;
+    prov:wasAttributedTo  <https://example.com/PPROCE/Agent#1> .
+
+<https://example.com/provenance_information_object_605043>{
+# OBJECT
+     <https://hdl.handle.net/20.500.11840/605043> a crm:E24_Physical_Human-Made_Thing;
+        crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                crm:P190_has_symbolic_content "Versierde olifantstand" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Presentatietitel"@nl ] ;
+                crm:P72_has_language [ a crm:E56_Language ;
+                        rdfs:label "Nederlands"@nl ]],
+            [ a crm:E42_Identifier ;
+                crm:P190_has_symbolic_content "RV-360-1623" ;
+                crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ];
+        crm:P2_has_type [ a crm:E55_Type ;
+                rdfs:label "Voorwerpen" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Materiële cultuurcollectie" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Shield" ],
+            <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
+        crm:P3_has_note " " ;
+        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
+                rdfs:label "the court of Ekeneza"];
+        crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi59610>;
+        crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P43_has_dimension [ a crm:E54_Dimension ;
+                crm:P190_has_symbolic_content "103 x 56 cm" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "afmetingenlabel" ] ] ;
+        crm:P108i_was_produced_by <https://example.com/605043#production/1> ;
+        # TODO: Update the following
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Bini" ;
+                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078292> ],
+            [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Benin City" ;
+                # crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> 
+                ] .
+
+# PRODUCTION
+    <https://example.com/605043#production/1> a crm:E12_Production ;
+        crm:P32_used_general_technique <http://vocab.getty.edu/aat/300311500> ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                        crm:P190_has_symbolic_content "1760-1786" ] ;
+                crm:P82a_begin_of_the_begin "1760-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1786-01-01"^^xsd:date ] ;
+        # TODO: Update the following
+        # crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055011> .
+
+
+ # PROVENANCE
+    <https://example.com/605043#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/605043>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "James du Puy (1792-1881)"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "inhabitants of the interior of Sumatra (Minangkabau)"]. 
+
+    
+    # acquisition 1
+    <https://example.com/638332#acquisition/1> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1824"];
+                crm:P82a_begin_of_the_begin "1824-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1824-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/638332#acquisition/1/sub-activity/1> ;
+        crm:P22_transferred_title_to [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label "James du Puy (1792-1881)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
+
+
+    <https://example.com/638332#acquisition/1/sub-activity/1> a crm:E7_Activity  ;
+         rdfs:label "donated to the Koninklijk Kabinet van Zeldzaamheden (KKZ)" ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1824"];
+                crm:P82a_begin_of_the_begin "1824-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1824-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Donation"].
+
+    # acquisition 2
+    <https://example.com/638332#acquisition/2> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/638332#acquisition/2/sub-activity/1> ;
+        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
+
+
+    <https://example.com/638332#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "KKZ collection was disbanded and a large number of objects transferred to the Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor" ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].
+            
+}
+
+<https://example.com/605043/transfer_of_custody/1>{
+    <https://example.com/605043#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/605043>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "James du Puy (1792-1881)"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "inhabitants of the interior of Sumatra (Minangkabau)"]. 
+        
+}
+
+
+<https://example.com/605043/acquisition_information/1>{
+    <https://example.com/638332#acquisition/1> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1824"];
+                crm:P82a_begin_of_the_begin "1824-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1824-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/638332#acquisition/1/sub-activity/1> ;
+        crm:P22_transferred_title_to [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label "James du Puy (1792-1881)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
+
+
+    <https://example.com/638332#acquisition/1/sub-activity/1> a crm:E7_Activity  ;
+         rdfs:label "donated to the Koninklijk Kabinet van Zeldzaamheden (KKZ)" ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1824"];
+                crm:P82a_begin_of_the_begin "1824-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1824-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Donation"].     
+}
+
+<https://example.com/605043/acquisition_information/2>{
+    <https://example.com/638332#acquisition/2> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/638332#acquisition/2/sub-activity/1> ;
+        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
+
+
+    <https://example.com/638332#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+         rdfs:label "donated to the Koninklijk Kabinet van Zeldzaamheden (KKZ)" ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1824"];
+                crm:P82a_begin_of_the_begin "1824-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1824-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Donation"].
+}
+
+<https://hdl.handle.net/20.500.11840/termmaster10067487> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10078292> a crm:E55_Type .
+
+<https://hdl.handle.net/20.500.11840/termmaster10055011> a crm:E53_Place .
+
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
+        prov:type prov:Organization ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+
+<http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
+        rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
