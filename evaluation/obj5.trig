@@ -1,0 +1,324 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<https://example.com/provenance_information_object_770058> a prov:Entity;
+        prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#31> ;
+    prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
+
+<https://example.com/PPROCE/Provenance_Report#31> a prov:Entity;
+        prov:type "Report";
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE> .
+
+<http://example.com/Project_PPROCE> a prov:Activity ;
+        prov:type "Research" ;
+    prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
+    prov:used <https://example.com/achieval_material_e12>,
+        <https://example.com/achieval_material_e13>,
+        <https://example.com/achieval_material_e14>,
+        <https://example.com/achieval_material_e15>,
+        <https://example.com/achieval_material_e16>,
+        <https://example.com/achieval_material_e17> .
+
+#TODO: WE CAN MENTION THE FOLLOWING:
+#    prov:startedAtTime  "2019-03-01"^^xsd:date ;
+#    prov:endedAtTime ""^^xsd:date .
+
+<https://example.com/PPROCE/Agent#1> a prov:Agent ;
+    prov:type prov:Person ;
+    rdfs:label "Klaas Stutje" ;
+    prov:actedOnBehalfOf [ a prov:Agent; 
+        rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
+
+<https://example.com/770058/transfer_of_custody_information/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e12>, 
+        <https://example.com/achieval_material_e13>, 
+        <https://example.com/achieval_material_e14> .
+
+<https://example.com/770058/transfer_of_custody_information/2>a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e15>, <https://example.com/achieval_material_e16> .
+
+<https://example.com/770058/transfer_of_custody_information/3> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e17> .
+
+<https://example.com/achieval_material_e12> a prov:Entity ;
+        prov:type "Telegram";
+        rdfs:label "NL-HaNA, 2.10.52.01, inv. no. 453, mail report no. 727, copy of telegram Resident Bali and Lombok, 04-05-1908".
+
+<https://example.com/achieval_material_e13> a prov:Entity ;
+        prov:type "Missive";
+        rdfs:label "inv. no. 610, copy of missive Resident Bali and Lombok, 29-06-1908, p. 3." .
+
+<https://example.com/achieval_material_e14> a prov:Entity ;
+        prov:type "Register";
+        rdfs:label "NL-HaNA, 2.10.36.04, inv. no. 610 “Extract uit het Register der Besluiten van den Gouverneur-Generaal van Nederlandsch- Indië,” 14-11-1908, no. 7." .
+
+<https://example.com/achieval_material_e15> a prov:Entity ;
+        prov:type "Register";
+        rdfs:label "NL-LdnRMV, A16, file no. 6: “Koninklijke Militaire Academie, Ethnographische Verzameling, Register, I,” 1909, p. 9." .
+
+<https://example.com/achieval_material_e16> a prov:Entity ;
+        prov:type "Register";
+        rdfs:label "NL-LdnRMV, A16, file no. 26, “Aanwinstenboek van de Ethnografische Verzameling van de Koninklijke Militaire Academie,” 1949, p. 2" .
+
+<https://example.com/achieval_material_e16> a prov:Entity ;
+        prov:type "Book";
+        rdfs:label "Marie-Antoinette Willemsen, Volkenkunde in Breda. Van Indische verzameling tot Rijksmuseum Justinus van Nassau en de Vereniging voor Volkenkunde (Breda 2011) 56-58." .
+
+<https://example.com/provenance_information_object_770058>{
+# OBJECT
+     <https://hdl.handle.net/20.500.11840/770058> a crm:E24_Physical_Human-Made_Thing;
+        crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                crm:P190_has_symbolic_content "Staatsiekris – keris (Ceremonial Kris)" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Presentatietitel"@nl ] ;
+                crm:P72_has_language [ a crm:E56_Language ;
+                        rdfs:label "Nederlands"@nl ]],
+            [ a crm:E42_Identifier ;
+                crm:P190_has_symbolic_content "RV-3600-193" ;
+                crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ];
+        crm:P2_has_type [ a crm:E55_Type ;
+                rdfs:label "Voorwerpen" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Materiële cultuurcollectie" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Shield" ],
+            <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
+        crm:P3_has_note " " ;
+        crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi59610>;
+        crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P43_has_dimension [ a crm:E54_Dimension ;
+                crm:P190_has_symbolic_content "Length: 67.5 cm; Length of blade: 54 cm; Length of hilt: 13.5 cm; Length of sheath: 54 cm" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "afmetingenlabel" ] ] ;
+        crm:P108i_was_produced_by <https://example.com/770058#production/1> ;
+        # TODO: Update the following
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Bini" ;
+                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078292> ],
+            [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Benin City" ;
+                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> ] .
+
+# PRODUCTION
+    <https://example.com/770058#production/1> a crm:E12_Production ;
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Iron"];
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Nickel"];
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Wood"];
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Precious stones"];
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Gold"];
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Ivory"];
+        # TODO: Correct it
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                        crm:P190_has_symbolic_content "1760-1786" ] ;
+                crm:P82a_begin_of_the_begin "1760-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1786-01-01"^^xsd:date ] .
+        # TODO: Update the following
+        # crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055011> .
+
+
+ # PROVENANCE
+ # transfer of custody 1
+    <https://example.com/770058#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "Government of the Dutch East Indies, Batavia (presently Jakarta)"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "(Relative of) Dewa Agung Jambe II, Klungkung"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "April 1908" ];
+                crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Klungkung (Bali)"] .
+    
+    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "the weapon was looted by the Royal Netherlands East Indies Army in April 1908 during the puputan (“fight to the end” ritual) in Klungkung (Bali)" ;
+        crm:P11_had_participant [a crm:E39_Actor;
+                rdfs:label "Royal Netherlands East Indies Army"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "April 1908"];
+                crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ];
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Klungkung (Bali)"];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Looting"].
+
+
+# HISTORICAL EVENT
+    # HISTOROCAL EVENT
+    <https://example.com/histevent/e1> a crm:E5_Event ;
+        crm:P1_is_identified_by <https://example.com/histevent/e1/title/1> ;
+        # TODO: Update the following
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P190_has_symbolic_content "February 1897" ;
+                crm:P82a_begin_of_the_begin "1897-02-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1897-02-28"^^xsd:date] ;
+        crm:P67i_is_referred_to_by [a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "De Britse expeditie naar AbessiniÃ« was een zogenaamde reddingsmissie en strafexpeditie die in 1868 werd uitgevoerd door de strijdkrachten van het Britse rijk tegen het Ethiopische rijk (destijds ook bekend als AbessiniÃ«). De Slag om Magdala was de afsluiting van de Britse expeditie naar AbessiniÃ« die in april 1868 tussen Britse en Abessijnse strijdkrachten werd uitgevochten bij Magdala, 390 mijl (630 km) van de kust van de Rode Zee. De Britten werden geleid door Robert Napier , terwijl de Abessijnen werden geleid door keizer Tewodros II." ;
+                crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ;
+                crm:P72_has_language <http://vocab.getty.edu/aat/300388256>] ;
+        crm:P9_consists_of  <https://example.com/770058#transfer_of_custody/1/ub-activity/1>; 
+        crm:P2_has_type <http://vocab.getty.edu/aat/300185689> . 
+
+    <https://example.com/histevent/e1/title/1> a crm:E33_E41_Linguistic_Appellation ;
+        crm:P190_has_symbolic_content "Britse expeditie naar AbessiniÃ«, 1867-1868" ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
+        crm:P72_has_language <http://vocab.getty.edu/aat/300388256> .
+
+# transfer of custody 2
+    <https://example.com/770058#transfer_of_custody/2> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "March 1909"];
+                crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ] .
+    
+    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "Transferred in March 1909 to the Ethnographic Museum of the Royal Military Academy (KMA) in Breda" ;
+        crm:P11_had_participant [ a crm:E39_Actor;
+                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P4_has_time-span [ a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "March 1909"];
+                crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfered"].
+
+# transfer of custody 3
+    <https://example.com/770058#transfer_of_custody/3> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
+        crm:P29_custody_received_by <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1956"];
+                crm:P82a_begin_of_the_begin "1956-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1956-12-31"^^xsd:date ] .
+    
+    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "Collection was taken over in 1956 by Museum Volkenkunde" ;
+        crm:P11_had_participant <https://www.wikidata.org/entity/Q17153751>;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "March 1909"];
+                crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfered"].
+            
+}
+
+<https://example.com/770058/transfer_of_custody_information/1>{
+    # transfer of custody 1
+    <https://example.com/770058#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "Government of the Dutch East Indies, Batavia (presently Jakarta)"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "(Relative of) Dewa Agung Jambe II, Klungkung"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "April 1908" ];
+                crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Klungkung (Bali)"] .
+    
+    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "the weapon was looted by the Royal Netherlands East Indies Army in April 1908 during the puputan (“fight to the end” ritual) in Klungkung (Bali)" ;
+        crm:P11_had_participant [a crm:E39_Actor;
+                rdfs:label "Royal Netherlands East Indies Army"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "April 1908"];
+                crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ];
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Klungkung (Bali)"];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Looting"].
+}
+
+<https://example.com/770058/transfer_of_custody_information/2>{
+    <https://example.com/770058#transfer_of_custody/2> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "March 1909"];
+                crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ] .
+    
+    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "Transferred in March 1909 to the Ethnographic Museum of the Royal Military Academy (KMA) in Breda" ;
+        crm:P11_had_participant [ a crm:E39_Actor;
+                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P4_has_time-span [ a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "March 1909"];
+                crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfered"].
+}
+
+<https://example.com/770058/transfer_of_custody_information/3>{
+    <https://example.com/770058#transfer_of_custody/3> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
+        crm:P29_custody_received_by <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"];
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1956"];
+                crm:P82a_begin_of_the_begin "1956-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1956-12-31"^^xsd:date ] .
+    
+    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "Collection was taken over in 1956 by Museum Volkenkunde" ;
+        crm:P11_had_participant <https://www.wikidata.org/entity/Q17153751>;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "March 1909"];
+                crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfered"].
+}
+
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
+        prov:type prov:Organization ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+
+<http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
+        rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
