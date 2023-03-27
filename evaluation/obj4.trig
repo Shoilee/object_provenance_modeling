@@ -1,0 +1,163 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<https://example.com/199456/provenance_information_object> a prov:Entity;
+        prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#25> ;
+    prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
+
+<https://example.com/PPROCE/Provenance_Report#25> a prov:Entity;
+        prov:type "Report";
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE> .
+
+<http://example.com/Project_PPROCE> a prov:Activity ;
+        prov:type "Research" ;
+    prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
+    prov:used <https://example.com/achieval_material_e1>,
+        <https://example.com/achieval_material_e2>,
+        <https://example.com/achieval_material_e3> .
+#TODO: WE CAN MENTION THE FOLLOWING:
+#    prov:startedAtTime  "2019-03-01"^^xsd:date ;
+#    prov:endedAtTime ""^^xsd:date .
+
+<https://example.com/PPROCE/Agent#1> a prov:Agent ;
+    prov:type prov:Person ;
+    rdfs:label "Klaas Stutje" ;
+    prov:actedOnBehalfOf [ a prov:Agent; 
+        rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
+
+<https://example.com/199456/purchase_information/1> a prov:Entity ;
+    prov:type "Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_e11> ;
+    prov:wasAttributedTo  <https://example.com/PPROCE/Agent#1>.
+
+<https://example.com/199456/acquisition_information/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e11> .
+
+<https://example.com/achieval_material_e11> a prov:Entity ;
+        prov:type "Inventory Card";
+        rdfs:label "Inventory card object number TM-H-1669.".
+
+<https://example.com/provenance_information_object_199456>{
+# OBJECT
+     <https://hdl.handle.net/20.500.11840/199456> a crm:E24_Physical_Human-Made_Thing;
+        crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                crm:P190_has_symbolic_content "Kromme sabel met schede, de kling met geïncrusteerde Arabische inschrift" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Presentatietitel"@nl ] ;
+                crm:P72_has_language [ a crm:E56_Language ;
+                        rdfs:label "Nederlands"@nl ]],
+            [ a crm:E42_Identifier ;
+                crm:P190_has_symbolic_content "TM-H-1669" ;
+                crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ];
+        crm:P2_has_type [ a crm:E55_Type ;
+                rdfs:label "Voorwerpen" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Materiële cultuurcollectie" ],
+            [ a crm:E55_Type ;
+                rdfs:label "beladah belabang" ],
+            [ a crm:E55_Type ;
+                rdfs:label "parang nabur (nabur sword)" ];
+        crm:P3_has_note " " ;
+        # TODO: correct it!
+        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
+                rdfs:label "Ferdinand Theodoor Pahud de Mortanges (1832-1898)"];
+        crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P43_has_dimension [ a crm:E54_Dimension ;
+                crm:P190_has_symbolic_content "Sword: 12 x 3 x 63 cm; Sword with sheath: 16.5 x 3 x 74.5 cm" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                    rdfs:label "afmetingenlabel" ] ] ;
+        crm:P108i_was_produced_by <https://example.com/199456#production/1> ;
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Negara" ;
+                crm:P2_has_type [a crm:E53_Place; 
+                    rdfs:label "Negara (town)"]],
+            [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "kabupaten Hulu Sungai Selatan in South Kalimantan, Indonesia" ;
+                crm:P2_has_type [a crm:E53_Place; 
+                    rdfs:label "kabupaten Hulu Sungai Selatan in South Kalimantan, Indonesia"]] .
+
+# PRODUCTION
+    <https://example.com/199456#production/1> a crm:E12_Production ;
+        crm:P32_used_general_technique [a crm:E57_Material ;
+                rdfs:label "Wood"] ;
+        crm:P32_used_general_technique [a crm:E57_Material ;
+                rdfs:label "Iron"] ;
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                        crm:P190_has_symbolic_content "Unknown; Must be before acquisition date" ] ;
+                crm:P82b_end_of_the_end "1888-01-01"^^xsd:date ] ;
+        # TODO: specify old name and current name for places
+        crm:P7_took_place_at [a crm:E53_Place; 
+                        rdfs:label "Negara (town)"] ;
+        crm:P7_took_place_at [a crm:E53_Place; 
+                        rdfs:label "kabupaten Hulu Sungai Selatan in South Kalimantan, Indonesia"] .
+
+
+ # PROVENANCE
+    # TODO: read the whole text and consider if the transfer of custody applies here
+    
+    # acquisition 1
+    <https://example.com/199456#acquisition/1> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1888"];
+                crm:P82a_begin_of_the_begin "1888-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1888-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/199456#acquisition/1/sub-activity/1> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label "Ferdinand Theodoor Pahud de Mortanges (1832-1898)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/199456> .
+
+
+    <https://example.com/199456#acquisition/1/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "The sword was donated in 1888 by colonial official Ferdinand Theodoor Pahud de Mortanges (1832-1898) to the Koloniaal Museum in Haarlem, a predecessor of NMVW Tropenmuseum in Amsterdam. " ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1888"];
+                crm:P82a_begin_of_the_begin "1888-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1888-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Donation"].
+            
+}
+
+<https://example.com/199456/acquisition_information/1>{
+    <https://example.com/199456#acquisition/1> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1888"];
+                crm:P82a_begin_of_the_begin "1888-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1888-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/199456#acquisition/1/sub-activity/1> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor; 
+                rdfs:label "Ferdinand Theodoor Pahud de Mortanges (1832-1898)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/199456> .
+
+
+    <https://example.com/199456#acquisition/1/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "The sword was donated in 1888 by colonial official Ferdinand Theodoor Pahud de Mortanges (1832-1898) to the Koloniaal Museum in Haarlem, a predecessor of NMVW Tropenmuseum in Amsterdam. " ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1888"];
+                crm:P82a_begin_of_the_begin "1888-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1888-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Donation"].  
+}
+
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
+        prov:type prov:Organization ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+
+<http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
+        rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300312355> a crm:E55_Type .

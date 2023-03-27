@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
-<https://example.com/605043/provenance_information_object> a prov:Entity;
+<https://example.com/provenance_information_object_605043> a prov:Entity;
         prov:type "Named Graph";
     prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#2> ;
     prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
@@ -19,7 +19,7 @@
     prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
     prov:used <https://example.com/achieval_material_e1>,
         <https://example.com/achieval_material_e2>,
-        <https://example.com/achieval_material_e3> ;
+        <https://example.com/achieval_material_e3> .
 #TODO: WE CAN MENTION THE FOLLOWING:
 #    prov:startedAtTime  "2019-03-01"^^xsd:date ;
 #    prov:endedAtTime ""^^xsd:date .
@@ -61,14 +61,6 @@
 <https://example.com/achieval_material_e3> a prov:Entity ;
         prov:type "Inventory Card";
         rdfs:label "Museum Volkenkunde, inventory card RV-360-1623".
-
-<https://example.com/provenance_information_object_605043>a prov:Entity ;
-        prov:type "Named Graph" ;
-    prov:wasDerivedFrom <http://example.com/Report#2> .
-
-<http://example.com/Report#2> a prov:Entity ;
-        prov:type "Provenance Report" ;
-    prov:wasAttributedTo  <https://example.com/PPROCE/Agent#1> .
 
 <https://example.com/provenance_information_object_605043>{
 # OBJECT
