@@ -109,26 +109,21 @@
             [ a crm:E55_Type ;
                 rdfs:label "plaat / scrolls" ] ;
         crm:P3_has_note "" ;
-        # TODO: Correct this information
         crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "the court of Ekeneza"];
-        crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi59610>;
+                rdfs:label "the guardian of the Pamambahans Sampang"];
         crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
         crm:P43_has_dimension [ a crm:E54_Dimension ;
                 crm:P190_has_symbolic_content "70 x 283 cm" ;
                 crm:P2_has_type [ a crm:E55_Type ;
                         rdfs:label "afmetingenlabel" ] ] ;
         crm:P108i_was_produced_by <https://example.com/609141#production/1> ;
-        crm:P138i_has_representation <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1.jpg&cache=yes>,
-            <http://collectie.wereldculturen.nl/lodimages/cc/imageproxy.ashx?filename=images/Images/RV//1148-1_a.jpg&cache=yes> ;  
         # TODO: correct it
         crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
                 crm:P190_has_symbolic_content "Bini" ;
                 crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078292> ],
             [ a crm:E33_Linguistic_Object ;
                 crm:P190_has_symbolic_content "Benin City" ;
-                # crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> 
-                ] .
+                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> ] .
 
 # PRODUCTION
     <https://example.com/609141#production/1> a crm:E12_Production ;

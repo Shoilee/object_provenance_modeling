@@ -17,7 +17,7 @@
 <http://example.com/Project_PPROCE> a prov:Activity ;
         prov:type "Research" ;
     prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
-    prov:used <<https://example.com/achieval_material_e1>,
+    prov:used <https://example.com/achieval_material_e1>,
         <https://example.com/achieval_material_e2>,
         <https://example.com/achieval_material_e3> ;
 #TODO: WE CAN MENTION THE FOLLOWING:

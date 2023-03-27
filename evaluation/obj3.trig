@@ -1,0 +1,201 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<https://example.com/unknown01/provenance_information_object> a prov:Entity;
+        prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#6> ;
+    prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
+
+<https://example.com/PPROCE/Provenance_Report#6> a prov:Entity;
+        prov:type "Report";
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE> ;
+    prov:wasAttributedTo  <https://example.com/PPROCE/Agent#1> .
+
+<http://example.com/Project_PPROCE> a prov:Activity ;
+        prov:type "Research" ;
+    prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
+    prov:used  <https://example.com/achieval_material_e8> , 
+        <https://example.com/achieval_material_e9> ,
+        <https://example.com/achieval_material_e10> .
+#TODO: WE CAN MENTION THE FOLLOWING:
+#    prov:startedAtTime  "2019-03-01"^^xsd:date ;
+#    prov:endedAtTime ""^^xsd:date .
+
+<https://example.com/PPROCE/Agent#1> a prov:Agent ;
+    prov:type prov:Person ;
+    rdfs:label "Klaas Stutje" ;
+    prov:actedOnBehalfOf [ a prov:Agent; 
+        rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
+
+<https://example.com/unknown01/purchase_information/1> a prov:Entity ;
+    prov:type "Named Graph" ;
+    prov:wasDerivedFrom <https://example.com/achieval_material_e8>,
+        <https://example.com/achieval_material_e9>,
+        <https://example.com/achieval_material_e10> ;
+    prov:wasAttributedTo  <https://example.com/PPROCE/Agent#1>.
+
+
+<https://example.com/unknown01/tranfer_of_custody/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e8> .
+
+<https://example.com/unknown01/acquisition_information/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e9>,
+        <https://example.com/achieval_material_e10>  .
+
+<https://example.com/achieval_material_e8> a prov:Entity ;
+        prov:type "Document";
+        rdfs:label "NL-HlmNHA, 476 Rijksmuseum en rechtsvoorgangers te Amsterdam, inv. no. 839, sales list and draft receipt notes, no author, no date.".
+
+<https://example.com/achieval_material_e9> a prov:Entity ;
+        prov:type "Invetory Book";
+        rdfs:label "NL-LdnRMV-A3-26 t/m -67, handwritten inventory books of the Rijks Ethnographisch Museum, no. 5838-9.".
+
+<https://example.com/achieval_material_e10> a prov:Entity ;
+        prov:type "Inventory Card";
+        rdfs:label "Museum Volkenkunde, inventory card RV-360-5839".
+
+
+<https://example.com/unknown01/provenance_information_object>{
+# OBJECT
+     <https://hdl.handle.net/20.500.11840/unknown01> a crm:E24_Physical_Human-Made_Thing;
+        crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                crm:P190_has_symbolic_content "Lans" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Presentatietitel"@nl ] ;
+                crm:P72_has_language [ a crm:E56_Language ;
+                        rdfs:label "Nederlands"@nl ]],
+            [ a crm:E42_Identifier ;
+                crm:P190_has_symbolic_content "RV-360-5839" ;
+                crm:P2_has_type <http://vocab.getty.edu/aat/300312355> ];
+        crm:P2_has_type [ a crm:E55_Type ;
+                rdfs:label "Voorwerpen" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Materiële cultuurcollectie" ],
+            [ a crm:E55_Type ;
+                rdfs:label "Lans" ],
+            <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
+        crm:P3_has_note " " ;
+        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
+                rdfs:label "A resident in the Netherlands Indies"];
+        crm:P49_has_former_or_current_keeper [a crm:E39_Actor; 
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden"];
+        crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
+        crm:P43_has_dimension [ a crm:E54_Dimension ;
+                crm:P190_has_symbolic_content "Length 184 cm; shaft 2 cm" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "afmetingenlabel" ] ] ;
+        crm:P108i_was_produced_by <https://example.com/unknown01#production/1> ;
+        # TODO: Update the following
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Borneo and Malay cultures" ] .
+
+# TODO: Introduce different theory of its place of origin
+# PRODUCTION
+    <https://example.com/unknown01#production/1> a crm:E12_Production ;
+        # TODO: find aat vocab for material. 
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Iron"];
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Wood (pelet)"];
+        crm:P32_used_general_technique [a crm:E57_Material;
+                rdfs:label "Brass"];
+        crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                        crm:P190_has_symbolic_content "[no date] - 1836/7" ] ;
+                crm:P82b_end_of_the_end "1836-07-01"^^xsd:date ] .
+
+
+ # PROVENANCE
+    <https://example.com/unknown01#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/unknown01>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "A resident in the Netherlands Indies"]. 
+
+    <https://example.com/unknown01#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "The identity of the selling party, a resident, could not be established." ;
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Unknown"].
+
+    # acquisition 1
+    <https://example.com/unknown01#acquisition/1> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/unknown01#acquisition/2/sub-activity/1> ;
+        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unknown01> .
+
+
+    <https://example.com/unknown01#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "KKZ collection was disbanded and a large number of objects transferred to the Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor" ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].
+            
+}
+
+<https://example.com/unknown01/transfer_of_custody/1>{
+    <https://example.com/unknown01#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/unknown01>;
+        crm:P29_custody_received_by [a crm:E39_Actor; 
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden"] ;
+        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
+                rdfs:label "A resident in the Netherlands Indies"]. 
+
+    <https://example.com/unknown01#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "The identity of the selling party, a resident, could not be established." ;
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Unknown"].
+        
+}
+
+<https://example.com/unknown01/acquisition_information/1>{
+    <https://example.com/unknown01#acquisition/1> a crm:E8_Acquisition ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P9_consists_of  <https://example.com/unknown01#acquisition/2/sub-activity/1> ;
+        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P23_transferred_title_from [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unknown01> .
+
+
+    <https://example.com/unknown01#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+        rdfs:label "KKZ collection was disbanded and a large number of objects transferred to the Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor" ;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "1883"];
+                crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
+                crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
+        crm:P2_has_type [ a crm:E55_Type;
+                rdfs:label "Transfer"].   
+}
+
+
+<https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
+        prov:type prov:Organization ;
+        crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+
+<http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
+        rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
