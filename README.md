@@ -24,4 +24,4 @@ Validation tool: <a href="https://rdfshape.weso.es/shexValidate">RDFshape<a>
 ![Data Provenace Ontology Diagram](resource/data_provenance_ontology.png)
 
 ### Multi-perspective Ontoloy
-![Multi-perspective Ontoloy Diagram](correction/Figure-2.png)
+![Multi-perspective Ontology Diagram](correction/Figure-2.png)
