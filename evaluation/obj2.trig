@@ -273,7 +273,7 @@
 }
 
 <https://example.com/609141/acquisition_information/1>{
-    <https://example.com/609141#acquisition/2> a crm:E8_Acquisition ;
+    <https://example.com/609141#acquisition/1> a crm:E8_Acquisition ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1852"];
