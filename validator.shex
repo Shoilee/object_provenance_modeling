@@ -89,7 +89,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
     crm:P14_carried_out_by @<actor> *;
     crm:P7_took_place_at @<place> * ;
     crm:P4_has_time-span  @<time-span> * ; 
-  	crm:P32_used_general_technique @<type> * ;
+  	crm:P32_used_general_technique @<type> OR @<material> * ;
 }
 
 <transfer_of_custody>{
