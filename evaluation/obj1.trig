@@ -99,7 +99,7 @@
                         [a crm:E39_Actor;
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"],
                         [a crm:E39_Actor;
-                rdfs:label " Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor"];
+                rdfs:label "Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor"];
         crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
         crm:P43_has_dimension [ a crm:E54_Dimension ;
                 crm:P190_has_symbolic_content "103 x 56 cm" ;
