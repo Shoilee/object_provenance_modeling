@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
-<https://example.com/provenance_information_object_605043> a prov:Entity;
+<https://example.com/605043/object_provenance_information> a prov:Entity;
         prov:type "Named Graph";
     prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#2> ;
     prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
@@ -72,7 +72,7 @@
         prov:type "Inventory Card";
         rdfs:label "Museum Volkenkunde, inventory card RV-360-1623".
 
-<https://example.com/provenance_information_object_605043>{
+<https://example.com/605043/object_provenance_information>{
 # OBJECT
      <https://hdl.handle.net/20.500.11840/605043> a crm:E24_Physical_Human-Made_Thing;
         crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
