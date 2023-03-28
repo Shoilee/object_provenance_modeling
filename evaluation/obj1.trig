@@ -12,22 +12,20 @@
 
 <https://example.com/PPROCE/Provenance_Report#2> a prov:Entity;
         prov:type "Report";
-    prov:wasGeneratedBy <http://example.com/Project_PPROCE> .
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE#2> .
 
-<http://example.com/Project_PPROCE> a prov:Activity ;
+<http://example.com/Project_PPROCE#2> a prov:Activity ;
         prov:type "Research" ;
     prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
     prov:used <https://example.com/achieval_material_e1>,
         <https://example.com/achieval_material_e2>,
         <https://example.com/achieval_material_e3> .
-#TODO: WE CAN MENTION THE FOLLOWING:
-#    prov:startedAtTime  "2019-03-01"^^xsd:date ;
-#    prov:endedAtTime ""^^xsd:date .
 
 <https://example.com/PPROCE/Agent#1> a prov:Agent ;
     prov:type prov:Person ;
     rdfs:label "Klaas Stutje" ;
     prov:actedOnBehalfOf [ a prov:Agent; 
+        prov:type prov:Organization ;
         rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
 
 <https://example.com/605043/purchase_information/1> a prov:Entity ;
@@ -49,6 +47,18 @@
 <https://example.com/605043/acquisition_information/2> a prov:Entity ;
     prov:type "Named Graph";
     prov:wasDerivedFrom <https://example.com/achieval_material_e3> .
+
+<https://example.com/605043/place_of_origin/2> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasAttributedTo  [ a prov:Agent ;
+        prov:type prov:Person ;
+        rdfs:label "James du Puy (1792-1881)" ] . 
+
+<https://example.com/605043/place_of_origin/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasAttributedTo  [ a prov:Agent ;
+        prov:type prov:Person ;
+        rdfs:label "Rijks Ethnographisch Museum, director H.H. Juynboll (1867-1945)" ] . 
 
 <https://example.com/achieval_material_e1> a prov:Entity ;
         prov:type "Document";
@@ -82,23 +92,28 @@
                 rdfs:label "Shield" ],
             <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
         crm:P3_has_note " " ;
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "the court of Ekeneza"];
-        crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi59610>;
+        crm:P49_has_former_or_current_keeper [ a crm:E39_Actor;
+                rdfs:label "inhabitants of the interior of Sumatra (Minangkabau)"],
+                        [a crm:E39_Actor; 
+                rdfs:label "James du Puy (1792-1881)"] ,
+                        [a crm:E39_Actor;
+                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"],
+                        [a crm:E39_Actor;
+                rdfs:label " Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor"];
         crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
         crm:P43_has_dimension [ a crm:E54_Dimension ;
                 crm:P190_has_symbolic_content "103 x 56 cm" ;
                 crm:P2_has_type [ a crm:E55_Type ;
                         rdfs:label "afmetingenlabel" ] ] ;
         crm:P108i_was_produced_by <https://example.com/605043#production/1> ;
-        # TODO: Update the following
         crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
-                crm:P190_has_symbolic_content "Bini" ;
-                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078292> ],
+                crm:P190_has_symbolic_content "Sumatra (Minangkabau)" ;
+                crm:P2_has_type [a crm:E55_Place ;
+                        rdfs:label "Sumatra (Minangkabau)"]],
             [ a crm:E33_Linguistic_Object ;
-                crm:P190_has_symbolic_content "Benin City" ;
-                # crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> 
-                ] .
+                crm:P190_has_symbolic_content "Batak" ;
+                crm:P2_has_type [a crm:E55_Place ;
+                        rdfs:label "Batak"]] .
 
 # PRODUCTION
     <https://example.com/605043#production/1> a crm:E12_Production ;
@@ -108,8 +123,10 @@
                         crm:P190_has_symbolic_content "1760-1786" ] ;
                 crm:P82a_begin_of_the_begin "1760-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1786-01-01"^^xsd:date ] ;
-        # TODO: Update the following
-        # crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055011> .
+        crm:P7_took_place_at [a crm:E53_Place ;
+                        rdfs:label "Sumatra (Minangkabau)"] ;
+        crm:P7_took_place_at [a crm:E53_Place ;
+                        rdfs:label "Batak"].
 
 
  # PROVENANCE
@@ -154,7 +171,7 @@
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/638332#acquisition/2/sub-activity/1> ;
-        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from [a crm:E39_Actor;
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
@@ -217,7 +234,7 @@
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/638332#acquisition/2/sub-activity/1> ;
-        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from [a crm:E39_Actor;
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
@@ -234,11 +251,33 @@
                 rdfs:label "Donation"].
 }
 
+<https://example.com/605043/place_of_origin/1>{
+    <https://example.com/605043#production/1> a crm:E12_Production ;
+        crm:P7_took_place_at [a crm:E53_Place ;
+                        rdfs:label "Batak"].
+
+    <https://hdl.handle.net/20.500.11840/605043> a crm:E24_Physical_Human-Made_Thing;
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Batak" ;
+                crm:P2_has_type [a crm:E55_Type ;
+                        rdfs:label "Batak"]] .
+
+}
+
+<https://example.com/605043/place_of_origin/2>{
+    <https://example.com/605043#production/1> a crm:E12_Production ;
+        crm:P7_took_place_at [a crm:E53_Place ;
+                        rdfs:label "Sumatra (Minangkabau)"].
+
+    <https://hdl.handle.net/20.500.11840/605043> a crm:E24_Physical_Human-Made_Thing;
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Sumatra (Minangkabau)" ;
+                crm:P2_has_type [a crm:E55_Type ;
+                        rdfs:label "Sumatra (Minangkabau)"]] .
+
+}
+
 <https://hdl.handle.net/20.500.11840/termmaster10067487> a crm:E55_Type .
-
-<https://hdl.handle.net/20.500.11840/termmaster10078292> a crm:E55_Type .
-
-<https://hdl.handle.net/20.500.11840/termmaster10055011> a crm:E53_Place .
 
 <https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
         prov:type prov:Organization ;
@@ -246,5 +285,7 @@
 
 <http://vocab.getty.edu/aat/300312281> a crm:E55_Type ;
         rdfs:label "Museum" .
+
+<http://vocab.getty.edu/aat/300311500> a crm:E55_Type .
 
 <http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
