@@ -176,7 +176,7 @@
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/unknown01#acquisition/2/sub-activity/1> ;
-        crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from [a crm:E39_Actor;
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unknown01> .
@@ -217,7 +217,7 @@
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/unkown01#acquisition/2/sub-activity/1> ;
-        crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
         crm:P23_transferred_title_from [a crm:E39_Actor;
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unkown01> .
