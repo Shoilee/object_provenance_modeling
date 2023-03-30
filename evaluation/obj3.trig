@@ -5,22 +5,20 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
-<https://example.com/provenance_information_object_unknown01> a prov:Entity;
+<https://example.com/unknown01/object_provenance_information> a prov:Entity;
         prov:type "Named Graph";
     prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#6> ;
     prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
 
 <https://example.com/PPROCE/Provenance_Report#6> a prov:Entity;
         prov:type "Report";
-    prov:wasGeneratedBy <http://example.com/Project_PPROCE> ;
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE#6> ;
     prov:wasAttributedTo  <https://example.com/PPROCE/Agent#1> .
 
-<http://example.com/Project_PPROCE> a prov:Activity ;
+<http://example.com/Project_PPROCE#6> a prov:Activity ;
         prov:type "Research" ;
     prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
-    prov:used  <https://example.com/achieval_material_e8> , 
-        <https://example.com/achieval_material_e9> ,
-        <https://example.com/achieval_material_e10> .
+    prov:used  <https://example.com/achieval_material_e8> , <https://example.com/achieval_material_e9> , <https://example.com/achieval_material_e10> .
 #TODO: WE CAN MENTION THE FOLLOWING:
 #    prov:startedAtTime  "2019-03-01"^^xsd:date ;
 #    prov:endedAtTime ""^^xsd:date .
@@ -29,6 +27,7 @@
     prov:type prov:Person ;
     rdfs:label "Klaas Stutje" ;
     prov:actedOnBehalfOf [ a prov:Agent; 
+        prov:type prov:Organization ;
         rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
 
 <https://example.com/unknown01/purchase_information/1> a prov:Entity ;
@@ -48,6 +47,25 @@
     prov:wasDerivedFrom <https://example.com/achieval_material_e9>,
         <https://example.com/achieval_material_e10>  .
 
+<https://example.com/unkown01/production/1> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasDerivedFrom <https://example.com/achieval_material_e18>, <https://example.com/achieval_material_e19> .
+
+<https://example.com/unkown01/production/2> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasAttributedTo [ a prov:Agent;
+                prov:type prov:Person;
+                rdfs:label "John Klein Nagelvoort"] .
+
+<https://example.com/unkown01/production/3> a prov:Entity ;
+    prov:type "Named Graph";
+    prov:wasAttributedTo [ a prov:Agent;
+                prov:type prov:Person;
+                rdfs:label "Hans van de Bunte"];
+    prov:wasAttributedTo [ a prov:Agent;
+                prov:type prov:Person;
+                rdfs:label "Mansyur Sammy"] .
+
 <https://example.com/achieval_material_e8> a prov:Entity ;
         prov:type "Document";
         rdfs:label "NL-HlmNHA, 476 Rijksmuseum en rechtsvoorgangers te Amsterdam, inv. no. 839, sales list and draft receipt notes, no author, no date.".
@@ -60,8 +78,21 @@
         prov:type "Inventory Card";
         rdfs:label "Museum Volkenkunde, inventory card RV-360-5839".
 
+<https://example.com/achieval_material_e18> a prov:Entity ;
+        prov:type "Book";
+        rdfs:label "Traditionele wapens van Borneo, de uitrusting van de koppensnellers. Deel II, speren en blaasroeren (Leiden: Sunfield Publishing, 2017), 55-56.";
+        prov:wasAttributedTo [ a prov:Agent;
+                prov:type prov:Person;
+                rdfs:label "Albert G. van Zonneveld"] .
 
-<https://example.com/provenance_information_object_unknown01>{
+<https://example.com/achieval_material_e19> a prov:Entity ;
+        prov:type "Catalogue";
+        rdfs:label "Catalogus van 's Rijks Ethnographisch Museum, II Borneo (Leiden: E.J. Brill 1910), 297-298.";
+        prov:wasAttributedTo [ a prov:Agent;
+                prov:type prov:Person;
+                rdfs:label "H. H. Juynboll"] .
+
+<https://example.com/unknown01/object_provenance_information>{
 # OBJECT
      <https://hdl.handle.net/20.500.11840/unknown01> a crm:E24_Physical_Human-Made_Thing;
         crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
@@ -91,14 +122,17 @@
                 crm:P2_has_type [ a crm:E55_Type ;
                         rdfs:label "afmetingenlabel" ] ] ;
         crm:P108i_was_produced_by <https://example.com/unknown01#production/1> ;
-        # TODO: Update the following
         crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
-                crm:P190_has_symbolic_content "Borneo and Malay cultures" ] .
+                crm:P190_has_symbolic_content "Borneo" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Borneo" ]];
+        crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                crm:P190_has_symbolic_content "Malay" ;
+                crm:P2_has_type [ a crm:E55_Type ;
+                        rdfs:label "Malay" ]] .
 
-# TODO: Introduce different theory of its place of origin
 # PRODUCTION
     <https://example.com/unknown01#production/1> a crm:E12_Production ;
-        # TODO: find aat vocab for material. 
         crm:P32_used_general_technique [a crm:E57_Material;
                 rdfs:label "Iron"];
         crm:P32_used_general_technique [a crm:E57_Material;
@@ -108,12 +142,22 @@
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
                         crm:P190_has_symbolic_content "[no date] - 1836/7" ] ;
-                crm:P82b_end_of_the_end "1836-07-01"^^xsd:date ] .
+                crm:P82b_end_of_the_end "1836-07-01"^^xsd:date ] ;
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "West-Borneo"] ; 
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Malay"];
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Javanese"];.
 
 
  # PROVENANCE
     <https://example.com/unknown01#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/unknown01>;
+        crm:P4_has_time-span [a crm:E52_Time-Span;
+                crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
+                    crm:P190_has_symbolic_content "The lance appears on a sales list in the archive of KKZ that can be dated around 1836-1837"];
+                crm:P82b_end_of_the_end "1836-07-01"^^xsd:date ];
         crm:P29_custody_received_by [a crm:E39_Actor; 
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden"] ;
         crm:P28_custody_surrendered_by [ a crm:E39_Actor;
@@ -132,7 +176,7 @@
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/unknown01#acquisition/2/sub-activity/1> ;
-        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
         crm:P23_transferred_title_from [a crm:E39_Actor;
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unknown01> .
@@ -150,36 +194,36 @@
             
 }
 
-<https://example.com/199456/transfer_of_custody/1>{
-    <https://example.com/199456#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
-        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/199456>;
+<https://example.com/unkown01/transfer_of_custody/1>{
+    <https://example.com/unkown01#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
+        crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/unkown01>;
         crm:P29_custody_received_by [a crm:E39_Actor; 
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden"] ;
         crm:P28_custody_surrendered_by [ a crm:E39_Actor;
                 rdfs:label "A resident in the Netherlands Indies"]. 
 
-    <https://example.com/199456#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/unkown01#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "The identity of the selling party, a resident, could not be established." ;
         crm:P2_has_type [ a crm:E55_Type;
                 rdfs:label "Unknown"].
         
 }
 
-<https://example.com/199456/acquisition_information/1>{
-    <https://example.com/199456#acquisition/1> a crm:E8_Acquisition ;
+<https://example.com/unkown01/acquisition_information/1>{
+    <https://example.com/unkown01#acquisition/1> a crm:E8_Acquisition ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1883"];
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
-        crm:P9_consists_of  <https://example.com/199456#acquisition/2/sub-activity/1> ;
-        rm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
+        crm:P9_consists_of  <https://example.com/unkown01#acquisition/2/sub-activity/1> ;
+        crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
         crm:P23_transferred_title_from [a crm:E39_Actor;
                 rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
-        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/199456> .
+        crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unkown01> .
 
 
-    <https://example.com/199456#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/unkown01#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "KKZ collection was disbanded and a large number of objects transferred to the Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor" ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
@@ -188,6 +232,26 @@
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P2_has_type [ a crm:E55_Type;
                 rdfs:label "Transfer"].   
+}
+<https://example.com/unkown01/production/1>{
+    <https://example.com/unknown01#production/1> crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "West-Borneo"] ; 
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Malay"];
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Javanese"];.
+}
+
+<https://example.com/unkown01/production/2>{
+    <https://example.com/unknown01#production/1> crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "West-Borneo"] ; 
+        crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Malay"];  
+}
+
+<https://example.com/unkown01/production/3>{
+    <https://example.com/unknown01#production/1> crm:P7_took_place_at [a crm:E53_Place;
+                rdfs:label "Javanese"];.
 }
 
 
