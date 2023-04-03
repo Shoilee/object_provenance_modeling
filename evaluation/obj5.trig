@@ -5,16 +5,16 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
-<https://example.com/provenance_information_object_770058> a prov:Entity;
+<https://example.com/provenance_information_object_770058> a prov:Entity ;
         prov:type "Named Graph";
     prov:wasDerivedFrom <https://example.com/PPROCE/Provenance_Report#31> ;
     prov:wasAttributedTo <https://example.com/PPROCE/Agent#1> .
 
 <https://example.com/PPROCE/Provenance_Report#31> a prov:Entity;
         prov:type "Report";
-    prov:wasGeneratedBy <http://example.com/Project_PPROCE> .
+    prov:wasGeneratedBy <http://example.com/Project_PPROCE#31> .
 
-<http://example.com/Project_PPROCE> a prov:Activity ;
+<http://example.com/Project_PPROCE#31> a prov:Activity ;
         prov:type "Research" ;
     prov:wasAssociatedWith <https://example.com/PPROCE/Agent#1>;
     prov:used <https://example.com/achieval_material_e12>,
@@ -23,15 +23,15 @@
         <https://example.com/achieval_material_e15>,
         <https://example.com/achieval_material_e16>,
         <https://example.com/achieval_material_e17> .
-
 #TODO: WE CAN MENTION THE FOLLOWING:
 #    prov:startedAtTime  "2019-03-01"^^xsd:date ;
 #    prov:endedAtTime ""^^xsd:date .
 
-<https://example.com/PPROCE/Agent#1> a prov:Agent ;
+<https://example.com/PPROCE/Agent#2> a prov:Agent ;
     prov:type prov:Person ;
-    rdfs:label "Klaas Stutje" ;
+    rdfs:label "Tom Quist" ;
     prov:actedOnBehalfOf [ a prov:Agent; 
+        prov:type prov:Organization ;
         rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
 
 <https://example.com/770058/transfer_of_custody_information/1> a prov:Entity ;
@@ -99,13 +99,10 @@
                 crm:P2_has_type [ a crm:E55_Type ;
                         rdfs:label "afmetingenlabel" ] ] ;
         crm:P108i_was_produced_by <https://example.com/770058#production/1> ;
-        # TODO: Update the following
         crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
-                crm:P190_has_symbolic_content "Bini" ;
-                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10078292> ],
-            [ a crm:E33_Linguistic_Object ;
-                crm:P190_has_symbolic_content "Benin City" ;
-                crm:P2_has_type <https://hdl.handle.net/20.500.11840/termmaster10055011> ] .
+                crm:P190_has_symbolic_content "Klungkung, Bali" ;
+                crm:P2_has_type [a crm:E55_Type;
+                        rdfs:label "Klungkung, Bali" ]] .
 
 # PRODUCTION
     <https://example.com/770058#production/1> a crm:E12_Production ;
@@ -121,14 +118,12 @@
                 rdfs:label "Gold"];
         crm:P32_used_general_technique [a crm:E57_Material;
                 rdfs:label "Ivory"];
-        # TODO: Correct it
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
-                        crm:P190_has_symbolic_content "1760-1786" ] ;
-                crm:P82a_begin_of_the_begin "1760-01-01"^^xsd:date ;
-                crm:P82b_end_of_the_end "1786-01-01"^^xsd:date ] .
-        # TODO: Update the following
-        # crm:P7_took_place_at <https://hdl.handle.net/20.500.11840/termmaster10055011> .
+                        crm:P190_has_symbolic_content "before 1908" ] ;
+                crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
+        crm:P7_took_place_at [a crm:E53_Place ;
+                        rdfs:label "Klungkung (Bali)" ] .
 
 
  # PROVENANCE
@@ -166,20 +161,15 @@
     # HISTOROCAL EVENT
     <https://example.com/histevent/e1> a crm:E5_Event ;
         crm:P1_is_identified_by <https://example.com/histevent/e1/title/1> ;
-        # TODO: Update the following
         crm:P4_has_time-span [ a crm:E52_Time-Span ;
-                crm:P190_has_symbolic_content "February 1897" ;
-                crm:P82a_begin_of_the_begin "1897-02-01"^^xsd:date ;
-                crm:P82b_end_of_the_end "1897-02-28"^^xsd:date] ;
-        crm:P67i_is_referred_to_by [a crm:E33_Linguistic_Object ;
-                crm:P190_has_symbolic_content "De Britse expeditie naar AbessiniÃ« was een zogenaamde reddingsmissie en strafexpeditie die in 1868 werd uitgevoerd door de strijdkrachten van het Britse rijk tegen het Ethiopische rijk (destijds ook bekend als AbessiniÃ«). De Slag om Magdala was de afsluiting van de Britse expeditie naar AbessiniÃ« die in april 1868 tussen Britse en Abessijnse strijdkrachten werd uitgevochten bij Magdala, 390 mijl (630 km) van de kust van de Rode Zee. De Britten werden geleid door Robert Napier , terwijl de Abessijnen werden geleid door keizer Tewodros II." ;
-                crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ;
-                crm:P72_has_language <http://vocab.getty.edu/aat/300388256>] ;
-        crm:P9_consists_of  <https://example.com/770058#transfer_of_custody/1/ub-activity/1>; 
+                crm:P190_has_symbolic_content "28 April 1908" ;
+                crm:P82a_begin_of_the_begin "1908-04-28"^^xsd:date ;
+                crm:P82b_end_of_the_end "1908-04-28"^^xsd:date] ;
+        crm:P9_consists_of   <https://example.com/770058#transfer_of_custody/1/ub-activity/1>; 
         crm:P2_has_type <http://vocab.getty.edu/aat/300185689> . 
 
     <https://example.com/histevent/e1/title/1> a crm:E33_E41_Linguistic_Appellation ;
-        crm:P190_has_symbolic_content "Britse expeditie naar AbessiniÃ«, 1867-1868" ;
+        crm:P190_has_symbolic_content "Badung Puputan" ;
         crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
         crm:P72_has_language <http://vocab.getty.edu/aat/300388256> .
 
