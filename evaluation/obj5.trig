@@ -92,7 +92,8 @@
                 rdfs:label "Shield" ],
             <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
         crm:P3_has_note " " ;
-        crm:P49_has_former_or_current_keeper <https://hdl.handle.net/20.500.11840/pi59610>;
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#10> ;
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#11> ;
         crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
         crm:P43_has_dimension [ a crm:E54_Dimension ;
                 crm:P190_has_symbolic_content "Length: 67.5 cm; Length of blade: 54 cm; Length of hilt: 13.5 cm; Length of sheath: 54 cm" ;
@@ -122,37 +123,31 @@
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
                         crm:P190_has_symbolic_content "before 1908" ] ;
                 crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                        rdfs:label "Klungkung (Bali)" ] .
+        crm:P7_took_place_at <https://example.com/Place#9> .
 
 
  # PROVENANCE
  # transfer of custody 1
     <https://example.com/770058#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "Government of the Dutch East Indies, Batavia (presently Jakarta)"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "(Relative of) Dewa Agung Jambe II, Klungkung"];
+        crm:P29_custody_received_by <https://example.com/Actor#10> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#12> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "April 1908" ];
                 crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Klungkung (Bali)"] .
+        crm:P7_took_place_at <https://example.com/Place#9> .
     
     <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
         rdfs:label "the weapon was looted by the Royal Netherlands East Indies Army in April 1908 during the puputan (“fight to the end” ritual) in Klungkung (Bali)" ;
-        crm:P11_had_participant [a crm:E39_Actor;
-                rdfs:label "Royal Netherlands East Indies Army"];
+        crm:P11_had_participant <https://example.com/Actor#11> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "April 1908"];
                 crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ];
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Klungkung (Bali)"];
+        crm:P7_took_place_at <https://example.com/Place#9>;
         crm:P2_has_type [ a crm:E55_Type;
                 rdfs:label "Looting"].
 
@@ -176,10 +171,8 @@
 # transfer of custody 2
     <https://example.com/770058#transfer_of_custody/2> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P29_custody_received_by <https://example.com/Actor#13> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#10>;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "March 1909"];
@@ -188,8 +181,7 @@
     
     <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
         rdfs:label "Transferred in March 1909 to the Ethnographic Museum of the Royal Military Academy (KMA) in Breda" ;
-        crm:P11_had_participant [ a crm:E39_Actor;
-                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P11_had_participant <https://example.com/Actor#10>;
         crm:P4_has_time-span [ a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "March 1909"];
@@ -202,8 +194,7 @@
     <https://example.com/770058#transfer_of_custody/3> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"];
+        crm:P28_custody_surrendered_by <https://example.com/Actor#13> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1956"];
@@ -227,29 +218,24 @@
     # transfer of custody 1
     <https://example.com/770058#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "Government of the Dutch East Indies, Batavia (presently Jakarta)"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "(Relative of) Dewa Agung Jambe II, Klungkung"];
+        crm:P29_custody_received_by <https://example.com/Actor#10> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#12> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "April 1908" ];
                 crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Klungkung (Bali)"] .
+        crm:P7_took_place_at <https://example.com/Place#9> .
     
     <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
         rdfs:label "the weapon was looted by the Royal Netherlands East Indies Army in April 1908 during the puputan (“fight to the end” ritual) in Klungkung (Bali)" ;
-        crm:P11_had_participant [a crm:E39_Actor;
-                rdfs:label "Royal Netherlands East Indies Army"];
+        crm:P11_had_participant <https://example.com/Actor#11> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "April 1908"];
                 crm:P82a_begin_of_the_begin "1908-04-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ];
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Klungkung (Bali)"];
+        crm:P7_took_place_at <https://example.com/Place#9>;
         crm:P2_has_type [ a crm:E55_Type;
                 rdfs:label "Looting"].
 }
@@ -257,10 +243,8 @@
 <https://example.com/770058/transfer_of_custody_information/2>{
     <https://example.com/770058#transfer_of_custody/2> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P29_custody_received_by <https://example.com/Actor#13> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#10> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "March 1909"];
@@ -269,8 +253,7 @@
     
     <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
         rdfs:label "Transferred in March 1909 to the Ethnographic Museum of the Royal Military Academy (KMA) in Breda" ;
-        crm:P11_had_participant [ a crm:E39_Actor;
-                rdfs:label "Government of the Dutch East Indies, Batavia"];
+        crm:P11_had_participant <https://example.com/Actor#10>;
         crm:P4_has_time-span [ a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "March 1909"];
@@ -284,8 +267,7 @@
     <https://example.com/770058#transfer_of_custody/3> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda"];
+        crm:P28_custody_surrendered_by <https://example.com/Actor#13> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1956"];
@@ -312,3 +294,22 @@
         rdfs:label "Museum" .
 
 <http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
+
+<https://example.com/Place#9> a crm:E53_Place;
+        rdfs:label "Klungkung (Bali)" .
+
+<https://example.com/Actor#10> a crm:E39_Actor; 
+        rdfs:label "Government of the Dutch East Indies, Batavia" .
+
+<https://example.com/Actor#11> a crm:E39_Actor;
+        rdfs:label "Royal Netherlands East Indies Army" .
+
+<https://example.com/Actor#12> a crm:E39_Actor;
+        rdfs:label "(Relative of) Dewa Agung Jambe II, Klungkung" .
+
+<https://example.com/Actor#13> a crm:E39_Actor; 
+        rdfs:label "Ethnographic Museum of the Royal Military Academy, Breda" .
+
+
+
+

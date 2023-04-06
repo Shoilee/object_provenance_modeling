@@ -24,9 +24,7 @@
 <https://example.com/PPROCE/Agent#1> a prov:Agent ;
     prov:type prov:Person ;
     rdfs:label "Klaas Stutje" ;
-    prov:actedOnBehalfOf [ a prov:Agent; 
-        prov:type prov:Organization ;
-        rdfs:label "NIOD, Rijksmuseum, Nationaal Museum van Wereldculturen"] .
+    prov:actedOnBehalfOf <https://example.com/Actor#1> .
 
 <https://example.com/605043/purchase_information/1> a prov:Entity ;
     prov:type "Named Graph" ;
@@ -92,14 +90,10 @@
                 rdfs:label "Shield" ],
             <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
         crm:P3_has_note " " ;
-        crm:P49_has_former_or_current_keeper [ a crm:E39_Actor;
-                rdfs:label "inhabitants of the interior of Sumatra (Minangkabau)"],
-                        [a crm:E39_Actor; 
-                rdfs:label "James du Puy (1792-1881)"] ,
-                        [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"],
-                        [a crm:E39_Actor;
-                rdfs:label "Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor"];
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#2> ,
+                        <https://example.com/Actor#1>,
+                        <https://example.com/Actor#3>,
+                        <https://example.com/Actor#4>;
         crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
         crm:P43_has_dimension [ a crm:E54_Dimension ;
                 crm:P190_has_symbolic_content "103 x 56 cm" ;
@@ -108,11 +102,11 @@
         crm:P108i_was_produced_by <https://example.com/605043#production/1> ;
         crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
                 crm:P190_has_symbolic_content "Sumatra (Minangkabau)" ;
-                crm:P2_has_type [a crm:E55_Place ;
+                crm:P2_has_type [a crm:E55_Type ;
                         rdfs:label "Sumatra (Minangkabau)"]],
             [ a crm:E33_Linguistic_Object ;
                 crm:P190_has_symbolic_content "Batak" ;
-                crm:P2_has_type [a crm:E55_Place ;
+                crm:P2_has_type [a crm:E55_Type ;
                         rdfs:label "Batak"]] .
 
 # PRODUCTION
@@ -123,19 +117,15 @@
                         crm:P190_has_symbolic_content "1760-1786" ] ;
                 crm:P82a_begin_of_the_begin "1760-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1786-01-01"^^xsd:date ] ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                        rdfs:label "Sumatra (Minangkabau)"] ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                        rdfs:label "Batak"].
+        crm:P7_took_place_at <https://example.com/Place#1> ;
+        crm:P7_took_place_at <https://example.com/Place#2>.
 
 
  # PROVENANCE
     <https://example.com/605043#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/605043>;
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "James du Puy (1792-1881)"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "inhabitants of the interior of Sumatra (Minangkabau)"]. 
+        crm:P29_custody_received_by <https://example.com/Actor#1> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#2> . 
 
     
     # acquisition 1
@@ -146,10 +136,8 @@
                 crm:P82a_begin_of_the_begin "1824-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1824-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/638332#acquisition/1/sub-activity/1> ;
-        crm:P22_transferred_title_to [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
-        crm:P23_transferred_title_from [a crm:E39_Actor; 
-                rdfs:label "James du Puy (1792-1881)"] ;
+        crm:P22_transferred_title_to <https://example.com/Actor#3> ;
+        crm:P23_transferred_title_from <https://example.com/Actor#1> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
 
 
@@ -172,8 +160,7 @@
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/638332#acquisition/2/sub-activity/1> ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from <https://example.com/Actor#3> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
 
 
@@ -192,10 +179,8 @@
 <https://example.com/605043/transfer_of_custody/1>{
     <https://example.com/605043#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/605043>;
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "James du Puy (1792-1881)"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "inhabitants of the interior of Sumatra (Minangkabau)"]. 
+        crm:P29_custody_received_by <https://example.com/Actor#1> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#2> . 
         
 }
 
@@ -208,10 +193,8 @@
                 crm:P82a_begin_of_the_begin "1824-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1824-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/638332#acquisition/1/sub-activity/1> ;
-        crm:P22_transferred_title_to [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
-        crm:P23_transferred_title_from [a crm:E39_Actor; 
-                rdfs:label "James du Puy (1792-1881)"] ;
+        crm:P22_transferred_title_to <https://example.com/Actor#3> ;
+        crm:P23_transferred_title_from <https://example.com/Actor#1> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
 
 
@@ -235,8 +218,7 @@
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/638332#acquisition/2/sub-activity/1> ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from <https://example.com/Actor#3> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/605043> .
 
 
@@ -253,8 +235,7 @@
 
 <https://example.com/605043/place_of_origin/1>{
     <https://example.com/605043#production/1> a crm:E12_Production ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                        rdfs:label "Batak"].
+        crm:P7_took_place_at <https://example.com/Place#2> .
 
     <https://hdl.handle.net/20.500.11840/605043> a crm:E24_Physical_Human-Made_Thing;
         crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
@@ -266,8 +247,7 @@
 
 <https://example.com/605043/place_of_origin/2>{
     <https://example.com/605043#production/1> a crm:E12_Production ;
-        crm:P7_took_place_at [a crm:E53_Place ;
-                        rdfs:label "Sumatra (Minangkabau)"].
+        crm:P7_took_place_at <https://example.com/Place#1>.
 
     <https://hdl.handle.net/20.500.11840/605043> a crm:E24_Physical_Human-Made_Thing;
         crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
@@ -289,3 +269,22 @@
 <http://vocab.getty.edu/aat/300311500> a crm:E55_Type .
 
 <http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
+
+<https://example.com/Place#1> a crm:E53_Place ;
+        rdfs:label "Sumatra (Minangkabau)" .
+
+<https://example.com/Place#2> a crm:E53_Place ;
+        rdfs:label "Batak" .
+
+<https://example.com/Actor#1> a crm:E39_Actor, prov:Agent ;
+        prov:type prov:Person ;
+        rdfs:label "James du Puy (1792-1881)" .
+
+<https://example.com/Actor#2> a crm:E39_Actor ;
+        rdfs:label "inhabitants of the interior of Sumatra (Minangkabau)" .
+
+<https://example.com/Actor#3> a crm:E39_Actor;
+        rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)" .
+
+<https://example.com/Actor#4> a crm:E39_Actor;
+        rdfs:label "Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor" .

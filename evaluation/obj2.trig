@@ -110,16 +110,11 @@
             [ a crm:E55_Type ;
                 rdfs:label "plaat / scrolls" ] ;
         crm:P3_has_note "" ;
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "the guardian of the Pamambahans Sampang"];
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "Adolph François Henry van de Poel (1816-1875)"];
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "Archaeologisch Cabinet der Hoogeschool"];
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"];
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor"];
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#6>;
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#7>;
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#5>;
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#3>;
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#4>;
         crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
         crm:P43_has_dimension [ a crm:E54_Dimension ;
                 crm:P190_has_symbolic_content "70 x 283 cm" ;
@@ -151,20 +146,16 @@
     <https://example.com/609141#transfer_of_custody/1> a crm:E10_Transfer_of_Custody ;
         crm:P9_consists_of <https://example.com/609141#transfer_of_custody/1/sub-activity/1> ;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/609141>;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor ;
-                        rdfs:label "The guardian of a cemetery of the Panembahan in Sampang" ];
-        crm:P29_custody_received_by [ a crm:E39_Actor ;
-                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] .
+        crm:P28_custody_surrendered_by <https://example.com/Actor#6> ;
+        crm:P29_custody_received_by <https://example.com/Actor#7> .
         
 
     <https://example.com/609141#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ; 
         rdfs:label "found in the village Sampang in the house of the guardian of the Pamambahans Sampang." ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P82b_end_of_the_end "1851-11-30"^^xsd:date ];
-        crm:P14_carried_out_by [ a crm:E39_Actor ;
-                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] ;
-        crm:P7_took_place_at [a crm:E53_Place;
-            rdfs:label "Sampang"];
+        crm:P14_carried_out_by <https://example.com/Actor#7> ;
+        crm:P7_took_place_at <https://example.com/Place#3> ;
         crm:P2_has_type [ a crm:E55_Type;
                 rdfs:label "Found"].
 
@@ -176,10 +167,8 @@
                 crm:P82a_begin_of_the_begin "1851-11-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1851-11-30"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/609141#acquisition/1/sub-activity/1> ;
-        crm:P22_transferred_title_to [a crm:E39_Actor;
-                rdfs:label "Archaeologisch Cabinet der Hoogeschool"] ;
-        crm:P23_transferred_title_from [a crm:E39_Actor; 
-                rdfs:label "Adolph François Henry van de Poel (1816-1875)"] ;
+        crm:P22_transferred_title_to <https://example.com/Actor#5> ;
+        crm:P23_transferred_title_from <https://example.com/Actor#7> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
 
     <https://example.com/609141#acquisition/1/sub-activity/1> a crm:E7_Activity  ;
@@ -201,10 +190,8 @@
                 crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
                 crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/609141#acquisition/2/sub-activity/1> ;
-        crm:P22_transferred_title_to [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
-        crm:P23_transferred_title_from [a crm:E39_Actor; 
-                rdfs:label  "Archaeologisch Cabinet der Hoogeschool"] ;
+        crm:P22_transferred_title_to <https://example.com/Actor#3> ;
+        crm:P23_transferred_title_from <https://example.com/Actor#5> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
 
     <https://example.com/609141#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
@@ -226,8 +213,7 @@
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/609141#acquisition/3/sub-activity/1> ;
         crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
-        crm:P23_transferred_title_from [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from <https://example.com/Actor#3> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
 
     <https://example.com/609141#acquisition/3/sub-activity/1> a crm:E7_Activity  ;
@@ -257,15 +243,13 @@
      <https://example.com/609141#transfer_of_custody/1> a crm:E10_Transfer_of_Custody ;
         crm:P9_consists_of <https://example.com/609141#transfer_of_custody/1/sub-activity/1> ;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/609141>;
-        crm:P29_custody_received_by [ a crm:E39_Actor ;
-                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] .
+        crm:P29_custody_received_by <https://example.com/Actor#7> .
 
     <https://example.com/609141#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ; 
         rdfs:label "found in the village Sampang in the house of the guardian of the Pamambahans Sampang." ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P82b_end_of_the_end "1851-11-30"^^xsd:date ];
-        crm:P14_carried_out_by [ a crm:E39_Actor ;
-                        rdfs:label "Adolph François Henry van de Poel (1816-1875)"] ;
+        crm:P14_carried_out_by <https://example.com/Actor#7> ;
         crm:P7_took_place_at [a crm:E53_Place;
             rdfs:label "in the village Sampang in the house of the guardian of the Pamambahans Sampang."];
         crm:P2_has_type [ a crm:E55_Type;
@@ -280,10 +264,8 @@
                 crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
                 crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/609141#acquisition/2/sub-activity/1> ;
-        crm:P22_transferred_title_to [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
-        crm:P23_transferred_title_from [a crm:E39_Actor; 
-                rdfs:label  "Archaeologisch Cabinet der Hoogeschool"] ;
+        crm:P22_transferred_title_to <https://example.com/Actor#3> ;
+        crm:P23_transferred_title_from <https://example.com/Actor#5> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
 
     <https://example.com/609141#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
@@ -305,10 +287,8 @@
                 crm:P82a_begin_of_the_begin "1852-03-02"^^xsd:date ;
                 crm:P82b_end_of_the_end "1852-03-02"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/609141#acquisition/2/sub-activity/1> ;
-        crm:P22_transferred_title_to [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
-        crm:P23_transferred_title_from [a crm:E39_Actor; 
-                rdfs:label  "Archaeologisch Cabinet der Hoogeschool"] ;
+        crm:P22_transferred_title_to <https://example.com/Actor#3> ;
+        crm:P23_transferred_title_from <https://example.com/Actor#5> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
 
     <https://example.com/609141#acquisition/2/sub-activity/1> a crm:E7_Activity  ;
@@ -331,8 +311,7 @@
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/609141#acquisition/3/sub-activity/1> ;
         crm:P22_transferred_title_to <https://www.wikidata.org/wiki/Q17153751> ;
-        crm:P23_transferred_title_from [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from <https://example.com/Actor#3> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/609141> .
 
     <https://example.com/609141#acquisition/3/sub-activity/1> a crm:E7_Activity  ;
@@ -359,3 +338,21 @@
 <http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
 
 <http://vocab.getty.edu/aat/300011914> a crm:E57_Material .
+
+<https://example.com/Actor#3> a crm:E39_Actor;
+        rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)" .
+
+<https://example.com/Actor#4> a crm:E39_Actor;
+        rdfs:label "Rijks Ethnographisch Museum, Museum Volkenkunde’s direct predecessor" .
+
+<https://example.com/Actor#5> a crm:E39_Actor;
+        rdfs:label "Archaeologisch Cabinet der Hoogeschool" .
+
+<https://example.com/Actor#6> a crm:E39_Actor;
+        rdfs:label "the guardian of the Pamambahans Sampang" .
+
+<https://example.com/Actor#7> a crm:E39_Actor;
+        rdfs:label "Adolph François Henry van de Poel (1816-1875)" .
+
+<https://example.com/Place#3> a crm:E53_Place;
+        rdfs:label "Sampang" .

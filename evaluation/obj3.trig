@@ -112,10 +112,8 @@
                 rdfs:label "Lans" ],
             <https://hdl.handle.net/20.500.11840/termmaster10067487> ;
         crm:P3_has_note " " ;
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor;
-                rdfs:label "A resident in the Netherlands Indies"];
-        crm:P49_has_former_or_current_keeper [a crm:E39_Actor; 
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden"];
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#8>;
+        crm:P49_has_former_or_current_keeper <https://example.com/Actor#3>;
         crm:P52_has_current_owner <https://www.wikidata.org/entity/Q17153751> ;
         crm:P43_has_dimension [ a crm:E54_Dimension ;
                 crm:P190_has_symbolic_content "Length 184 cm; shaft 2 cm" ;
@@ -143,12 +141,9 @@
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
                         crm:P190_has_symbolic_content "[no date] - 1836/7" ] ;
                 crm:P82b_end_of_the_end "1836-07-01"^^xsd:date ] ;
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "West-Borneo"] ; 
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Malay"];
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Javanese"];.
+        crm:P7_took_place_at <https://example.com/Place#4> ; 
+        crm:P7_took_place_at <https://example.com/Place#5>;
+        crm:P7_took_place_at <https://example.com/Place#6>.
 
 
  # PROVENANCE
@@ -158,10 +153,8 @@
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "The lance appears on a sales list in the archive of KKZ that can be dated around 1836-1837"];
                 crm:P82b_end_of_the_end "1836-07-01"^^xsd:date ];
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "A resident in the Netherlands Indies"]. 
+        crm:P29_custody_received_by <https://example.com/Actor#3> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#8> . 
 
     <https://example.com/unknown01#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "The identity of the selling party, a resident, could not be established." ;
@@ -177,8 +170,7 @@
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/unknown01#acquisition/2/sub-activity/1> ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from <https://example.com/Actor#3> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unknown01> .
 
 
@@ -190,22 +182,20 @@
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P2_has_type [ a crm:E55_Type;
-                rdfs:label "Transfer"].
+                rdfs:label "Transfer"] .
             
 }
 
 <https://example.com/unkown01/transfer_of_custody/1>{
     <https://example.com/unkown01#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/unkown01>;
-        crm:P29_custody_received_by [a crm:E39_Actor; 
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden"] ;
-        crm:P28_custody_surrendered_by [ a crm:E39_Actor;
-                rdfs:label "A resident in the Netherlands Indies"]. 
+        crm:P29_custody_received_by <https://example.com/Actor#3> ;
+        crm:P28_custody_surrendered_by <https://example.com/Actor#8> . 
 
     <https://example.com/unkown01#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "The identity of the selling party, a resident, could not be established." ;
         crm:P2_has_type [ a crm:E55_Type;
-                rdfs:label "Unknown"].
+                rdfs:label "Unknown"] .
         
 }
 
@@ -218,8 +208,7 @@
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P9_consists_of  <https://example.com/unkown01#acquisition/2/sub-activity/1> ;
         crm:P22_transferred_title_to <https://www.wikidata.org/entity/Q17153751> ;
-        crm:P23_transferred_title_from [a crm:E39_Actor;
-                rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)"] ;
+        crm:P23_transferred_title_from <https://example.com/Actor#3> ;
         crm:P24_transferred_title_of <https://hdl.handle.net/20.500.11840/unkown01> .
 
 
@@ -231,29 +220,22 @@
                 crm:P82a_begin_of_the_begin "1883-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1883-12-31"^^xsd:date ];
         crm:P2_has_type [ a crm:E55_Type;
-                rdfs:label "Transfer"].   
+                rdfs:label "Transfer"] .   
 }
 <https://example.com/unkown01/production/1>{
-    <https://example.com/unknown01#production/1> crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "West-Borneo"] ; 
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Malay"];
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Javanese"];.
+    <https://example.com/unknown01#production/1> crm:P7_took_place_at <https://example.com/Place#4> ; 
+        crm:P7_took_place_at <https://example.com/Place#5>;
+        crm:P7_took_place_at <https://example.com/Place#6>.
 }
 
 <https://example.com/unkown01/production/2>{
-    <https://example.com/unknown01#production/1> crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "West-Borneo"] ; 
-        crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Malay"];  
+    <https://example.com/unknown01#production/1> crm:P7_took_place_at <https://example.com/Place#4> ; 
+        crm:P7_took_place_at <https://example.com/Place#5> .
 }
 
 <https://example.com/unkown01/production/3>{
-    <https://example.com/unknown01#production/1> crm:P7_took_place_at [a crm:E53_Place;
-                rdfs:label "Javanese"];.
+    <https://example.com/unknown01#production/1> crm:P7_took_place_at <https://example.com/Place#6> .
 }
-
 
 <https://www.wikidata.org/entity/Q17153751> a crm:E39_Actor , prov:Agent;
         prov:type prov:Organization ;
@@ -263,3 +245,20 @@
         rdfs:label "Museum" .
 
 <http://vocab.getty.edu/aat/300312355> a crm:E55_Type .
+
+<https://example.com/Actor#3> a crm:E39_Actor;
+        rdfs:label "Koninklijk Kabinet van Zeldzaamheden (KKZ)" .
+
+
+<https://example.com/Actor#8> a crm:E39_Actor;
+        rdfs:label "A resident in the Netherlands Indies" .
+
+<https://example.com/Place#4> a crm:E53_Place;
+        rdfs:label "West-Borneo" .
+
+<https://example.com/Place#5> a crm:E53_Place  ;
+        rdfs:label "Malay" .
+
+<https://example.com/Place#6> a crm:E53_Place;
+        rdfs:label "Javanese" .
+
