@@ -1,21 +1,23 @@
-class, count
-crm:E24_Physical_Human-Made_Thing	,6
-crm:E12_Production	,7
-crm:E10_Transfer_of_Custody	,7
-crm:E8_Acquisition	,12
-crm:E7_Activity	,21
-crm:E5_Event	,3
-crm:E39_Actor	,27
-crm:E33_E41_Linguistic_Appellation	,40
-crm:E33_Linguistic_Object	,13
-crm:E36_Visual_Item	,13
-crm:E42_Identifier	,7
-crm:E52_Time-Span	,57
-crm:E53_Place	,11
-crm:E54_Dimension	,7
-crm:E55_Type	,111
-crm:E56_Language	,27
-crm:E57_Material	,6
-prov:Activity	,2
-prov:Agent	,20
-prov:Entity	,38
+Entity, Count
+Total triples , 1290 
+Named graphs , 27 
+crm:E24_Physical_Human-Made_Thing  , 5     
+crm:E12_Production                   , 5     
+crm:E10_Transfer_of_Custody        , 7     
+crm:E8_Acquisition                   , 8     
+crm:E7_Activity                      , 12    
+crm:E5_Event                         , 1     
+crm:E39_Actor                        , 14    
+crm:E33_E41_Linguistic_Appellation , 54    
+crm:E33_Linguistic_Object           , 11    
+crm:E36 Visual Item                   , 0    
+crm:E42_Identifier                   , 5     
+crm:E52_Time-Span                    , 50    
+crm:E53_Place                        , 10    
+crm:E54_Dimension                    , 5     
+crm:E55_Type                         , 66    
+crm:E56_Language                     , 7     
+crm:E57_Material                     , 14    
+prov:Activity                         , 5     
+prov:Agent                            , 18    
+prov:Entity                           , 51

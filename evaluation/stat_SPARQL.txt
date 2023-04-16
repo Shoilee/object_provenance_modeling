@@ -1,0 +1,21 @@
+# GENERATE NUMBER OF INSTANCE FOR EACH CLASS
+SELECT ?type (COUNT (DISTINCT ?s) AS ?n) WHERE 
+{
+	?s a ?type .
+} GROUP BY ?type
+
+
+# GENERATE NUMBER OF Named Graph
+SELECT (COUNT (DISTINCT ?s) AS ?n) WHERE 
+{
+	?s a prov:Entity .
+  	?s prov:type "Named Graph" .
+  
+} 
+
+
+# GENERATE property list and number of times each properties appeared in triples
+SELECT ?p (COUNT (*) AS ?n) WHERE 
+{
+	?s ?p ?o .
+} GROUP BY ?p
