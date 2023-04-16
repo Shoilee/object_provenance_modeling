@@ -2,8 +2,8 @@
 
 **This REPO contains the following:**
 <ol>
-    <li> <a href="/data">Consturct objects TriG files and triple statistics<a>
-    <li> <a href="/evaluation">Evaluation objects TriG files,triple statistics, and corresponding provenance report<a>
+    <li> <a href="/data">Consturct objects:<a> TriG files and triple statistics
+    <li> <a href="/evaluation">Evaluation objects:<a> TriG files,triple statistics, and corresponding provenance report
     <li> <a href="/ontologies">Existing ontologies:<a> CIDOC & PROV
     <li> <a href="/resource">Resources:<a> Interview questions, Model diagrams, Data Diagrams 
     <li> <a href="validator.shex">ShEX shape<a> for data model
