@@ -139,7 +139,7 @@
                 crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
         crm:P7_took_place_at <https://example.com/Place#9> .
     
-    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/770058#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "the weapon was looted by the Royal Netherlands East Indies Army in April 1908 during the puputan (“fight to the end” ritual) in Klungkung (Bali)" ;
         crm:P11_had_participant <https://example.com/Actor#11> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
@@ -160,7 +160,7 @@
                 crm:P190_has_symbolic_content "28 April 1908" ;
                 crm:P82a_begin_of_the_begin "1908-04-28"^^xsd:date ;
                 crm:P82b_end_of_the_end "1908-04-28"^^xsd:date] ;
-        crm:P9_consists_of   <https://example.com/770058#transfer_of_custody/1/ub-activity/1>; 
+        crm:P9_consists_of   <https://example.com/770058#transfer_of_custody/1/sub-activity/1>; 
         crm:P2_has_type <http://vocab.getty.edu/aat/300185689> . 
 
     <https://example.com/histevent/e1/title/1> a crm:E33_E41_Linguistic_Appellation ;
@@ -179,7 +179,7 @@
                 crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ] .
     
-    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/770058#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "Transferred in March 1909 to the Ethnographic Museum of the Royal Military Academy (KMA) in Breda" ;
         crm:P11_had_participant <https://example.com/Actor#10>;
         crm:P4_has_time-span [ a crm:E52_Time-Span;
@@ -201,7 +201,7 @@
                 crm:P82a_begin_of_the_begin "1956-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1956-12-31"^^xsd:date ] .
     
-    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/770058#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "Collection was taken over in 1956 by Museum Volkenkunde" ;
         crm:P11_had_participant <https://www.wikidata.org/entity/Q17153751>;
         crm:P4_has_time-span [a crm:E52_Time-Span;
@@ -251,7 +251,7 @@
                 crm:P82a_begin_of_the_begin "1909-03-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1909-03-31"^^xsd:date ] .
     
-    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/770058#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "Transferred in March 1909 to the Ethnographic Museum of the Royal Military Academy (KMA) in Breda" ;
         crm:P11_had_participant <https://example.com/Actor#10>;
         crm:P4_has_time-span [ a crm:E52_Time-Span;
@@ -274,7 +274,7 @@
                 crm:P82a_begin_of_the_begin "1956-01-01"^^xsd:date ;
                 crm:P82b_end_of_the_end "1956-12-31"^^xsd:date ] .
     
-    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/770058#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "Collection was taken over in 1956 by Museum Volkenkunde" ;
         crm:P11_had_participant <https://www.wikidata.org/entity/Q17153751>;
         crm:P4_has_time-span [a crm:E52_Time-Span;
