@@ -7,6 +7,21 @@ SELECT ?object ?person WHERE
   ?person rdfs:label ?lab
 }
 
+# CQ1 --> retrieve actor with activity
+SELECT ?s ?activity1 ?name1 ?activity2 ?p2 ?name2 WHERE 
+{
+	?s a crm:E24_Physical_Human-Made_Thing.
+  {
+  ?s crm:P108i_was_produced_by ?activity1 .
+  ?activity crm:P14_carried_out_by ?actor .
+    ?actor rdfs:label ?name1 .
+} UNION {
+    ?activity2 ?p ?s .
+    ?activity2 ?p2 ?actor2 .
+    ?actor2 a crm:E39_Actor .
+    ?actor2 rdfs:label ?name2 .
+  } 
+}
 
 # CQ2
 
@@ -32,7 +47,7 @@ SELECT * WHERE
   FILTER (?p1 != ?p2)
 } 
 
-# CQ4, matches object location
+# CQ4A, matches object location when location in listed in sub-activity
 SELECT ?obj ?place WHERE
 {
   ?obj a crm:E24_Physical_Human-Made_Thing .
@@ -43,6 +58,15 @@ SELECT ?obj ?place WHERE
    ?activity crm:P24_transferred_title_of ?obj}
    ?activity crm:P9_consists_of ?sub .
   ?sub crm:P7_took_place_at ?place. 
+} 
+
+# CQ4B, matches object location when location with collection activity
+SELECT DISTINCT * WHERE 
+{
+  ?place a crm:E53_Place .
+  ?activity ?prop ?place .
+  ?activity ?prop2 ?object .
+  ?object a crm:E24_Physical_Human-Made_Thing. 
 } 
 
 # CQ5
@@ -90,7 +114,7 @@ WHERE
 {
   ?research a prov:Activity .
   ?research prov:wasAssociatedWith ?agent1 . 
-	OPTIONAL (?agent prov:actedOnBehalfOf ?agent2 .)
+	OPTIONAL {?agent prov:actedOnBehalfOf ?agent2 .}
 }
 
 # CQ9
@@ -105,4 +129,4 @@ WHERE
       ?activity prov:endedAtTime ?date1 
       filter (?date > ?date1)
    }
- } ORDER BY DESC(?date)
+ } ORDER BY DESC(?date) 

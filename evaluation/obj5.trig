@@ -227,7 +227,7 @@
                 crm:P82b_end_of_the_end "1908-04-30"^^xsd:date ] ;
         crm:P7_took_place_at <https://example.com/Place#9> .
     
-    <https://example.com/770058#transfer_of_custody/1/ub-activity/1> a crm:E7_Activity  ;
+    <https://example.com/770058#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "the weapon was looted by the Royal Netherlands East Indies Army in April 1908 during the puputan (“fight to the end” ritual) in Klungkung (Bali)" ;
         crm:P11_had_participant <https://example.com/Actor#11> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
