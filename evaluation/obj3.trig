@@ -154,7 +154,8 @@
                     crm:P190_has_symbolic_content "The lance appears on a sales list in the archive of KKZ that can be dated around 1836-1837"];
                 crm:P82b_end_of_the_end "1836-07-01"^^xsd:date ];
         crm:P29_custody_received_by <https://example.com/Actor#3> ;
-        crm:P28_custody_surrendered_by <https://example.com/Actor#8> . 
+        crm:P28_custody_surrendered_by <https://example.com/Actor#8> ;
+        crm:P9_consists_of <https://example.com/unknown01#transfer_of_custody/1/sub-activity/1> . 
 
     <https://example.com/unknown01#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "The identity of the selling party, a resident, could not be established." ;
@@ -190,7 +191,8 @@
     <https://example.com/unkown01#transfer_of_custody/1> a crm:E10_Transfer_of_Custody;
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/unkown01>;
         crm:P29_custody_received_by <https://example.com/Actor#3> ;
-        crm:P28_custody_surrendered_by <https://example.com/Actor#8> . 
+        crm:P28_custody_surrendered_by <https://example.com/Actor#8> ;
+        crm:P9_consists_of <https://example.com/unknown01#transfer_of_custody/1/sub-activity/1> . 
 
     <https://example.com/unkown01#transfer_of_custody/1/sub-activity/1> a crm:E7_Activity  ;
         rdfs:label "The identity of the selling party, a resident, could not be established." ;

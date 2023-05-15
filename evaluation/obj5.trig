@@ -132,6 +132,7 @@
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://example.com/Actor#10> ;
         crm:P28_custody_surrendered_by <https://example.com/Actor#12> ;
+        crm:P9_consists_of <https://example.com/770058#transfer_of_custody/1/sub-activity/1> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "April 1908" ];
@@ -173,6 +174,7 @@
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://example.com/Actor#13> ;
         crm:P28_custody_surrendered_by <https://example.com/Actor#10>;
+        crm:P9_consists_of <https://example.com/770058#transfer_of_custody/1/sub-activity/1> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "March 1909"];
@@ -195,6 +197,7 @@
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://www.wikidata.org/entity/Q17153751> ;
         crm:P28_custody_surrendered_by <https://example.com/Actor#13> ;
+        crm:P9_consists_of <https://example.com/770058#transfer_of_custody/1/sub-activity/1> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1956"];
@@ -220,6 +223,7 @@
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://example.com/Actor#10> ;
         crm:P28_custody_surrendered_by <https://example.com/Actor#12> ;
+        crm:P9_consists_of <https://example.com/770058#transfer_of_custody/1/sub-activity/1> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "April 1908" ];
@@ -245,6 +249,7 @@
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://example.com/Actor#13> ;
         crm:P28_custody_surrendered_by <https://example.com/Actor#10> ;
+        crm:P9_consists_of <https://example.com/770058#transfer_of_custody/1/sub-activity/1> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "March 1909"];
@@ -268,6 +273,7 @@
         crm:P30_transferred_custody_of <https://hdl.handle.net/20.500.11840/770058>;
         crm:P29_custody_received_by <https://www.wikidata.org/entity/Q17153751> ;
         crm:P28_custody_surrendered_by <https://example.com/Actor#13> ;
+        crm:P9_consists_of <https://example.com/770058#transfer_of_custody/1/sub-activity/1> ;
         crm:P4_has_time-span [a crm:E52_Time-Span;
                 crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation;
                     crm:P190_has_symbolic_content "1956"];

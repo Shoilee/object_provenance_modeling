@@ -7,13 +7,13 @@ SELECT ?object ?person WHERE
   ?person rdfs:label ?lab
 }
 
-# CQ1 --> retrieve actor with activity
+# CQ1 retrieve actor with activity
 SELECT ?s ?activity1 ?name1 ?activity2 ?p2 ?name2 WHERE 
 {
-	?s a crm:E24_Physical_Human-Made_Thing.
+  ?s a crm:E24_Physical_Human-Made_Thing.
   {
-  ?s crm:P108i_was_produced_by ?activity1 .
-  ?activity crm:P14_carried_out_by ?actor .
+    ?s crm:P108i_was_produced_by ?activity1 .
+    ?activity crm:P14_carried_out_by ?actor .
     ?actor rdfs:label ?name1 .
 } UNION {
     ?activity2 ?p ?s .
@@ -36,7 +36,7 @@ WHERE
    ?activity crm:P24_transferred_title_of ?object}
 } 
 
-# CQ3A partial match, requires specific queries for specific versions
+# CQ3A actors connected with shared activity
 SELECT * WHERE 
 {
   ?p1 a crm:E39_Actor .
@@ -47,7 +47,27 @@ SELECT * WHERE
   FILTER (?p1 != ?p2)
 } 
 
-# CQ4A, matches object location when location in listed in sub-activity
+
+# CQ3B actors connected with shared object
+SELECT DISTINCT ?p1 ?p2 WHERE 
+{
+  ?o a crm:E24_Physical_Human-Made_Thing .
+  ?act1 a crm:E7_Activity .
+  ?act1 ?link1 ?o .
+    OPTIONAL {?act1 ?prop1 ?p1 .} .
+    OPTIONAL {?act1 crm:P9_consists_of ?sub_act1 .
+    	?sub_act1 ?prop1 ?p1 .} .
+    ?p1 a crm:E39_Actor .
+  ?act2 a crm:E7_Activity .
+  ?act2 ?link2 ?o .
+    OPTIONAL {?act2 ?prop2 ?p2 .} .
+    OPTIONAL {?act2 crm:P9_consists_of ?sub_act2 .
+    	?sub_act2 ?prop2 ?p2 .} .
+    ?p2 a crm:E39_Actor .  
+  FILTER (?p1 != ?p2)
+}
+
+# CQ4A, when activity location is listed under sub-activity
 SELECT ?obj ?place WHERE
 {
   ?obj a crm:E24_Physical_Human-Made_Thing .
@@ -70,17 +90,16 @@ SELECT DISTINCT * WHERE
 } 
 
 # CQ5
-SELECT * WHERE
-{
+SELECT DISTINCT ?obj ?event WHERE{
   ?event a crm:E5_Event .
-  ?event crm:P9_consists_of ?activity .
-  ?activity a crm:E7_Activity .
-  ?superActivity crm:P9_consists_of ?activity  .
-  ?superActivity ?prop ?obj .
-  ?obj a crm:E24_Physical_Human-Made_Thing .
-} 
+  ?event crm:P9_consists_of ?act .
+  ?m_act crm:P9_consists_of ?act .
+  {?m_act a crm:E8_Acquisition .}
+  UNION {?m_act a crm:E10_Transfer_of_Custody .}
+  ?m_act ?p ?obj .
+  ?obj a crm:E24_Physical_Human-Made_Thing. }  
 
-# CQ6, matches object location with time
+# CQ6A, matches object location with time
 SELECT ?obj ?place ?b_time ?e_time WHERE
 {
   ?obj a crm:E24_Physical_Human-Made_Thing .
@@ -96,7 +115,31 @@ UNION
    ?activity crm:P24_transferred_title_of ?obj}
 } 
 
-# CQ7
+# CQ6B, objects collected within a time-period, e.g., between 1909 and 1910
+SELECT ?obj ?place ?b_time ?e_time WHERE
+{
+  ?obj a crm:E24_Physical_Human-Made_Thing .
+  ?activity a crm:E7_Activity .
+  ?activity crm:P9_consists_of ?sub .
+  ?sub crm:P7_took_place_at ?place. 
+  ?sub crm:P4_has_time-span ?time .
+  ?time crm:P82a_begin_of_the_begin ?b_time .
+  ?time crm:P82b_end_of_the_end ?e_time.
+  {?activity crm:P30_transferred_custody_of ?obj} 
+UNION
+  {?activity crm:P24_transferred_title_of ?obj}
+  FILTER (?b_time > "1909-01-01"^^xsd:date) .
+  FILTER (?e_time < "1910-01-01"^^xsd:date) .
+} 
+
+# CQ7A, which source states this statement
+SELECT * WHERE{
+  Graph ?g {?s ?p ?o . }
+  ?g (a|!a)+ ?g_o .
+  ?g_o a prov:Entity .
+}
+
+# CQ7B retrieves who/which institution made this statement
 SELECT ?s ?p ?o ?agentName
 WHERE
 {
@@ -106,7 +149,7 @@ WHERE
   ?activity prov:wasAssociatedWith ?agent} UNION
   {?g prov:wasAttibutedTo ?agent . }
   ?agent rdfs:label ?agentName .
-}LIMIT 100
+}
 
 # CQ8
 SELECT ?research ?agent1 ?agent2
@@ -117,7 +160,7 @@ WHERE
 	OPTIONAL {?agent prov:actedOnBehalfOf ?agent2 .}
 }
 
-# CQ9
+# CQ9 
 SELECT ?activity ?date
 WHERE
 {
